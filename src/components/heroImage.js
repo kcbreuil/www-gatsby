@@ -4,33 +4,32 @@ import styled from 'styled-components'
 
 import BackgroundImage from 'gatsby-background-image'
 
-
 const Hero = () => (
-  <StaticQuery query={graphql`
-    query {
-      desktop: file(relativePath: {eq: "bckrm-audifield-bg.jpg"}) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 4160) {
-            ...GatsbyImageSharpFluid_withWebp
+  <StaticQuery
+    query={graphql`
+      query {
+        desktop: file(relativePath: { eq: "bckrm-audifield-bg.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 4160) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
           }
         }
       }
-    }
-  `}
+    `}
+    render={data => {
+      const imageData = data.desktop.childImageSharp.fluid
 
-  render={data => {
-    const imageData = data.desktop.childImageSharp.fluid
-
-    return (
-      <StyledHeroWrapper>
-        <BackgroundImage fluid={imageData} ></BackgroundImage>
-      </StyledHeroWrapper>
-    )
-  }}
+      return (
+        <StyledHeroWrapper>
+          <BackgroundImage fluid={imageData} />
+        </StyledHeroWrapper>
+      )
+    }}
   />
 )
 
-const StyledBackgroundImage = styled(BackgroundImage)`
+styled(BackgroundImage)`
   background-position: center center;
   background-repeat: repeat-y;
   background-size: cover;
@@ -43,6 +42,5 @@ const StyledHeroWrapper = styled.div`
     min-height: 90vh;
   }
 `
-
 
 export default Hero

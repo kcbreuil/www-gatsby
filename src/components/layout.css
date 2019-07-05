@@ -1,8 +1,8 @@
-html {
+/* html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-}
+} */
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -60,10 +60,10 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
+/* h1 {
   font-size: 2em;
   margin: 0.67em 0;
-}
+} */
 mark {
   background-color: #ff0;
   color: #000;
@@ -98,7 +98,8 @@ samp {
   font-size: 1em;
 }
 figure {
-  margin: 1em 40px;
+  margin: 0;
+  padding: 0;
 }
 hr {
   box-sizing: content-box;
@@ -184,11 +185,11 @@ textarea {
   -webkit-appearance: button;
   font: inherit;
 }
-html {
+/* html {
   font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
-}
+} */
 * {
   box-sizing: inherit;
 }
@@ -198,7 +199,7 @@ html {
 *:after {
   box-sizing: inherit;
 }
-body {
+/* body {
   color: hsla(0, 0%, 0%, 0.8);
   font-family: georgia, serif;
   font-weight: normal;
@@ -208,8 +209,8 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
-}
-img {
+} */
+/* img {
   max-width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -219,8 +220,8 @@ img {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-}
-h1 {
+} */
+/* h1 {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -236,8 +237,8 @@ h1 {
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
-}
-h2 {
+} */
+/* h2 {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -253,8 +254,8 @@ h2 {
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
   line-height: 1.1;
-}
-h3 {
+} */
+/* h3 {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -270,8 +271,8 @@ h3 {
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
   line-height: 1.1;
-}
-h4 {
+} */
+/* h4 {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -287,7 +288,7 @@ h4 {
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.1;
-}
+} */
 h5 {
   margin-left: 0;
   margin-right: 0;
@@ -386,7 +387,7 @@ p {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-figure {
+/* figure {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -395,7 +396,7 @@ figure {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-}
+} */
 pre {
   margin-left: 0;
   margin-right: 0;
@@ -619,4 +620,8 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+#logo {
+  transition: height 250ms ease-out;
 }
