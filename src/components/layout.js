@@ -13,6 +13,7 @@ import debounce from 'lodash/debounce'
 import { createGlobalStyle } from 'styled-components'
 import * as fonts from '../fonts'
 
+import NavModal from './NavModal'
 import Header from './Header'
 import StyledHeroImage from './HeroImage'
 import './layout.css'
@@ -95,18 +96,18 @@ export default class Layout extends Component {
     super(props)
     this.state = {
       isScrolled: false,
+      navActive: false,
     }
 
     this.handleScroll = debounce(this.handleScroll.bind(this), 10)
+    this.handleNavClick = this.handleNavClick.bind(this)
   }
 
   componentDidMount() {
-    console.log('component did mount')
     window.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnmount() {
-    console.log('component will unmount')
     window.removeEventListener('scroll', this.handleScroll)
   }
 
@@ -120,9 +121,18 @@ export default class Layout extends Component {
     }
   }
 
+  handleNavClick() {
+    console.log('clicked the thing')
+    const { navActive } = this.state
+    this.setState({
+      navActive: !navActive,
+    })
+  }
+
   render() {
     const { children, data } = this.props
     const { isScrolled } = this.state
+    const { navActive } = this.state
     return (
       <StaticQuery
         query={graphql`
@@ -137,9 +147,12 @@ export default class Layout extends Component {
         render={data => (
           <>
             <GlobalStyle />
+            <NavModal navActive={navActive} />
             <Header
               siteTitle={data.site.siteMetadata.title}
               isScrolled={isScrolled}
+              navActive={navActive}
+              handleNavClick={this.handleNavClick}
             />
             <StyledHeroImage />
             <main>{children}</main>

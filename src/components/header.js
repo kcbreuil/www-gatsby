@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
   position: fixed;
   transition: background-color 500ms ease-out;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 `
 const HeaderWrapper = styled.div`
   margin: 0 auto;
@@ -21,7 +21,7 @@ const HeaderWrapper = styled.div`
 `
 
 const Header = props => {
-  const { isScrolled } = props
+  const { isScrolled, handleNavClick, navActive } = props
   return (
     <HeaderContainer isScrolled={isScrolled}>
       <HeaderWrapper isScrolled={isScrolled}>
@@ -35,9 +35,18 @@ const Header = props => {
             width: `4rem`,
           }}
         >
-          <Logo width="4rem" height="4rem" isScrolled={isScrolled} />
+          <Logo
+            width="4rem"
+            height="4rem"
+            isScrolled={isScrolled}
+            navActive={navActive}
+          />
         </Link>
-        <Hamburger isScrolled={isScrolled} />
+        <Hamburger
+          isScrolled={isScrolled}
+          navActive={navActive}
+          handleNavClick={handleNavClick}
+        />
       </HeaderWrapper>
     </HeaderContainer>
   )
