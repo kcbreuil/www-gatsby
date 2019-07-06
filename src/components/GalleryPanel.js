@@ -44,7 +44,7 @@ export default function GalleryPanel() {
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  height: 50vh;
+  min-height: 50vh;
 `
 
 const FlexWrapper = styled.div`
@@ -59,15 +59,17 @@ const FlexWrapper = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin: auto;
   max-width: 1280px;
+  min-height: 25vh;
   width: 100%;
 `
 
 const StyledLink = styled(Link)`
   align-self: flex-end;
   color: #4e5859;
-  font-size: 1.777rem;
+  font-size: 1.333rem;
   padding: 3rem 0;
   text-decoration: none;
 

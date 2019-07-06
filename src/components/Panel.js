@@ -18,7 +18,7 @@ const Section = styled.section`
 const StyledLink = styled(Link)`
   align-self: flex-end;
   color: #4e5859;
-  font-size: 1.777rem;
+  font-size: 1.333rem;
   padding: 3rem 0;
   text-align: left;
   text-decoration: none;
@@ -31,7 +31,7 @@ const StyledLink = styled(Link)`
 export default function Panel({ header, body, link }) {
   return (
     <Section>
-      {header && <h1>{header}</h1>}
+      {header && <h2 className="h1">{header}</h2>}
       {body && <p>{body}</p>}
       {link && <StyledLink to="#">{link}</StyledLink>}
     </Section>

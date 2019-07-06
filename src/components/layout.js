@@ -64,12 +64,29 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1;
   }
 
-  h1 {
-    font-size: 4.209rem;
+  h1,
+  .h1 {
+    font-size: 3.157rem;
+  }
+
+  h2,
+  .h2 {
+    font-size: 2.369rem;
+  }
+
+  h3,
+  .h3 {
+    font-size: 1.777rem;
+  }
+
+  h4,
+  .h4 {
+    font-size: 1.333rem;
   }
 
   a {
     font-style: italic;
+    text-decoration: none;
   }
 `
 
@@ -126,11 +143,6 @@ export default class Layout extends Component {
             />
             <StyledHeroImage />
             <main>{children}</main>
-            <footer>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
           </>
         )}
       />
