@@ -13,6 +13,10 @@ const Section = styled.section`
   p {
     font-size: 1.777rem;
   }
+
+  @media screen and (max-width: 450px) {
+    padding: 0 1rem;
+  }
 `
 
 const StyledLink = styled(Link)`

@@ -11,6 +11,10 @@ const HeaderContainer = styled.header`
   transition: background-color 500ms ease-out;
   width: 100%;
   z-index: 2;
+
+  @media screen and (max-width: 450px) {
+    padding-left: 1rem;
+  }
 `
 const HeaderWrapper = styled.div`
   margin: 0 auto;

@@ -28,11 +28,19 @@ const FlexColumn = styled.section`
     margin: auto;
     max-width: 1280px;
     width: 100%;
+
+    @media screen and (max-width: 450px) {
+      padding-left: 1rem;
+    }
   }
 `
 
 const FlexRow = styled.div`
   display: flex;
+
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+  }
 `
 
 export default function IndexPage(props) {

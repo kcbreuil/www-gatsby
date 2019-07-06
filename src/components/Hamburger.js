@@ -7,13 +7,17 @@ const Wrapper = styled.div`
   justify-content: space-around;
   height: 1.5rem;
   position: absolute;
-  left: 100%;
+  right: 0;
   top: 50%;
-  transform: translateX(-100%) translateY(-50%);
+  transform: translateY(-50%);
   width: 1.5rem;
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 450px) {
+    right: 2rem;
   }
 `
 
