@@ -10,7 +10,7 @@ const Hero = () => (
       query {
         desktop: file(relativePath: { eq: "bckrm-audifield-bg.jpg" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 4160) {
+            fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
