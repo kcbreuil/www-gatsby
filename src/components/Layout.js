@@ -8,7 +8,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import debounce from 'lodash/debounce'
 
 import { createGlobalStyle } from 'styled-components'
 import * as fonts from '../fonts'
@@ -95,30 +94,10 @@ export default class Layout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isScrolled: false,
       navActive: false,
     }
 
-    this.handleScroll = debounce(this.handleScroll.bind(this), 10)
     this.handleNavClick = this.handleNavClick.bind(this)
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll() {
-    const yPos = window.scrollY
-
-    if (yPos > 0) {
-      this.setState({ isScrolled: true })
-    } else {
-      this.setState({ isScrolled: false })
-    }
   }
 
   handleNavClick() {
@@ -131,7 +110,6 @@ export default class Layout extends Component {
 
   render() {
     const { children, data } = this.props
-    const { isScrolled } = this.state
     const { navActive } = this.state
     return (
       <StaticQuery
@@ -150,7 +128,6 @@ export default class Layout extends Component {
             <NavModal navActive={navActive} />
             <Header
               siteTitle={data.site.siteMetadata.title}
-              isScrolled={isScrolled}
               navActive={navActive}
               handleNavClick={this.handleNavClick}
             />
