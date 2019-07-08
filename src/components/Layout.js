@@ -47,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     color: #4e5859;
-    font-family: 'Galano Grotesque Regular', sans-serif;
+    font-family: 'Galano Grotesque';
     font-feature-settings: "kern", "liga", "clig", "calt";
     font-kerning: normal;
     font-size: 1rem;
