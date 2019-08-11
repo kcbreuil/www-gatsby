@@ -22,7 +22,10 @@ const Wrapper = styled.div`
 `
 
 const Span = styled.span`
-  background-color: ${props => (props.isScrolled ? `#4e5859` : `#fff`)};
+  background-color: ${props =>
+    props.isScrolled || (!props.isIndex && !props.navActive)
+      ? `#4e5859`
+      : `#fff`};
   border-radius: 1rem;
   height: 3px;
   transition: transform 250ms ease, width 50ms ease;
@@ -47,11 +50,11 @@ const Span = styled.span`
   }
 `
 
-const Hamburger = ({ isScrolled, handleNavClick, navActive }) => (
+const Hamburger = ({ isIndex, isScrolled, handleNavClick, navActive }) => (
   <Wrapper onClick={handleNavClick}>
-    <Span isScrolled={isScrolled} navActive={navActive} />
-    <Span isScrolled={isScrolled} navActive={navActive} />
-    <Span isScrolled={isScrolled} navActive={navActive} />
+    <Span isIndex={isIndex} isScrolled={isScrolled} navActive={navActive} />
+    <Span isIndex={isIndex} isScrolled={isScrolled} navActive={navActive} />
+    <Span isIndex={isIndex} isScrolled={isScrolled} navActive={navActive} />
   </Wrapper>
 )
 

@@ -32,13 +32,19 @@ export default class Header extends Component {
 
     this.state = {
       isScrolled: false,
+      isIndexPage: true,
     }
 
     this.handleScroll = debounce(this.handleScroll.bind(this), 10)
+    this.checkPage = this.checkPage.bind(this)
+  }
+
+  componentWillMount() {
+    console.log('component will mount')
+    this.checkPage()
   }
 
   componentDidMount() {
-    console.log('component will mount')
     window.addEventListener('scroll', this.handleScroll)
   }
 
@@ -60,9 +66,25 @@ export default class Header extends Component {
     }
   }
 
+  checkPage() {
+    const { pathname } = window.location
+
+    const pnArr = pathname.split('/')
+
+    if (pnArr[1] === '') {
+      this.setState({
+        isIndexPage: true,
+      })
+    } else {
+      this.setState({
+        isIndexPage: false,
+      })
+    }
+  }
+
   render() {
     const { handleNavClick, navActive } = this.props
-    const { isScrolled } = this.state
+    const { isScrolled, isIndexPage } = this.state
 
     return (
       <HeaderContainer isScrolled={isScrolled}>
@@ -82,10 +104,12 @@ export default class Header extends Component {
               height="4rem"
               isScrolled={isScrolled}
               navActive={navActive}
+              isIndex={isIndexPage}
             />
           </Link>
           <Hamburger
             isScrolled={isScrolled}
+            isIndex={isIndexPage}
             navActive={navActive}
             handleNavClick={handleNavClick}
           />
