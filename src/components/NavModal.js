@@ -40,7 +40,7 @@ export default function NavModal({ navActive }) {
       <ul>
         {menu.map(item => (
           <li>
-            <Link className="h3" to="/{item.link}">
+            <Link className="h3" to={item.link}>
               {item.name}
             </Link>
           </li>
