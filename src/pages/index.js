@@ -37,6 +37,8 @@ const FlexColumn = styled.section`
 
 const FlexRow = styled.div`
   display: flex;
+  margin: auto;
+  max-width: 1440px;
 
   @media screen and (max-width: 450px) {
     flex-direction: column;
