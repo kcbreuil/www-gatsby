@@ -14,7 +14,6 @@ import * as fonts from '../fonts'
 
 import NavModal from './NavModal'
 import Header from './Header'
-import StyledHeroImage from './HeroImage'
 import './layout.css'
 
 const GlobalStyle = createGlobalStyle`
@@ -131,7 +130,6 @@ export default class Layout extends Component {
               navActive={navActive}
               handleNavClick={this.handleNavClick}
             />
-            <StyledHeroImage />
             <main>{children}</main>
           </>
         )}
