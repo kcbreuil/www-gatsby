@@ -58,7 +58,11 @@ export default function IndexPage(props) {
       <Layout>
         <SEO title="Home" />
         <StyledHeroImage />
-        <Panel header={content.panelOne.header} body={content.panelOne.body} />
+        <Panel
+          isTitle="true"
+          header={content.panelOne.header}
+          body={content.panelOne.body}
+        />
         <GalleryPanel />
         <Panel header={content.panelTwo.header} link={content.panelTwo.link} />
         <FlexColumn>
