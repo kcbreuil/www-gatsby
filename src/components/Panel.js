@@ -32,10 +32,14 @@ const StyledLink = styled(Link)`
   }
 `
 
-export default function Panel({ header, body, link }) {
+export default function Panel({ header, body, link, isTitle }) {
   return (
     <Section>
-      {header && <h2 className="h1">{header}</h2>}
+      {header && isTitle ? (
+        <h1 className="h1">{header}</h1>
+      ) : (
+        <h2 className="h1">{header}</h2>
+      )}
       {body && <p>{body}</p>}
       {link && <StyledLink to="#">{link}</StyledLink>}
     </Section>
