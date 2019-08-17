@@ -38,13 +38,31 @@ export default function NavModal({ navActive }) {
   return (
     <StyledNav navActive={navActive}>
       <ul>
-        {menu.map(item => (
-          <li>
-            <Link className="h3" to={item.link}>
-              {item.name}
-            </Link>
-          </li>
-        ))}
+        {menu.map(item => {
+          if (item.submenu) {
+            return (
+              <li>
+                <h3 className="h3 nav-title">{item.name}</h3>
+                <ul>
+                  {item.submenu.map(item => (
+                    <li>
+                      <Link className="h3 nav__link" to={item.link}>
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            )
+          }
+          return (
+            <li>
+              <Link className="h3 nav__title nav__link" to={item.link}>
+                {item.name}
+              </Link>
+            </li>
+          )
+        })}
       </ul>
     </StyledNav>
   )
@@ -63,6 +81,7 @@ const StyledNav = styled.div`
   z-index: 1;
 
   ul {
+    color: #fff;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -70,8 +89,19 @@ const StyledNav = styled.div`
     text-align: right;
     width: 100%;
   }
-  a {
-    color: #fff;
-    font-style: normal;
+
+  .nav__title {
+    font-weight: bold;
+  }
+
+  .nav__link {
+    &:hover {
+      border-bottom: 1px solid;
+    }
+  }
+
+  .nav__link--sub {
+    font-size: 1.333rem;
+    font-weight: normal;
   }
 `
