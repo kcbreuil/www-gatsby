@@ -84,7 +84,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    font-style: italic;
     text-decoration: none;
   }
 `

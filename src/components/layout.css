@@ -39,10 +39,12 @@ progress {
 template {
   display: none;
 }
-/* a {
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-} */
+a {
+  /* background-color: transparent; */
+  /* -webkit-text-decoration-skip: objects; */
+  color: inherit;
+  font-style: normal;
+}
 a:active,
 a:hover {
   outline-width: 0;
@@ -334,7 +336,7 @@ hgroup {
   margin-bottom: 1.45rem;
 }
 ul {
-  margin-left: 1.45rem;
+  /* margin-left: 1.45rem; */
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
@@ -342,6 +344,7 @@ ul {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  list-style: none;
   list-style-position: outside;
   list-style-image: none;
 }
