@@ -40,16 +40,21 @@ export default class Header extends Component {
   }
 
   componentWillMount() {
-    this.checkPage()
+    // window undefined build issue
+    if (typeof window !== `undefined`) {
+      this.checkPage()
+    }
   }
 
   componentDidMount() {
+    // window undefined build issue
     if (typeof window !== `undefined`) {
       window.addEventListener('scroll', this.handleScroll)
     }
   }
 
   componentWillUnmount() {
+    // window undefined build issue
     if (typeof window !== `undefined`) {
       window.removeEventListener('scroll', this.handleScroll)
     }
