@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import StyledHeroImage from '../components/HeroImage'
+import HeroSlider from '../components/HeroSlider'
 import Panel from '../components/Panel'
 import GalleryPanel from '../components/GalleryPanel'
 import BlogTile from '../components/BlogTile'
@@ -57,7 +57,7 @@ export default function IndexPage(props) {
     <>
       <Layout>
         <SEO title="Home" />
-        <StyledHeroImage />
+        <HeroSlider />
         <Panel
           isTitle="true"
           header={content.panelOne.header}

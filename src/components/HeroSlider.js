@@ -25,7 +25,7 @@ function useInterval(callback, delay) {
   }, [delay])
 }
 
-const Hero = () => {
+export default function Hero() {
   const [val, setVal] = useState(0)
   const [str, setStr] = useState(`${val}%`)
 
@@ -105,5 +105,3 @@ const FlexWrapper = styled.div`
     flex: 1 0 100%;
   }
 `
-
-export default Hero
