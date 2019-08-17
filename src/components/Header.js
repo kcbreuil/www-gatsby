@@ -40,17 +40,19 @@ export default class Header extends Component {
   }
 
   componentWillMount() {
-    console.log('component will mount')
     this.checkPage()
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
+    if (typeof window !== `undefined`) {
+      window.addEventListener('scroll', this.handleScroll)
+    }
   }
 
   componentWillUnmount() {
-    console.log('component will unmount')
-    window.removeEventListener('scroll', this.handleScroll)
+    if (typeof window !== `undefined`) {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
   }
 
   handleScroll() {
