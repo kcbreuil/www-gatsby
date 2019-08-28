@@ -78,7 +78,7 @@ export default class Header extends Component {
 
     const pnArr = pathname.split('/')
 
-    if (pnArr[1] === '') {
+    if (pnArr[1] === '' || pnArr[1] === 'dcu') {
       this.setState({
         isIndexPage: true,
       })

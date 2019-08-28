@@ -13,7 +13,8 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: `${process.env.DATO_API_KEY}`,
+        // TODO: use .env, refresh key since it's been in gh
+        apiToken: `001645ef451df7777445035847beb5`,
       },
     },
     {
