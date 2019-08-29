@@ -33,27 +33,31 @@ export default function AboutPage(props) {
         <Panel isTitle="true" header={content.panel1.header} />
         <BlockQuote />
         <Panel header={content.panel2.header} />
-        <FlexWrapper>
+        <GridWrapper>
           {nodes.map(node => (
             <Figure>
-              <Img fixed={node.img.fixed} />
+              <Img fluid={node.img.fluid} />
               <figcaption>
                 <Heading>{node.name}</Heading>
                 <p>{node.title}</p>
               </figcaption>
             </Figure>
           ))}
-        </FlexWrapper>
+        </GridWrapper>
         <Panel header={content.panel3.header} />
       </Layout>
     </>
   )
 }
 
-const FlexWrapper = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+const GridWrapper = styled.section`
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-around;
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin: auto;
   max-width: 1280px;
   width: 75%;
@@ -63,7 +67,7 @@ const Figure = styled.figure`
   display: flex;
   flex: 0 1 auto;
   flex-direction: column;
-  padding: 0 0.5rem;
+  // padding: 0 0.5rem;
 
   figcaption {
     margin-left: 1rem;
@@ -83,8 +87,8 @@ export const query = graphql`
         title
         name
         img {
-          fixed(width: 350, imgixParams: { fm: "jpg", auto: "compress" }) {
-            ...GatsbyDatoCmsFixed
+          fluid(maxWidth: 550, imgixParams: { fm: "jpg", auto: "compress" }) {
+            ...GatsbyDatoCmsFluid
           }
         }
       }

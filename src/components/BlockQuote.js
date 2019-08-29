@@ -11,8 +11,13 @@ const StyledDiv = styled.div`
   width: 100%;
 
   blockquote {
-    margin: auto;
-    max-width: 50%;
+    margin: 1rem auto;
+    max-width: 85%;
+
+    @media screen and (min-width: 600px) {
+      margin: auto;
+      max-width: 50%;
+    }
 
     p {
       color: inherit;

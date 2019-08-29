@@ -15,7 +15,8 @@ const Section = styled.section`
   }
 
   @media screen and (max-width: 450px) {
-    padding: 0 1rem;
+    //padding: 0 1rem;
+    padding: ${props => (props.isTitle ? `5rem 1rem 1rem` : `0 1rem`)};
   }
 `
 
@@ -32,11 +33,15 @@ const StyledLink = styled(Link)`
   }
 `
 
+const StyledHeading = styled.h1`
+  padding: ${props => (props.isTitle ? `4rem 1rem rem` : `0`)};
+`
+
 export default function Panel({ header, body, link, isTitle }) {
   return (
-    <Section>
+    <Section isTitle={isTitle}>
       {header && isTitle ? (
-        <h1 className="h1">{header}</h1>
+        <StyledHeading className="h1">{header}</StyledHeading>
       ) : (
         <h2 className="h1">{header}</h2>
       )}
