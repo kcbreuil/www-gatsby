@@ -77,8 +77,12 @@ export default class Header extends Component {
     const { pathname } = window.location
 
     const pnArr = pathname.split('/')
+    const pageRegex = /dcu|volo-city|gundalow-juice/
 
-    if (pnArr[1] === '' || pnArr[1] === 'dcu') {
+    console.log(pageRegex.test(pnArr[1]))
+    // if page is /index or a case study
+    // there's got to be a better way
+    if (pnArr[1] === '' || pageRegex.test(pnArr[1])) {
       this.setState({
         isIndexPage: true,
       })

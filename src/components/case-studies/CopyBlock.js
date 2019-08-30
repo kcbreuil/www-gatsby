@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export default function CopyBlock({ header, body }) {
   return (
     <StyledDiv>
-      <h1>{header}</h1>
+      <h2 className="h1">{header}</h2>
       {body.map(item => (
         <p>{item.p}</p>
       ))}

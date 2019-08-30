@@ -52,31 +52,29 @@ export default function DCUPage(props) {
   const screenShots = data.screenShots.childImageSharp.fluid
 
   return (
-    <>
-      <Layout>
-        <SEO title="D.C. United" />
-        <StyledBackgroundImage fluid={hero} Tag="section">
-          <StyledHeading className="h2">
-            D.C. United is a professional American soccer club who will start
-            their 2018 season in their new home — Audi Field. We channeled the
-            excitement that comes along with a brand new home when creating this
-            captivatingly bold website for the new stadium.
-          </StyledHeading>
-        </StyledBackgroundImage>
-        <PositionedSection>
-          <StyledImage fluid={heroAlt} positioned Tag="section" />
-          <CopyBLock header={content[0].heading} body={content[0].body} />
-        </PositionedSection>
-        <StyledSection>
-          <StyledImage fluid={mobileImg} Tag="section" />
-          <CopyBLock header={content[1].heading} body={content[1].body} />
-        </StyledSection>
-        <StyledSection>
-          <StyledImage fluid={screenShots} Tag="section" />
-          <CopyBLock header={content[2].heading} body={content[2].body} />
-        </StyledSection>
-      </Layout>
-    </>
+    <Layout>
+      <SEO title="D.C. United" />
+      <StyledBackgroundImage fluid={hero} Tag="section">
+        <StyledHeading className="h2">
+          D.C. United is a professional American soccer club who will start
+          their 2018 season in their new home — Audi Field. We channeled the
+          excitement that comes along with a brand new home when creating this
+          captivatingly bold website for the new stadium.
+        </StyledHeading>
+      </StyledBackgroundImage>
+      <PositionedSection>
+        <StyledImage fluid={heroAlt} positioned Tag="section" />
+        <CopyBLock header={content[0].heading} body={content[0].body} />
+      </PositionedSection>
+      <StyledSection>
+        <StyledImage fluid={mobileImg} Tag="section" />
+        <CopyBLock header={content[1].heading} body={content[1].body} />
+      </StyledSection>
+      <StyledSection>
+        <StyledImage fluid={screenShots} Tag="section" />
+        <CopyBLock header={content[2].heading} body={content[2].body} />
+      </StyledSection>
+    </Layout>
   )
 }
 
