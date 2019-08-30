@@ -23,17 +23,17 @@ export default function GalleryPanel() {
       `}
       render={data => (
         <StyledSection>
-          <FlexWrapper>
+          <GridWrapper>
             {data.source.edges.map(({ node }) => (
-              <figure>
+              <li>
                 <Link to="#">
                   <Img fluid={node.childImageSharp.fluid} />
                 </Link>
-              </figure>
+              </li>
             ))}
-          </FlexWrapper>
+          </GridWrapper>
           <Container>
-            <StyledLink to="#">See our work</StyledLink>
+            <StyledLink to="/case-studies">See our work</StyledLink>
           </Container>
         </StyledSection>
       )}
@@ -47,13 +47,11 @@ const StyledSection = styled.section`
   min-height: 50vh;
 `
 
-const FlexWrapper = styled.div`
-  display: flex;
+const GridWrapper = styled.ul`
+  // display: flex;
   position: relative;
-
-  > figure {
-    width: calc(100% / 3);
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 `
 
 const Container = styled.div`
