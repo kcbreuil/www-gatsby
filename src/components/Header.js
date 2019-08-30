@@ -39,7 +39,7 @@ export default class Header extends Component {
     this.checkPage = this.checkPage.bind(this)
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // window undefined build issue
     if (typeof window !== `undefined`) {
       this.checkPage()
