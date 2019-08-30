@@ -38,7 +38,7 @@ export default function Hero() {
       setVal(val - 100)
       setStr(`${val}%`)
     }
-  }, 5000)
+  }, 3500)
 
   return (
     <StaticQuery
@@ -49,7 +49,7 @@ export default function Hero() {
               node {
                 childImageSharp {
                   fluid(quality: 90, maxWidth: 1920) {
-                    src
+                    ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }
@@ -91,7 +91,11 @@ export default function Hero() {
 const StyledHeroWrapper = styled.div`
   overflow: hidden;
   > div {
-    min-height: 90vh;
+    min-height: 35vh;
+
+    @media screen and (min-width: 600px) {
+      max-height: 90vh;
+    }
   }
 
   .gatsby-image-wrapper {
