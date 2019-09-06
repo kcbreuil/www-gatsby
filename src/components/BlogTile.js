@@ -6,9 +6,11 @@ export default function BlogTile({
 }) {
   return (
     <StyledDiv>
-      <h2 className="h3">{title}</h2>
-      <p>{body}</p>
-      <StyledLink href={linkHref}>{linkTitle}</StyledLink>
+      <StyledLink href={linkHref}>
+        <h2 className="h3">{title}</h2>
+        <p>{body}</p>
+        <StyledP>{linkTitle}</StyledP>
+      </StyledLink>
     </StyledDiv>
   )
 }
@@ -18,30 +20,58 @@ const StyledDiv = styled.div`
   flex: 1 1 calc(100% / 3);
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  transition: color 400ms, background-color 400ms;
+
+  &:hover {
+    background-color: #4e5859;
+    color: #fff;
+
+    p {
+      color: inherit;
+
+      &:after {
+        background-color: #fff;
+      }
+    }
+  }
 
   &:first-of-type {
     background-color: #4e5859;
     color: #fff;
 
-    & a {
+    &:hover {
+      background-color: #fff;
+      color: #4e5859;
+
+      p {
+        &:after {
+          background-color: #4e5859;
+        }
+      }
+    }
+
+    & p {
       color: inherit;
 
-      &:first-of-type {
-        &:after {
-          background-color: #fff;
-        }
+      &:after {
+        background-color: #fff;
       }
     }
   }
 `
 
 const StyledLink = styled.a`
+  display: block;
+  height: 100%;
+  padding: 1rem;
+`
+
+const StyledP = styled.p`
   color: #4e5859;
   display: inline;
   padding-right: 1rem;
   position: relative;
-  width: fit-content;
+  // width: fit-content;
 
   &:after {
     content: '';
