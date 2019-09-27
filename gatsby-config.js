@@ -1,5 +1,9 @@
+// require('dotenv').config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// })
+
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 })
 
 module.exports = {
@@ -9,6 +13,16 @@ module.exports = {
     author: `asasmith`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `stqzzq3s`,
+        dataset: `production`,
+        watchMode: true,
+        overlayDrafts: true,
+        token: process.env.SANITY_READ_TOKEN,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-datocms`,
