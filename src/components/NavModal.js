@@ -14,15 +14,15 @@ export default function NavModal({ navActive }) {
       submenu: [
         {
           name: 'D.C. United',
-          link: 'dcu',
+          link: '/dcu',
         },
         {
           name: 'Volo City',
-          link: 'volo-city',
+          link: '/volo-city',
         },
         {
           name: 'Gundalow Juice',
-          link: 'gundalow-juice',
+          link: '/gundalow-juice',
         },
       ],
     },
@@ -41,11 +41,11 @@ export default function NavModal({ navActive }) {
         {menu.map(item => {
           if (item.submenu) {
             return (
-              <li>
+              <li key={item.name}>
                 <h3 className="h3 nav-title">{item.name}</h3>
                 <ul>
                   {item.submenu.map(item => (
-                    <li>
+                    <li key={item.name}>
                       <Link className="h3 nav__link" to={item.link}>
                         {item.name}
                       </Link>

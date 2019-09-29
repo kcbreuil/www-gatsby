@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/Layout'
@@ -50,6 +50,7 @@ export default function IndexPage(props) {
   const {
     data: {
       datoCmsHomepage: { feature },
+      allSanityHpHero: { edges },
     },
   } = props
 
@@ -57,7 +58,7 @@ export default function IndexPage(props) {
     <>
       <Layout>
         <SEO title="Home" />
-        <HeroSlider />
+        <HeroSlider icons={edges} />
         <Panel
           isTitle="true"
           header={content.panelOne.header}
@@ -88,6 +89,22 @@ export const query = graphql`
         body
         linkHref
         linkTitle
+      }
+    }
+
+    allSanityHpHero {
+      edges {
+        node {
+          bgColor
+          excerpt
+          logo {
+            asset {
+              fixed(width: 800) {
+                ...GatsbySanityImageFixed_noBase64
+              }
+            }
+          }
+        }
       }
     }
   }
