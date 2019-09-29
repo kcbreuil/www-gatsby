@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
 // import BackgroundImage from 'gatsby-background-image'
@@ -25,87 +24,73 @@ function useInterval(callback, delay) {
   }, [delay])
 }
 
-export default function Hero() {
+export default function Hero({ icons }) {
+  console.log(icons)
   const [val, setVal] = useState(0)
-  const [str, setStr] = useState(`${val}%`)
 
   useInterval(() => {
     // Your custom logic here
     if (val === -500) {
       setVal(0)
-      setStr(`${val}%`)
     } else {
       setVal(val - 100)
-      setStr(`${val}%`)
     }
   }, 3500)
 
+  const style = {
+    transform: `translateX(${val}%)`,
+    transition: `500ms ease-in-out`,
+  }
+
   return (
-    <StaticQuery
-      query={graphql`
-        query {
-          source: allFile(filter: { absolutePath: { regex: "/hp-hero/" } }) {
-            edges {
-              node {
-                childImageSharp {
-                  fluid(quality: 90, maxWidth: 1920) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
-            }
-          }
-
-          desktop: file(relativePath: { eq: "bckrm-audifield-bg.jpg" }) {
-            childImageSharp {
-              fluid(quality: 90, maxWidth: 1920) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      `}
-      render={data => {
-        const { edges } = data.source
-
-        const something = {
-          display: `flex`,
-          transform: `translateX(${str})`,
-          transition: `500ms ease-in-out`,
-        }
-
-        return (
-          <StyledHeroWrapper>
-            <div style={something} props={str}>
-              {edges.map(({ node }) => (
-                <Img fluid={node.childImageSharp.fluid} />
-              ))}
-            </div>
-          </StyledHeroWrapper>
-        )
-      }}
-    />
+    <StyledHeroWrapper>
+      <CarouselInner style={style}>
+        {icons.map(item => (
+          <HeroInner bgColor={item.node.bgColor}>
+            <Img fixed={item.node.logo.asset.fixed} />
+            <StyledHeading>{item.node.excerpt}</StyledHeading>
+          </HeroInner>
+        ))}
+      </CarouselInner>
+    </StyledHeroWrapper>
   )
 }
 
 const StyledHeroWrapper = styled.div`
-  overflow: hidden;
-  > div {
-    min-height: 35vh;
-
-    @media screen and (min-width: 600px) {
-      max-height: 90vh;
-    }
-  }
-
-  .gatsby-image-wrapper {
-    flex: 1 0 100%;
+  display: flex;
+  min-height: 95vh;
+  overflow: scroll;
   }
 `
 
-const FlexWrapper = styled.div`
+const CarouselInner = styled.div`
   display: flex;
+  flex: 1 0 100%;
+  width: 100%;
+`
+
+const HeroInner = styled.div`
+  background-color: ${props => props.bgColor};
+  flex: 1 0 100%;
+  max-width: 100vw;
+  min-width: 100vw;
+  overflow: hidden;
+  position: relative;
+
   .gatsby-image-wrapper {
-    flex: 1 0 100%;
+    border: 2px dashed white;
+    left: 60%;
+    position: absolute !important;
+    top: 50%;
   }
+`
+
+const StyledHeading = styled.p`
+  color: #fff;
+  font-size: 3.157rem;
+  font-weight: bold;
+  left: 15%;
+  position: absolute;
+  top: 20%;
+  width: 50vw;
 `
