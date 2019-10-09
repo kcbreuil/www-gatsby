@@ -95,12 +95,21 @@ export const query = graphql`
     allSanityHpHero {
       edges {
         node {
+          _rawLogo
           bgColor
           excerpt
-          logo {
+          mobile: logo {
             asset {
-              fixed(width: 800) {
-                ...GatsbySanityImageFixed_noBase64
+              fixed(width: 300, height: 300) {
+                ...GatsbySanityImageFixed
+              }
+            }
+          }
+
+          desktop: logo {
+            asset {
+              fixed(width: 800, height: 800) {
+                ...GatsbySanityImageFixed
               }
             }
           }
