@@ -51,13 +51,13 @@ export default function Hero({ icons }) {
             <Img
               fixed={[
                 // fix for max-width media query?
-                {
-                  ...item.node.mobile.asset.fixed,
-                  media: `(max-width: 320px)`,
-                },
+                // {
+                //   ...item.node.mobile.asset.fixed,
+                //   media: `(max-width: 320px)`,
+                // },
                 {
                   ...item.node.desktop.asset.fixed,
-                  // media: `(min-width: 681px)`,
+                  media: `(min-width: 681px)`,
                 },
               ]}
             />

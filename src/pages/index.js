@@ -101,7 +101,7 @@ export const query = graphql`
           mobile: logo {
             asset {
               fixed(width: 300, height: 300) {
-                ...GatsbySanityImageFixed
+                ...GatsbySanityImageFixed_noBase64
               }
             }
           }
@@ -109,7 +109,7 @@ export const query = graphql`
           desktop: logo {
             asset {
               fixed(width: 800, height: 800) {
-                ...GatsbySanityImageFixed
+                ...GatsbySanityImageFixed_noBase64
               }
             }
           }
