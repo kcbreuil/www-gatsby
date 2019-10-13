@@ -49,14 +49,13 @@ export default function Hero({ icons }) {
           <HeroInner bgColor={item.node.bgColor}>
             {/* <Img fixed={item.node.logo.asset.fixed} /> */}
             <Img
-              fixed={[
-                // fix for max-width media query?
-                // {
-                //   ...item.node.mobile.asset.fixed,
-                //   media: `(max-width: 320px)`,
-                // },
+              fluid={[
                 {
-                  ...item.node.desktop.asset.fixed,
+                  ...item.node.mobile.asset.fluid,
+                  media: `(max-width: 680px)`,
+                },
+                {
+                  ...item.node.desktop.asset.fluid,
                   media: `(min-width: 681px)`,
                 },
               ]}
@@ -68,6 +67,12 @@ export default function Hero({ icons }) {
     </StyledHeroWrapper>
   )
 }
+
+const Test = styled.div`
+  @media screen and (min-width: 681px) {
+    width: 800px;
+  }
+`
 
 const StyledHeroWrapper = styled.div`
   display: flex;
@@ -94,11 +99,13 @@ const HeroInner = styled.div`
     left: 50%;
     position: absolute !important;
     top: 65%;
+    width: 400px;
 
     @media screen and (min-width: 800px) {
       left: 60%;
       position: absolute !important;
       top: 50%;
+      width: 800px;
     }
   }
 `

@@ -2,6 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
+import Img from 'gatsby-image'
+
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import HeroSlider from '../components/HeroSlider'
@@ -44,6 +46,11 @@ const FlexRow = styled.div`
   @media screen and (max-width: 450px) {
     flex-direction: column;
   }
+`
+
+const Test = styled.div`
+  margin: auto;
+  max-width: 90%;
 `
 
 export default function IndexPage(props) {
@@ -91,7 +98,6 @@ export const query = graphql`
         linkTitle
       }
     }
-
     allSanityHpHero {
       edges {
         node {
@@ -100,16 +106,16 @@ export const query = graphql`
           excerpt
           mobile: logo {
             asset {
-              fixed(width: 300, height: 300) {
-                ...GatsbySanityImageFixed_noBase64
+              fluid(maxWidth: 300) {
+                ...GatsbySanityImageFluid_noBase64
               }
             }
           }
 
           desktop: logo {
             asset {
-              fixed(width: 800, height: 800) {
-                ...GatsbySanityImageFixed_noBase64
+              fluid(maxWidth: 800) {
+                ...GatsbySanityImageFluid_noBase64
               }
             }
           }
