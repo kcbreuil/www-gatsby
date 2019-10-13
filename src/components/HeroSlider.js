@@ -47,7 +47,19 @@ export default function Hero({ icons }) {
       <CarouselInner style={style}>
         {icons.map(item => (
           <HeroInner bgColor={item.node.bgColor}>
-            <Img fixed={item.node.logo.asset.fixed} />
+            {/* <Img fixed={item.node.logo.asset.fixed} /> */}
+            <Img
+              fluid={[
+                {
+                  ...item.node.mobile.asset.fluid,
+                  media: `(max-width: 680px)`,
+                },
+                {
+                  ...item.node.desktop.asset.fluid,
+                  media: `(min-width: 681px)`,
+                },
+              ]}
+            />
             <StyledHeading>{item.node.excerpt}</StyledHeading>
           </HeroInner>
         ))}
@@ -55,6 +67,12 @@ export default function Hero({ icons }) {
     </StyledHeroWrapper>
   )
 }
+
+const Test = styled.div`
+  @media screen and (min-width: 681px) {
+    width: 800px;
+  }
+`
 
 const StyledHeroWrapper = styled.div`
   display: flex;
@@ -78,19 +96,33 @@ const HeroInner = styled.div`
   position: relative;
 
   .gatsby-image-wrapper {
-    border: 2px dashed white;
-    left: 60%;
+    left: 50%;
     position: absolute !important;
-    top: 50%;
+    top: 65%;
+    width: 400px;
+
+    @media screen and (min-width: 800px) {
+      left: 60%;
+      position: absolute !important;
+      top: 50%;
+      width: 800px;
+    }
   }
 `
 
 const StyledHeading = styled.p`
   color: #fff;
-  font-size: 3.157rem;
+  font-size: 2.157rem;
   font-weight: bold;
-  left: 15%;
+  left: 5%;
   position: absolute;
   top: 20%;
-  width: 50vw;
+  width: 90%;
+
+  @media screen and (min-width: 800px) {
+    font-size: 3.157rem;
+    left: 15%;
+    top: 20%;
+    width: 50vw;
+  }
 `
