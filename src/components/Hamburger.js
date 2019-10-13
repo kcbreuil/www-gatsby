@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1300px) {
     right: 2rem;
   }
 `

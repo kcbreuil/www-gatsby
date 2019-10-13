@@ -13,7 +13,7 @@ const HeaderContainer = styled.header`
   width: 100%;
   z-index: 2;
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1300px) {
     padding-left: 1rem;
   }
 `
