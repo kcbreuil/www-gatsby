@@ -91,7 +91,7 @@ const HeroInner = styled.div`
   .gatsby-image-wrapper {
     left: 15%;
     position: absolute !important;
-    top: 65%;
+    top: 50%;
     width: 400px;
 
     @media screen and (min-width: 800px) {
