@@ -106,7 +106,7 @@ export const query = graphql`
           excerpt
           mobile: logo {
             asset {
-              fluid(maxWidth: 300) {
+              fluid(maxWidth: 400) {
                 ...GatsbySanityImageFluid_noBase64
               }
             }

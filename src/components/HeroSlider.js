@@ -25,7 +25,6 @@ function useInterval(callback, delay) {
 }
 
 export default function Hero({ icons }) {
-  console.log(icons)
   const [val, setVal] = useState(0)
 
   useInterval(() => {
@@ -68,12 +67,6 @@ export default function Hero({ icons }) {
   )
 }
 
-const Test = styled.div`
-  @media screen and (min-width: 681px) {
-    width: 800px;
-  }
-`
-
 const StyledHeroWrapper = styled.div`
   display: flex;
   min-height: 95vh;
@@ -96,7 +89,7 @@ const HeroInner = styled.div`
   position: relative;
 
   .gatsby-image-wrapper {
-    left: 50%;
+    left: 15%;
     position: absolute !important;
     top: 65%;
     width: 400px;
