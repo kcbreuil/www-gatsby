@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { window } from 'browser-monads';
 
 // import BackgroundImage from 'gatsby-background-image'
 import Img from 'gatsby-image';
@@ -26,10 +27,9 @@ function useInterval(callback, delay) {
 
 export default function Hero({ icons }) {
   const [val, setVal] = useState(0);
-  const ww = typeof window !== 'undefined' ? window.innerWidth : 0;
+  const ww = window.innerWidth;
 
   useInterval(() => {
-    // Your custom logic here
     if (val <= ww - icons.length * ww) {
       setVal(0);
     } else {
