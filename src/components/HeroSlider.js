@@ -26,18 +26,19 @@ function useInterval(callback, delay) {
 
 export default function Hero({ icons }) {
   const [val, setVal] = useState(0);
+  const ww = window.innerWidth;
 
   useInterval(() => {
     // Your custom logic here
-    if (val === -500) {
+    if (val <= ww - icons.length * ww) {
       setVal(0);
     } else {
-      setVal(val - 100);
+      setVal(val - ww);
     }
   }, 3500);
 
   const style = {
-    transform: `translateX(${val}%)`,
+    transform: `translateX(-${val}px)`,
     transition: `500ms ease-in-out`,
   };
 
