@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const Section = styled.section`
   display: flex;
@@ -18,7 +18,7 @@ const Section = styled.section`
     //padding: 0 1rem;
     padding: ${props => (props.isTitle ? `5rem 1rem 1rem` : `0 1rem`)};
   }
-`
+`;
 
 const StyledLink = styled(Link)`
   align-self: flex-end;
@@ -31,11 +31,11 @@ const StyledLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
-`
+`;
 
 const StyledHeading = styled.h1`
   padding: ${props => (props.isTitle ? `4rem 1rem rem` : `0`)};
-`
+`;
 
 export default function Panel({ header, body, link, isTitle }) {
   return (
@@ -46,7 +46,7 @@ export default function Panel({ header, body, link, isTitle }) {
         <h2 className="h1">{header}</h2>
       )}
       {body && <p>{body}</p>}
-      {link && <StyledLink to="#">{link}</StyledLink>}
+      {/* {link && <StyledLink to="#">{link}</StyledLink>} */}
     </Section>
-  )
+  );
 }

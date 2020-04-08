@@ -1,15 +1,15 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
+import React from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import Img from 'gatsby-image'
+import Img from 'gatsby-image';
 
-import Layout from '../components/Layout'
-import SEO from '../components/seo'
-import HeroSlider from '../components/HeroSlider'
-import Panel from '../components/Panel'
-import GalleryPanel from '../components/GalleryPanel'
-import BlogTile from '../components/BlogTile'
+import Layout from '../components/Layout';
+import SEO from '../components/seo';
+import HeroSlider from '../components/HeroSlider';
+import Panel from '../components/Panel';
+import GalleryPanel from '../components/GalleryPanel';
+import BlogTile from '../components/BlogTile';
 
 const content = {
   panelOne: {
@@ -21,7 +21,7 @@ const content = {
     header: `We got beyond storytelling, helping brands listen first to create meaningful dialog with their customers.`,
     link: `View our capabilities`,
   },
-}
+};
 
 const FlexColumn = styled.section`
   display: flex;
@@ -36,7 +36,7 @@ const FlexColumn = styled.section`
       padding-left: 1rem;
     }
   }
-`
+`;
 
 const FlexRow = styled.div`
   display: flex;
@@ -46,12 +46,12 @@ const FlexRow = styled.div`
   @media screen and (max-width: 450px) {
     flex-direction: column;
   }
-`
+`;
 
 const Test = styled.div`
   margin: auto;
   max-width: 90%;
-`
+`;
 
 export default function IndexPage(props) {
   const {
@@ -59,7 +59,7 @@ export default function IndexPage(props) {
       datoCmsHomepage: { feature },
       allSanityHpHero: { edges },
     },
-  } = props
+  } = props;
 
   return (
     <>
@@ -85,7 +85,7 @@ export default function IndexPage(props) {
         </FlexColumn>
       </Layout>
     </>
-  )
+  );
 }
 
 export const query = graphql`
@@ -123,4 +123,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
