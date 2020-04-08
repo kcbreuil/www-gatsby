@@ -5,6 +5,20 @@ import { window } from 'browser-monads';
 // import BackgroundImage from 'gatsby-background-image'
 import Img from 'gatsby-image';
 
+const useWindowWidth = () => {
+  const isBrowser = typeof window !== 'undefined';
+  const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0);
+  useEffect(() => {
+    if (!isBrowser) return false;
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+  return width;
+};
+
 function useInterval(callback, delay) {
   const savedCallback = useRef();
 
@@ -27,14 +41,14 @@ function useInterval(callback, delay) {
 
 export default function Hero({ icons }) {
   const [val, setVal] = useState(0);
-  const [ww, setWW] = useState(window.innerWidth);
+  const windowWidth = useWindowWidth();
+  console.log(windowWidth);
 
   useInterval(() => {
-    setWW(window.innerWidth);
-    if (val <= ww - icons.length * ww) {
+    if (val <= windowWidth - icons.length * windowWidth) {
       setVal(0);
     } else {
-      setVal(val - ww);
+      setVal(val - windowWidth);
     }
   }, 3500);
 
