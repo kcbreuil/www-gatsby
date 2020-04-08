@@ -1,7 +1,7 @@
-import React from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
+import React from 'react';
+import { StaticQuery, graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
 
 export default function GalleryPanel() {
   return (
@@ -11,6 +11,7 @@ export default function GalleryPanel() {
           source: allFile(filter: { absolutePath: { regex: "/hp-links/" } }) {
             edges {
               node {
+                id
                 childImageSharp {
                   fluid(maxWidth: 500) {
                     ...GatsbyImageSharpFluid
@@ -25,34 +26,34 @@ export default function GalleryPanel() {
         <StyledSection>
           <GridWrapper>
             {data.source.edges.map(({ node }) => (
-              <li>
-                <Link to="#">
-                  <Img fluid={node.childImageSharp.fluid} />
-                </Link>
+              <li key={node.id}>
+                {/* <Link to="#"> */}
+                <Img fluid={node.childImageSharp.fluid} />
+                {/* </Link> */}
               </li>
             ))}
           </GridWrapper>
-          <Container>
+          {/* <Container>
             <StyledLink to="/case-studies">See our work</StyledLink>
-          </Container>
+          </Container> */}
         </StyledSection>
       )}
     />
-  )
+  );
 }
 
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   min-height: 50vh;
-`
+`;
 
 const GridWrapper = styled.ul`
   // display: flex;
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-`
+`;
 
 const Container = styled.div`
   display: flex;
@@ -62,7 +63,7 @@ const Container = styled.div`
   max-width: 1280px;
   min-height: 25vh;
   width: 100%;
-`
+`;
 
 const StyledLink = styled(Link)`
   align-self: flex-end;
@@ -74,4 +75,4 @@ const StyledLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
-`
+`;

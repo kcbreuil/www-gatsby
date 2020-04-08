@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
 
 export default function NavModal({ navActive }) {
   const menu = [
@@ -27,14 +27,10 @@ export default function NavModal({ navActive }) {
       ],
     },
     {
-      name: 'Blog',
-      link: 'blog',
-    },
-    {
       name: 'Contact',
       link: 'contact',
     },
-  ]
+  ];
   return (
     <StyledNav navActive={navActive}>
       <ul>
@@ -53,19 +49,19 @@ export default function NavModal({ navActive }) {
                   ))}
                 </ul>
               </li>
-            )
+            );
           }
           return (
-            <li>
+            <li key={item.name}>
               <Link className="h3 nav__title nav__link" to={item.link}>
                 {item.name}
               </Link>
             </li>
-          )
+          );
         })}
       </ul>
     </StyledNav>
-  )
+  );
 }
 
 const StyledNav = styled.div`
@@ -104,4 +100,4 @@ const StyledNav = styled.div`
     font-size: 1.333rem;
     font-weight: normal;
   }
-`
+`;

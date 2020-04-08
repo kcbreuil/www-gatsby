@@ -1,45 +1,59 @@
-import React, { useState, useEffect, useRef } from 'react'
-import styled from 'styled-components'
+import React, { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
 
 // import BackgroundImage from 'gatsby-background-image'
-import Img from 'gatsby-image'
+import Img from 'gatsby-image';
+
+const useWindowWidth = () => {
+  const isBrowser = typeof window !== 'undefined';
+  const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0);
+  useEffect(() => {
+    if (!isBrowser) return false;
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+  return width;
+};
 
 function useInterval(callback, delay) {
-  const savedCallback = useRef()
+  const savedCallback = useRef();
 
   // Remember the latest function.
   useEffect(() => {
-    savedCallback.current = callback
-  }, [callback])
+    savedCallback.current = callback;
+  }, [callback]);
 
   // Set up the interval.
   useEffect(() => {
     function tick() {
-      savedCallback.current()
+      savedCallback.current();
     }
     if (delay !== null) {
-      const id = setInterval(tick, delay)
-      return () => clearInterval(id)
+      const id = setInterval(tick, delay);
+      return () => clearInterval(id);
     }
-  }, [delay])
+  }, [delay]);
 }
 
 export default function Hero({ icons }) {
-  const [val, setVal] = useState(0)
+  const [val, setVal] = useState(0);
+  const windowWidth = useWindowWidth();
 
   useInterval(() => {
-    // Your custom logic here
-    if (val === -500) {
-      setVal(0)
+    if (val === windowWidth - icons.length * windowWidth) {
+      setVal(0);
     } else {
-      setVal(val - 100)
+      setVal(val - windowWidth);
     }
-  }, 3500)
+  }, 3500);
 
   const style = {
-    transform: `translateX(${val}%)`,
+    transform: `translateX(${val}px)`,
     transition: `500ms ease-in-out`,
-  }
+  };
 
   return (
     <StyledHeroWrapper>
@@ -64,21 +78,21 @@ export default function Hero({ icons }) {
         ))}
       </CarouselInner>
     </StyledHeroWrapper>
-  )
+  );
 }
 
 const StyledHeroWrapper = styled.div`
   display: flex;
   min-height: 95vh;
-  overflow: scroll;
+  overflow: hidden;
   }
-`
+`;
 
 const CarouselInner = styled.div`
   display: flex;
   flex: 1 0 100%;
   width: 100%;
-`
+`;
 
 const HeroInner = styled.div`
   background-color: ${props => props.bgColor};
@@ -101,7 +115,7 @@ const HeroInner = styled.div`
       width: 800px;
     }
   }
-`
+`;
 
 const StyledHeading = styled.p`
   color: #fff;
@@ -118,4 +132,4 @@ const StyledHeading = styled.p`
     top: 20%;
     width: 50vw;
   }
-`
+`;
