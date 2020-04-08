@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { window } from 'browser-monads';
 
 // import BackgroundImage from 'gatsby-background-image'
 import Img from 'gatsby-image';
@@ -44,8 +43,7 @@ export default function Hero({ icons }) {
   const windowWidth = useWindowWidth();
 
   useInterval(() => {
-    console.log(val, windowWidth, icons.length);
-    if (val <= windowWidth - icons.length * windowWidth) {
+    if (val === windowWidth - icons.length * windowWidth) {
       setVal(0);
     } else {
       setVal(val - windowWidth);
@@ -53,7 +51,7 @@ export default function Hero({ icons }) {
   }, 3500);
 
   const style = {
-    transform: `translateX(-${val}px)`,
+    transform: `translateX(${val}px)`,
     transition: `500ms ease-in-out`,
   };
 
