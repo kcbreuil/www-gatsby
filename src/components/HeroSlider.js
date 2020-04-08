@@ -26,7 +26,7 @@ function useInterval(callback, delay) {
 
 export default function Hero({ icons }) {
   const [val, setVal] = useState(0);
-  const ww = window.innerWidth;
+  const ww = typeof window !== 'undefined' ? window.innerWidth : 0;
 
   useInterval(() => {
     // Your custom logic here
