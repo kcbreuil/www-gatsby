@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import debounce from 'lodash/debounce'
-import styled from 'styled-components'
-import Logo from './Logo'
-import Hamburger from './Hamburger'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import debounce from 'lodash/debounce';
+import styled from 'styled-components';
+import Logo from './Logo';
+import Hamburger from './Hamburger';
 
 const HeaderContainer = styled.header`
   background-color: ${props => (props.isScrolled ? '#ffffff' : '#ffffff00')};
@@ -16,86 +16,86 @@ const HeaderContainer = styled.header`
   @media screen and (max-width: 1300px) {
     padding-left: 1rem;
   }
-`
+`;
 const HeaderWrapper = styled.div`
   margin: 0 auto;
   max-width: 1280px;
   padding: ${props => (props.isScrolled ? `0` : `1.45rem 0`)};
   position: relative;
   transition: padding 500ms ease;
-`
+`;
 
 // TODO: try hooks here?
 export default class Header extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       isScrolled: false,
       isIndexPage: true,
-    }
+    };
 
-    this.handleScroll = debounce(this.handleScroll.bind(this), 10)
-    this.checkPage = this.checkPage.bind(this)
+    this.handleScroll = debounce(this.handleScroll.bind(this), 10);
+    this.checkPage = this.checkPage.bind(this);
   }
 
   UNSAFE_componentWillMount() {
     // window undefined build issue
     if (typeof window !== `undefined`) {
-      this.checkPage()
+      this.checkPage();
     }
   }
 
   componentDidMount() {
     // window undefined build issue
     if (typeof window !== `undefined`) {
-      window.addEventListener('scroll', this.handleScroll)
+      window.addEventListener('scroll', this.handleScroll);
     }
   }
 
   componentWillUnmount() {
     // window undefined build issue
     if (typeof window !== `undefined`) {
-      window.removeEventListener('scroll', this.handleScroll)
+      window.removeEventListener('scroll', this.handleScroll);
     }
   }
 
   handleScroll() {
-    const yPos = window.scrollY
+    const yPos = window.scrollY;
 
     if (yPos > 0) {
       if (this.state.isScrolled !== true) {
-        console.log('state changed')
-        this.setState({ isScrolled: true })
+        console.log('state changed');
+        this.setState({ isScrolled: true });
       }
     } else {
-      this.setState({ isScrolled: false })
+      this.setState({ isScrolled: false });
     }
   }
 
   checkPage() {
-    const { pathname } = window.location
+    const { pathname } = window.location;
 
-    const pnArr = pathname.split('/')
-    const pageRegex = /dcu|volo-city|gundalow-juice/
+    const pnArr = pathname.split('/');
+    const pageRegex = /dcu|volo-city|gundalow-juice/;
 
-    console.log(pageRegex.test(pnArr[1]))
+    // console.log(pageRegex.test(pnArr[1]))
     // if page is /index or a case study
     // there's got to be a better way
     if (pnArr[1] === '' || pageRegex.test(pnArr[1])) {
       this.setState({
         isIndexPage: true,
-      })
+      });
     } else {
       this.setState({
         isIndexPage: false,
-      })
+      });
     }
   }
 
   render() {
-    const { handleNavClick, navActive } = this.props
-    const { isScrolled, isIndexPage } = this.state
+    const { handleNavClick, navActive } = this.props;
+    const { isScrolled, isIndexPage } = this.state;
 
     return (
       <HeaderContainer isScrolled={isScrolled}>
@@ -126,14 +126,14 @@ export default class Header extends Component {
           />
         </HeaderWrapper>
       </HeaderContainer>
-    )
+    );
   }
 }
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};

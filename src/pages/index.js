@@ -60,6 +60,7 @@ export default function IndexPage(props) {
       allSanityHpHero: { edges },
     },
   } = props;
+  // console.log(feature);
 
   return (
     <>
@@ -79,7 +80,7 @@ export default function IndexPage(props) {
           </header>
           <FlexRow>
             {feature.map(item => (
-              <BlogTile content={item} />
+              <BlogTile key={item.title} content={item} />
             ))}
           </FlexRow>
         </FlexColumn>

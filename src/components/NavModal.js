@@ -52,7 +52,7 @@ export default function NavModal({ navActive }) {
             );
           }
           return (
-            <li>
+            <li key={item.name}>
               <Link className="h3 nav__title nav__link" to={item.link}>
                 {item.name}
               </Link>

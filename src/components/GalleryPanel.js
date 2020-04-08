@@ -11,6 +11,7 @@ export default function GalleryPanel() {
           source: allFile(filter: { absolutePath: { regex: "/hp-links/" } }) {
             edges {
               node {
+                id
                 childImageSharp {
                   fluid(maxWidth: 500) {
                     ...GatsbyImageSharpFluid
@@ -25,7 +26,7 @@ export default function GalleryPanel() {
         <StyledSection>
           <GridWrapper>
             {data.source.edges.map(({ node }) => (
-              <li>
+              <li key={node.id}>
                 {/* <Link to="#"> */}
                 <Img fluid={node.childImageSharp.fluid} />
                 {/* </Link> */}
