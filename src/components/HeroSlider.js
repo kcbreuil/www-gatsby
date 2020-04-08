@@ -42,9 +42,9 @@ function useInterval(callback, delay) {
 export default function Hero({ icons }) {
   const [val, setVal] = useState(0);
   const windowWidth = useWindowWidth();
-  console.log(windowWidth);
 
   useInterval(() => {
+    console.log(val, windowWidth, icons.length);
     if (val <= windowWidth - icons.length * windowWidth) {
       setVal(0);
     } else {
