@@ -18,7 +18,7 @@ const content = {
           p: `This 16-person team knew that more people craved the social interaction and connectedness surrounding sports. They made it their mission to create an environment where anyone could be the best player on the team no matter their age, race, or athletic ability.`,
         },
         {
-          p: `Now, the company has grown from a 16-person team to over 125,000 members strong across seven cities — and counting!a`,
+          p: `Now, the company has grown from a 16-person team to over 125,000 members strong across seven cities — and counting!`,
         },
       ],
     },
@@ -34,7 +34,7 @@ const content = {
       heading: `We Play So Kids Can Play Free`,
       body: [
         {
-          p: `Volo City launched their first youth league at Herring Run Rec Center in Baltimore as an attempt to expand our adult leagues into a profitable arm for kids. The team quickly realized that in order to create a truly inclusive environment, they had to remove a major economic barrier — so they let kids play free.1`,
+          p: `Volo City launched their first youth league at Herring Run Rec Center in Baltimore as an attempt to expand our adult leagues into a profitable arm for kids. The team quickly realized that in order to create a truly inclusive environment, they had to remove a major economic barrier — so they let kids play free.`,
         },
         {
           p: `Now, Volo City Kids Foundation is a 501(c)3 non-profit organization, offering leagues in the seven cities they’re active in for kids ages 6-12 years of all genders, abilities, and races, to play at zero cost to their families.`,
