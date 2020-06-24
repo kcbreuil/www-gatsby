@@ -38,7 +38,10 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
             path,
             component: require.resolve("./src/templates/case-study.js"),
-            context: { slug: edge.node.Slug.current },
+            context: {
+                slug: edge.node.Slug.current,
+                id: edge.node.id,
+            },
         })
     })
 }
