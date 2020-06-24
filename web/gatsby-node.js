@@ -14,7 +14,6 @@ exports.createPages = async ({ graphql, actions }) => {
             allSanityCaseStudy {
                 edges {
                     node {
-                        title
                         Slug {
                             current
                         }
