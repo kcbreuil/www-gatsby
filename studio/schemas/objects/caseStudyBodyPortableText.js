@@ -47,7 +47,9 @@ export default {
         // as a block type.
         {
             type: 'caseStudyFeaturedImage',
-            // options: {hotspot: true}
+        },
+        {
+            type: 'caseStudyFullBleedImage',
         },
         {
             type: 'caseStudyTextBlock',

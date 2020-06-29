@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function ContentBlock({ heading, body, positioned }) {
+export default function ContentBlock({ node }) {
   return (
-    <StyledSection positioned={positioned}>
-      {heading && <h2 className="h1">{heading}</h2>}
-      {body && body.map(item => <p>{item.p}</p>)}
+    <StyledSection>
+      {node.heading && <h2 className="h1">{node.heading}</h2>}
+      {node.body && <p>{node.body}</p>}
     </StyledSection>
   )
 }
@@ -18,8 +18,8 @@ const StyledSection = styled.section`
   width: 90%;
 
   @media screen and (min-width: 600px) {
-    margin: auto;
-    min-height: ${props => (props.positioned ? `50vh` : `75vh`)};
+    margin: 2rem auto;
+    min-height: 40rem;
     width: 50%;
   }
 

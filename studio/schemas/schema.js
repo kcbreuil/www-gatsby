@@ -11,6 +11,7 @@ import post from './documents/post'
 import teamMember from './documents/teamMember'
 
 // object types
+import caseStudyFullBleedImage from './objects/caseStudyFullBleedImage'
 import caseStudyBodyPortableText from './objects/caseStudyBodyPortableText'
 import caseStudyFeaturedImage from './objects/caseStudyFeaturedImage'
 import caseStudyTextBlock from './objects/caseStudyTextBlock'
@@ -24,6 +25,7 @@ export default createSchema({
     types: schemaTypes.concat([
         /* Your types here! */
         caseStudy,
+        caseStudyFullBleedImage,
         caseStudyBodyPortableText,
         caseStudyFeaturedImage,
         caseStudyTextBlock,
