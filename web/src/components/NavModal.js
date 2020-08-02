@@ -14,15 +14,15 @@ export default function NavModal({ navActive }) {
       submenu: [
         {
           name: 'D.C. United',
-          link: '/dcu',
+          link: '/case-studies/dcu',
         },
         {
           name: 'Volo City',
-          link: '/volo-city',
+          link: '/case-studies/volo-city',
         },
         {
           name: 'Gundalow Juice',
-          link: '/gundalow-juice',
+          link: '/case-studies/gundalow-juice',
         },
       ],
     },
