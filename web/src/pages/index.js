@@ -18,7 +18,7 @@ const content = {
         experiences.`,
   },
   panelTwo: {
-    header: `We got beyond storytelling, helping brands listen first to create meaningful dialog with their customers.`,
+    header: `We go beyond storytelling, helping brands listen first to create meaningful dialog with their customers.`,
     link: `View our capabilities`,
   },
 };
