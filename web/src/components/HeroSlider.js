@@ -48,7 +48,7 @@ export default function Hero({ icons }) {
     } else {
       setVal(val - windowWidth);
     }
-  }, 3500);
+  }, 5000);
 
   const style = {
     transform: `translateX(${val}px)`,
