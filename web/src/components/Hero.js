@@ -5,11 +5,11 @@ import tw from 'twin.macro';
 import Img from 'gatsby-image'
 
 const StyledSection = styled.section`
-    ${tw`container flex flex-col justify-end content-center min-h-screen mx-auto`}
+    ${tw`container flex flex-col justify-end content-center min-h-screen mx-auto mb-20`}
 `
 
 const StyledHeading = styled.h1`
-    ${tw`max-w-5xl mx-auto text-center`}
+    ${tw`max-w-5xl mx-auto text-center text-h1`}
 `
 
 export default function Hero ({ heading, image }) {
