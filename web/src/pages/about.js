@@ -8,6 +8,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import Hero from '../components/Hero';
 import ServiceSection from '../components/ServiceSection';
+import TeamSection from '../components/TeamSection';
 
 export const query = graphql`
     query AboutQuery {
@@ -18,13 +19,21 @@ export const query = graphql`
                 }
             }
         } 
+        tempHeadshot: file(relativePath: {regex: "/headshot-temp/"}) {
+            childImageSharp {
+                fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
     } 
 `
 
 export default function AboutPage(props) {
     const {
         data: {
-            heroImage
+            heroImage,
+            tempHeadshot,
         }
     } = props
 
@@ -36,6 +45,11 @@ export default function AboutPage(props) {
             <ServiceSection
                 heading={content.serviceSection.heading}
                 services={content.serviceSection.services}
+            />
+            <TeamSection
+                heading={content.teamSection.heading}
+                team={content.teamSection.teamMembers}
+                image={tempHeadshot}
             />
         </Layout>
     </>
@@ -110,5 +124,46 @@ const content = {
                 ],
             },
         ]
-    }
+    },
+    teamSection: {
+        heading: 'the team',
+        teamMembers: [
+            {
+                name: 'Kara Redman',
+                title: 'CEO/Founder',
+            },
+            {
+                name: 'Joshua Harding',
+                title: 'Creative Director',
+            },
+            {
+                name: 'Michelle Barrow',
+                title: 'Strategist',
+            },
+            {
+                name: 'Shanae Mitchell',
+                title: 'Project Manager',
+            },
+            {
+                name: 'Isabelle Malouf',
+                title: 'Digital Producer',
+            },
+            {
+                name: 'Leslie Osmont',
+                title: 'Illustrator & Animator',
+            },
+            {
+                name: 'Jameson McCulloch-Faber',
+                title: 'Copywriter',
+            },
+            {
+                name: 'Christina Little',
+                title: 'Growth Specialist',
+            },
+            {
+                name: 'Vassillis Terzopoulos',
+                title: 'Web Developer',
+            },
+        ]
+    },
 }
