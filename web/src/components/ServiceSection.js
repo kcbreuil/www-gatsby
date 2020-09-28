@@ -6,6 +6,8 @@ import ServiceItem from '../components/ServiceItem';
 
 const StyledSection = styled.section`
     ${tw`container mx-auto py-20`}
+
+    margin-bottom: 17.25rem;
 `
 
 const StyledHeading = styled.h2`
@@ -21,7 +23,7 @@ export default function ServiceSection ({ heading, services }) {
         <StyledSection>
             <StyledHeading>{heading}</StyledHeading>
             <StyledGrid>
-                {services.map(( service, index ) => <ServiceItem heading={service.title} services={service.items} key={index}/> )}
+                    {services.map(( service, index ) => <ServiceItem heading={service.title} services={service.items} key={index}/> )}
             </StyledGrid>   
         </StyledSection>
     )
