@@ -13,7 +13,6 @@ const StyledP = styled.p`
 `
 
 export default function TeamMember ({ image, person }) {
-    console.log(image)
     return (
         <div>
             <Img
