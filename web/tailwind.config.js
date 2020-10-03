@@ -5,6 +5,9 @@ module.exports = {
   },
   purge: [],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       fontSize: {
         'h1': '3.75rem',

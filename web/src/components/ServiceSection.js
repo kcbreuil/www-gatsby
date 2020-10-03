@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 import ServiceItem from '../components/ServiceItem';
 
 const StyledSection = styled.section`
-    ${tw`container mx-auto py-20`}
+    ${tw`container py-20`}
 
     margin-bottom: 17.25rem;
 `

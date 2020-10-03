@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 import Img from 'gatsby-image'
 
 const StyledSection = styled.section`
-    ${tw`container flex flex-col justify-end content-center min-h-screen mx-auto mb-20`}
+    ${tw`container flex flex-col justify-end content-center min-h-screen mb-20`}
 `
 
 const StyledHeading = styled.h1`
