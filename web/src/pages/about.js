@@ -9,6 +9,8 @@ import SEO from '../components/seo';
 import Hero from '../components/Hero';
 import ServiceSection from '../components/ServiceSection';
 import TeamSection from '../components/TeamSection';
+import ValuesSection from '../components/ValuesSection';
+import TestimonialSection from '../components/TestimonialSection';
 
 export const query = graphql`
     query AboutQuery {
@@ -51,6 +53,10 @@ export default function AboutPage(props) {
                 team={content.teamSection.teamMembers}
                 image={tempHeadshot}
             />
+            <ValuesSection
+                heading={content.valuesSection.heading} 
+            />
+            <TestimonialSection content={content.testimonialSection.testimonials} />
         </Layout>
     </>
 )
@@ -165,5 +171,32 @@ const content = {
                 title: 'Web Developer',
             },
         ]
+    },
+    testimonialSection: {
+        testimonials: [
+            {
+                quote: 'Backroom did amazing things for us!',
+                source: 'Testimonial person'
+            },
+            {
+                quote: 'Backroom did amazing things for us!',
+                source: 'Testimonial person'
+            },
+            {
+                quote: 'Backroom did amazing things for us!',
+                source: 'Testimonial person'
+            },
+            {
+                quote: 'Backroom did amazing things for us!',
+                source: 'Testimonial person'
+            },
+            {
+                quote: 'Backroom did amazing things for us!',
+                source: 'Testimonial person'
+            },
+        ]
+    },
+    valuesSection: {
+        heading: 'Our shared values drive every decision we make',
     },
 }
