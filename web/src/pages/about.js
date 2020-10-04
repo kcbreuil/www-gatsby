@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 // import Img from 'gatsby-image'
 
+import Contact from '../components/Contact';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import Hero from '../components/Hero';
@@ -75,6 +76,7 @@ export default function AboutPage(props) {
                 heading={content.valuesSection.heading} 
             />
             <TestimonialSection content={content.testimonialSection.testimonials} />
+            <Contact />
         </Layout>
     </>
 )
