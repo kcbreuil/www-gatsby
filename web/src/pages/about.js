@@ -21,6 +21,21 @@ export const query = graphql`
                 }
             }
         } 
+        sanityInfoPage {
+            id
+            team {
+                id
+                name
+                title
+                image {
+                    asset {
+                        fluid(maxWidth: 350) {
+                            ...GatsbySanityImageFluid
+                        }
+                    }
+                }
+            }
+        }
         tempHeadshot: file(relativePath: {regex: "/headshot-temp/"}) {
             childImageSharp {
                 fluid(maxWidth: 400) {
@@ -35,6 +50,9 @@ export default function AboutPage(props) {
     const {
         data: {
             heroImage,
+            sanityInfoPage: {
+                team
+            },
             tempHeadshot,
         }
     } = props
@@ -50,7 +68,7 @@ export default function AboutPage(props) {
             />
             <TeamSection
                 heading={content.teamSection.heading}
-                team={content.teamSection.teamMembers}
+                team={team}
                 image={tempHeadshot}
             />
             <ValuesSection

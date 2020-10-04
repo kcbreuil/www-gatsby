@@ -12,11 +12,12 @@ const StyledP = styled.p`
     ${tw`text-2xl`}
 `
 
-export default function TeamMember ({ image, person }) {
+export default function TeamMember ({ person }) {
+    console.log(person)
     return (
         <div>
             <Img
-                fluid={image.childImageSharp.fluid}
+                fluid={person.image.asset.fluid}
                 className={`mb-5`}
             />
             <StyledHeading>{person.name}</StyledHeading>

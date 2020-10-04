@@ -19,11 +19,12 @@ const StyledGrid = styled.div`
 `
 
 export default function TeamSection ({ heading, image, team }) {
+    console.log(team)
     return (
         <StyledSection>
             <StyledHeading>{heading}</StyledHeading>
             <StyledGrid>
-                {team.map(( person, index ) => <TeamMember image={image} person={person} />)}
+                {team.map(( person ) => <TeamMember person={person} key={person.id}/>)}
             </StyledGrid>
         </StyledSection>
     )
