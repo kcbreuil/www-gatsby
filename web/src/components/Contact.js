@@ -34,7 +34,7 @@ export default function Contact () {
                 </StyledP>
                 <Link
                     className={`text-3xl flex items-center justify-between w-1/2 md:w-56`}
-                    to='/about'
+                    to='/contact'
                 >
                     Contact Us
                     <Icon />
