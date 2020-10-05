@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 import TeamMember from '../components/TeamMember';
 
 const StyledSection = styled.section`
-    ${tw`container`}
+    ${tw`container w-11/12 md:w-full`}
 
     margin-bottom: 17.25rem;
 `

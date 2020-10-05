@@ -6,7 +6,7 @@ import tw from 'twin.macro';
 import { CgArrowLongRight as Icon } from 'react-icons/cg'
 
 const StyledSection = styled.section`
-    ${tw`container mb-40 p-5 md:p-0`}
+    ${tw`container mb-40 px-5`}
 `
 const StyledGrid = styled.div`
     ${tw`flex justify-between flex-col md:flex-row flex-wrap`}
@@ -19,7 +19,8 @@ const StyledHeading = styled.h2`
 `
 
 const StyledP = styled.p`
-    ${tw`text-3xl md:mb-0`}
+    ${tw`text-3xl md:mb-0 break-normal`}
+    max-width: 80%;
 `
 
 export default function Contact () {
