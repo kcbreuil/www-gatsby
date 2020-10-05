@@ -23,7 +23,6 @@ export const query = graphql`
             }
         } 
         sanityInfoPage {
-            id
             team {
                 id
                 name
@@ -35,6 +34,11 @@ export const query = graphql`
                         }
                     }
                 }
+            }
+            services {
+                serviceCategory
+                serviceItems
+                id
             }
         }
         tempHeadshot: file(relativePath: {regex: "/headshot-temp/"}) {
@@ -52,7 +56,8 @@ export default function AboutPage(props) {
         data: {
             heroImage,
             sanityInfoPage: {
-                team
+                team,
+                services,
             },
             tempHeadshot,
         }
@@ -65,7 +70,7 @@ export default function AboutPage(props) {
             <Hero heading={content.heroSection.heading} image={heroImage}/>
             <ServiceSection
                 heading={content.serviceSection.heading}
-                services={content.serviceSection.services}
+                services={services}
             />
             <TeamSection
                 heading={content.teamSection.heading}

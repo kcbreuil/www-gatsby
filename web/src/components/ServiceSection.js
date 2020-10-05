@@ -15,7 +15,7 @@ const StyledHeading = styled.h2`
 `
 
 const StyledGrid = styled.div`
-    ${tw`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 xl:gap-20 w-11/12 mx-auto`}
+    ${tw`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:gap-20 w-11/12 mx-auto`}
 `
 
 export default function ServiceSection ({ heading, services }) {
@@ -23,7 +23,7 @@ export default function ServiceSection ({ heading, services }) {
         <StyledSection>
             <StyledHeading>{heading}</StyledHeading>
             <StyledGrid>
-                    {services.map(( service, index ) => <ServiceItem heading={service.title} services={service.items} key={index}/> )}
+                    {services.map(( service ) => <ServiceItem service={service} key={service.id} /> )}
             </StyledGrid>   
         </StyledSection>
     )
