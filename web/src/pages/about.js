@@ -72,10 +72,10 @@ export default function AboutPage(props) {
                 team={team}
                 image={tempHeadshot}
             />
-            <ValuesSection
+            {/* <ValuesSection
                 heading={content.valuesSection.heading} 
-            />
-            <TestimonialSection content={content.testimonialSection.testimonials} />
+            /> */}
+            {/* <TestimonialSection content={content.testimonialSection.testimonials} /> */}
             <Contact />
         </Layout>
     </>
