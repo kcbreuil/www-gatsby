@@ -23,5 +23,20 @@ export default {
                 },
             ],
         },
+        {
+            name: 'services',
+            title: 'Service Section',
+            type: 'array',
+            of: [
+                {
+                    type: 'reference',
+                    to: [
+                        {
+                            type: 'service'
+                        },
+                    ],
+                },
+            ]
+        }
     ],
 }

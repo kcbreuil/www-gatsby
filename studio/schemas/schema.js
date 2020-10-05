@@ -9,6 +9,7 @@ import caseStudy from './documents/caseStudy'
 import homepagehero from './documents/homepageHero'
 import infoPage from './documents/infoPage'
 import post from './documents/post'
+import service from './documents/service'
 import team from './documents/team'
 
 // object types
@@ -33,6 +34,7 @@ export default createSchema({
         homepagehero,
         infoPage,
         post,
+        service,
         team,
     ])
 })
