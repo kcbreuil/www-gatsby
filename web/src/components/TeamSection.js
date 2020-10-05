@@ -19,7 +19,6 @@ const StyledGrid = styled.div`
 `
 
 export default function TeamSection ({ heading, image, team }) {
-    console.log(team)
     return (
         <StyledSection>
             <StyledHeading>{heading}</StyledHeading>
