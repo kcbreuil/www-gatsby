@@ -41,13 +41,6 @@ export const query = graphql`
                 id
             }
         }
-        tempHeadshot: file(relativePath: {regex: "/headshot-temp/"}) {
-            childImageSharp {
-                fluid(maxWidth: 400) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
     } 
 `
 
@@ -59,7 +52,6 @@ export default function AboutPage(props) {
                 team,
                 services,
             },
-            tempHeadshot,
         }
     } = props
 
@@ -75,7 +67,6 @@ export default function AboutPage(props) {
             <TeamSection
                 heading={content.teamSection.heading}
                 team={team}
-                image={tempHeadshot}
             />
             {/* <ValuesSection
                 heading={content.valuesSection.heading} 
