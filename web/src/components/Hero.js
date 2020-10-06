@@ -9,7 +9,7 @@ const StyledSection = styled.section`
 `
 
 const StyledHeading = styled.h1`
-    ${tw`max-w-5xl mx-auto text-center text-h1 mt-16`}
+    ${tw`max-w-5xl mx-auto text-center md:text-h1 mt-16`}
 `
 
 export default function Hero ({ heading, image }) {
