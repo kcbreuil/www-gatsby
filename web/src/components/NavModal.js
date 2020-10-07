@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export default function NavModal({ navActive }) {
   const menu = [
     {
-      name: 'About',
+      name: 'Info',
       link: 'about',
     },
     {

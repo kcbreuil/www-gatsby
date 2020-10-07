@@ -7,8 +7,10 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // document types
 import caseStudy from './documents/caseStudy'
 import homepagehero from './documents/homepageHero'
+import infoPage from './documents/infoPage'
 import post from './documents/post'
-import teamMember from './documents/teamMember'
+import service from './documents/service'
+import team from './documents/team'
 
 // object types
 import caseStudyFullBleedImage from './objects/caseStudyFullBleedImage'
@@ -30,7 +32,9 @@ export default createSchema({
         caseStudyFeaturedImage,
         caseStudyTextBlock,
         homepagehero,
+        infoPage,
         post,
-        teamMember,
+        service,
+        team,
     ])
 })
