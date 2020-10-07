@@ -89,30 +89,8 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export default class Layout extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            navActive: true,
-        }
-
-        this.handleNavClick = this.handleNavClick.bind(this)
-    }
-
-    handleNavClick() {
-        const { navActive } = this.state
-
-        console.log('clicked')
-        this.setState({
-            navActive: !navActive,
-        })
-    }
-
-    render() {
-        console.log(navActive);
-        const { children, data } = this.props
-        const { navActive } = this.state
-        return (
+export default function Layout ({ children }) {
+    return (
         <StaticQuery
             query={graphql`
                 query SiteTitleQuery {
@@ -124,24 +102,14 @@ export default class Layout extends Component {
                 }
             `}
             render={data => (
-            <>
-                <GlobalStyle />
-                {/* <NavModal navActive={navActive} />
-                <Header
-                siteTitle={data.site.siteMetadata.title}
-                navActive={navActive}
-                handleNavClick={this.handleNavClick}
-                /> */}
-                <NewNav
-                    handleNavClick={this.handleNavClick}
-                    navActive={navActive}
-                />
-                <main>{children}</main>
-            </>
+                <>
+                    <GlobalStyle />
+                    <NewNav />
+                    <main>{children}</main>
+                </>
             )}
         />
-        )
-    }
+    )
 }
 
 Layout.propTypes = {
