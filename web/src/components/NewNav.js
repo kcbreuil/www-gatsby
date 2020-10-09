@@ -8,11 +8,20 @@ import tw from 'twin.macro';
 import Logo from '../components/Logo';
 import NewHamburger from '../components/NewHamburger';
 
-const StyledLink = styled(Link)`
-    ${tw`block mt-4 text-right md:inline-block md:mt-0 mr-4 text-bckrmGreen text-3xl leading-10`}
+const StyledNav = styled.nav`
+    ${tw`fixed w-full bg-white z-50`}
+
+    background-color: ${props => props.darkTheme ? 'var(--brGreen)' : 'var(--white)' };
 `
 
-export default function NewNav () {
+const StyledLink = styled(Link)`
+    ${tw`block mt-4 text-right md:inline-block md:mt-0 mr-4 text-3xl leading-10`}
+
+    color: ${props => props.darkTheme ? '#fff' : '#2E444F' }
+
+`
+
+export default function NewNav ({ darkTheme }) {
     const [navOpen, setNavOpen] = useState(false)
 
     const menu = [
@@ -47,11 +56,11 @@ export default function NewNav () {
     const handleClick = () => setNavOpen(!navOpen)
 
     return (
-        <nav class="fixed w-full bg-white z-50">
+        <StyledNav darkTheme={darkTheme} >
             <div class="max-w-screen-xl mx-auto flex items-center justify-between flex-wrap">
                 <div class="flex items-center flex-shrink-0 mr-6">
                     <Link to='/'>
-                        <Logo />
+                        <Logo darkTheme={darkTheme} />
                     </Link>
                 </div>
             {/* <div class="block md:hidden"> */}
@@ -70,6 +79,7 @@ export default function NewNav () {
                             return (
                                 <StyledLink
                                     activeClassName='font-bold pointer-events-none'
+                                    // darkTheme={darkTheme}
                                     to={item.link}
                                     key={item.name}
                                 >
@@ -80,6 +90,6 @@ export default function NewNav () {
                     </div>
                 </div>
             </div>
-        </nav>
+        </StyledNav>
     )
 }

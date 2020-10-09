@@ -18,6 +18,12 @@ import './layout.css'
 import NewNav from './NewNav'
 
 const GlobalStyle = createGlobalStyle`
+    html {
+        --brGreen: #2E444F;
+        --brGrey: #4E5859;
+        --white: #ffffff;
+    }
+
     @font-face {
         font-family: 'Galano Grotesque';
         font-style: normal;
@@ -46,7 +52,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        color: #4e5859;
+        color: ${props => props.darkTheme ? `var(--white)` : 'var(--brGreen)' };
+        background-color: ${props => props.darkTheme ? `var(--brGreen)` : `var(--white)`};
         font-family: 'Galano Grotesque';
         font-feature-settings: "kern", "liga", "clig", "calt";
         font-kerning: normal;
@@ -89,7 +96,7 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export default function Layout ({ children }) {
+export default function Layout ({ children, darkTheme }) {
     return (
         <StaticQuery
             query={graphql`
@@ -103,8 +110,8 @@ export default function Layout ({ children }) {
             `}
             render={data => (
                 <>
-                    <GlobalStyle />
-                    <NewNav />
+                    <GlobalStyle darkTheme={darkTheme} />
+                    <NewNav darkTheme={darkTheme} />
                     <main>{children}</main>
                 </>
             )}
