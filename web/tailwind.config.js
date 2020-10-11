@@ -16,9 +16,9 @@ module.exports = {
     fontSize: {
         'h1': '3.75rem',
     },
-    // gridRowEnd: {
-
-    // },
+    gridRowStart: {
+        '8': '8',
+    },
     lineHeight: {
             '11': '3rem',
             '12': '4rem'
