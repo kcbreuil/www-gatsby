@@ -79,7 +79,7 @@ export default function NewNav ({ darkTheme }) {
                             return (
                                 <StyledLink
                                     activeClassName='font-bold pointer-events-none'
-                                    // darkTheme={darkTheme}
+                                    darkTheme={darkTheme}
                                     to={item.link}
                                     key={item.name}
                                 >
