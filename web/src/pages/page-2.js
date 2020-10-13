@@ -7,6 +7,7 @@ import tw from 'twin.macro';
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import IndexHero from '../components/IndexHero'
+import IndexCTA from '../components/IndexCTA'
 
 export default function SecondPage ({ data }) {
     const {
@@ -21,6 +22,7 @@ export default function SecondPage ({ data }) {
         <Layout darkTheme={true}>
             <SEO title="Page two" />
             <IndexHero images={images} /> 
+            <IndexCTA />
         </Layout>
     )
 }
