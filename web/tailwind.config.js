@@ -19,6 +19,9 @@ module.exports = {
             gridRowStart: {
                 '8': '8',
             },
+            height: {
+                '3/4': '75vh',
+            },
             lineHeight: {
                 '11': '3rem',
                 '12': '4rem'
