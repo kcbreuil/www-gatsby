@@ -33,7 +33,6 @@ const StyledImgWrapper = styled.div`
 `
 
 export default function IndexHero ({ images }) {
-    console.log(images)
     return(
         <StyledSection>
             <StyledGrid>
