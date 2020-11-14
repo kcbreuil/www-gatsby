@@ -6,7 +6,7 @@ import tw from 'twin.macro';
 import { CgArrowLongRight as Icon } from 'react-icons/cg'
 
 const StyledSection = styled.section`
-    ${tw`container flex flex-col h-screen justify-center`}
+    ${tw`container flex flex-col h-3/4 justify-center`}
 `
 
 const StyledHeading = styled.h2`
