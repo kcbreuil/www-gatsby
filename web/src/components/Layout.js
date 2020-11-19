@@ -71,10 +71,6 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1;
     }
 
-    h1,
-    .h1 {
-        font-size: 3.157rem;
-    }
 
     h2,
     .h2 {

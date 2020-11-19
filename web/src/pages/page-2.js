@@ -6,11 +6,16 @@ import tw from 'twin.macro';
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import IndexHero from '../components/IndexHero'
+
+import Contact from '../components/Contact'
 import IndexCTA from '../components/IndexCTA'
+import IndexHero from '../components/IndexHero'
+import IndexFeatureSection from '../components/IndexFeatureSection'
+import IndexPressSection from '../components/IndexPressSection'
 
 export default function SecondPage ({ data }) {
     const {
+        featureImage,
         tempBarcoding,
         tempByteLion,
         tempRendia,
@@ -23,32 +28,42 @@ export default function SecondPage ({ data }) {
             <SEO title="Page two" />
             <IndexHero images={images} /> 
             <IndexCTA />
+            <IndexFeatureSection featureImage={featureImage} />
+            <IndexPressSection />
+            <Contact />
         </Layout>
     )
 }
 
 export const query = graphql`
     query NewIndexQuery {
+        featureImage: file(relativePath: { regex: "/kara/" }) {
+            childImageSharp {
+                fluid(maxWidth: 500) {
+                    ...GatsbyImageSharpFluid	
+                }
+            }
+        }
         tempByteLion: file(relativePath: { regex: "/dreamBigger/" }){
             childImageSharp {	
-                fixed(width: 1000) {	
-                    ...GatsbyImageSharpFixed	
+                fluid(maxWidth: 500) {	
+                    ...GatsbyImageSharpFluid
                 }	
             } 
             id
         }
         tempRendia: file(relativePath: { regex: "/rendia/" }){
             childImageSharp {	
-                fixed(width: 400) {	
-                    ...GatsbyImageSharpFixed	
+                fluid(maxWidth: 400) {	
+                    ...GatsbyImageSharpFluid	
                 }	
             } 
             id
         }
         tempBarcoding: file(relativePath: { regex: "/barcoding/" }){
             childImageSharp {	
-                fixed(width: 600) {	
-                    ...GatsbyImageSharpFixed	
+                fluid(maxWidth: 600) {	
+                    ...GatsbyImageSharpFluid	
                 }	
             } 
             id

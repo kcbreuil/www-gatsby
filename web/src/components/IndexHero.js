@@ -8,42 +8,63 @@ const StyledSection = styled.section`
 `
 
 const StyledGrid = styled.div`
-    ${tw`grid grid-cols-1 md:grid-cols-2 mx-auto`}
+    ${tw`grid md:grid-cols-2 mx-4 lg:mx-auto mt-40 lg:mt-24 md:gap-x-2 lg:gap-x-20`}
 
-    grid-template-rows: repeat(10, 8rem);
-    margin-top: 12rem;
+    grid-template-rows: auto;
+
+    @media(min-width: 1024px) {
+        grid-template-rows: repeat(10, 8rem);
+        margin-top: 12rem;
+    }
 `
 
 const StyledImgWrapper = styled.div`
 
-    &:nth-of-type(1) {
-        grid-row-start: 1;
-    } 
 
-    &:nth-of-type(2) {
-        grid-column-start: 2;
-        grid-row-start: 4;
+    @media(min-width: 1024px) {
+        &:nth-of-type(1) {
+            grid-row-start: 1;
+
+            p {
+                width: 50%;
+            }
+        } 
+
+        &:nth-of-type(2) {
+            grid-column-start: 2;
+            grid-row-start: 4;
+        }
+
+        &:nth-of-type(3) {
+            grid-row-start: 9;
+            margin-left: 5rem;
+
+            p {
+                text-align: right;
+            }
+        }
     }
+`
 
-    &:nth-of-type(3) {
-        grid-row-start: 8;
-        margin-left: 5rem;
-    }
-
+const StyledP = styled.p`
+    ${tw`text-2xl mt-5`}
 `
 
 export default function IndexHero ({ images }) {
     return(
         <StyledSection>
             <StyledGrid>
-                <h1 class="col-start-2">Backroom is an independent, full service brand strategy & activation agency.</h1>
+                <h1 class="text-4xl md:text-5xl xl:text-h1 mb-8 lg:col-start-2 flex flex-col justify-center lg:flex-row">Backroom is an independent, full service brand strategy & activation agency.</h1>
                 {images.map(image => {
                     return (
                         <StyledImgWrapper
                             key={image.id}
                         >
-                            <Img fixed={image.childImageSharp.fixed}/>
-                            <p>Statement about this project</p>
+                            <Img
+                                fluid={image.childImageSharp.fluid}
+                                style={{maxWidth: `100%`}}
+                            />
+                            <StyledP>Statement about this project</StyledP>
                         </StyledImgWrapper>
                     )
                 })}
