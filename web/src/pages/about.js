@@ -1,7 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components';
-import tw from 'twin.macro';
 // import Img from 'gatsby-image'
 
 import Contact from '../components/Contact';
@@ -57,25 +55,25 @@ export default function AboutPage(props) {
 
     return (
         <>
-            <Layout>
-            <SEO title="About" />
-            <Hero heading={content.heroSection.heading} image={heroImage}/>
-            <ServiceSection
-                heading={content.serviceSection.heading}
-                services={services}
-            />
-            <TeamSection
-                heading={content.teamSection.heading}
-                team={team}
-            />
-            {/* <ValuesSection
-                heading={content.valuesSection.heading} 
-            /> */}
-            {/* <TestimonialSection content={content.testimonialSection.testimonials} /> */}
-            <Contact />
-        </Layout>
-    </>
-)
+            <Layout darkTheme={false}>
+                <SEO title="About" />
+                <Hero heading={content.heroSection.heading} image={heroImage}/>
+                <ServiceSection
+                    heading={content.serviceSection.heading}
+                    services={services}
+                />
+                <TeamSection
+                    heading={content.teamSection.heading}
+                    team={team}
+                />
+                {/* <ValuesSection
+                    heading={content.valuesSection.heading} 
+                /> */}
+                {/* <TestimonialSection content={content.testimonialSection.testimonials} /> */}
+                <Contact />
+            </Layout>
+        </>
+    )
 }
 
 const content = {
