@@ -35,14 +35,14 @@ export default function IndexFeatureSection ({ featureImage }) {
         <StyledSection>
             <StyledGrid>
                 <StyledDiv>
-                    <img src='https://via.placeholder.com/275' class='mx-auto'/>
+                    <img src='https://via.placeholder.com/275' class='mx-auto' alt="placeholder"/>
                     <StyledLink to='/'>
                         Work with us
                         <Icon className={`ml-5`} />
                     </StyledLink>
                 </StyledDiv>
                 <StyledDiv>
-                    <img src='https://via.placeholder.com/507x325' />
+                    <img src='https://via.placeholder.com/507x325' alt="placeholder"/>
                 </StyledDiv>
                 <ImageContainer>
                     <Img fluid={featureImage.childImageSharp.fluid} style={{maxWidth: `100%`}} />

@@ -1,12 +1,12 @@
 import React from 'react';
-import { useState } from 'react'
+// import { useState } from 'react'
 import { Link } from 'gatsby';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
 import Logo from '../components/Logo';
-import NewHamburger from '../components/NewHamburger';
+// import NewHamburger from '../components/NewHamburger';
 
 const StyledNav = styled.nav`
     ${tw`fixed w-full bg-white z-50`}
@@ -22,7 +22,7 @@ const StyledLink = styled(Link)`
 `
 
 export default function NewNav ({ darkTheme }) {
-    const [navOpen, setNavOpen] = useState(false)
+    // const [navOpen, setNavOpen] = useState(false)
 
     const menu = [
         {
@@ -53,7 +53,7 @@ export default function NewNav ({ darkTheme }) {
         },
       ];
 
-    const handleClick = () => setNavOpen(!navOpen)
+    // const handleClick = () => setNavOpen(!navOpen)
 
     return (
         <StyledNav darkTheme={darkTheme} >

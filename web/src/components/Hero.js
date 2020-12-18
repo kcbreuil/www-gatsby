@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 
 const StyledSection = styled.section`
     ${tw`container flex flex-col justify-center content-center min-h-screen mb-10`}
