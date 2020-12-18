@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import styled from 'styled-components';
-import tw from 'twin.macro';
+// import Img from 'gatsby-image'
+// import styled from 'styled-components';
+// import tw from 'twin.macro';
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'

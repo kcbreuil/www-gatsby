@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
@@ -48,10 +48,10 @@ const FlexRow = styled.div`
   }
 `;
 
-const Test = styled.div`
-  margin: auto;
-  max-width: 90%;
-`;
+// const Test = styled.div`
+//   margin: auto;
+//   max-width: 90%;
+// `;
 
 export default function IndexPage(props) {
   const {

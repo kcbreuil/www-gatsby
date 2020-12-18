@@ -5,15 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, { Component } from 'react'
+import React from 'react'
+// import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import { createGlobalStyle } from 'styled-components'
 import * as fonts from '../fonts'
 
-import NavModal from './NavModal'
-import Header from './Header'
+// import NavModal from './NavModal'
+// import Header from './Header'
 import './layout.css'
 import NewNav from './NewNav'
 

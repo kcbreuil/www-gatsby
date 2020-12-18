@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 
 const Section = styled.section`
   display: flex;
@@ -20,18 +20,18 @@ const Section = styled.section`
   }
 `;
 
-const StyledLink = styled(Link)`
-  align-self: flex-end;
-  color: #4e5859;
-  font-size: 1.333rem;
-  padding: 3rem 0;
-  text-align: left;
-  text-decoration: none;
+// const StyledLink = styled(Link)`
+//   align-self: flex-end;
+//   color: #4e5859;
+//   font-size: 1.333rem;
+//   padding: 3rem 0;
+//   text-align: left;
+//   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
-`;
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// `;
 
 const StyledHeading = styled.h1`
   padding: ${props => (props.isTitle ? `4rem 1rem rem` : `0`)};

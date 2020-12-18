@@ -1,5 +1,6 @@
 import React from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
+// import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
@@ -55,24 +56,24 @@ const GridWrapper = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 `;
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
-  max-width: 1280px;
-  min-height: 25vh;
-  width: 100%;
-`;
+// const Container = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   margin: auto;
+//   max-width: 1280px;
+//   min-height: 25vh;
+//   width: 100%;
+// `;
 
-const StyledLink = styled(Link)`
-  align-self: flex-end;
-  color: #4e5859;
-  font-size: 1.333rem;
-  padding: 3rem 0;
-  text-decoration: none;
+// const StyledLink = styled(Link)`
+//   align-self: flex-end;
+//   color: #4e5859;
+//   font-size: 1.333rem;
+//   padding: 3rem 0;
+//   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
-`;
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// `;
