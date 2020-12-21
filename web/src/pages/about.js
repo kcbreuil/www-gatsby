@@ -8,8 +8,8 @@ import SEO from '../components/seo';
 import Hero from '../components/Hero';
 import ServiceSection from '../components/ServiceSection';
 import TeamSection from '../components/TeamSection';
-import ValuesSection from '../components/ValuesSection';
-import TestimonialSection from '../components/TestimonialSection';
+// import ValuesSection from '../components/ValuesSection';
+// import TestimonialSection from '../components/TestimonialSection';
 
 export const query = graphql`
     query AboutQuery {
