@@ -14,7 +14,7 @@ import video from '../images/barcoding/Video-pic.png';
 import postcard1 from '../images/barcoding/Postcard-BG1.png';
 import postcard2 from '../images/barcoding/Postcard-BG2.png';
 import document from '../images/barcoding/B-document.png';
-import exploration from '../images/barcoding/B-exploration.jpg';
+import exploration from '../images/barcoding/B-Exploration.jpg';
 import tape from '../images/barcoding/tape-pattern.png';
 
 const HeroStyle = styled.div`
