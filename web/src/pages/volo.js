@@ -27,21 +27,22 @@ const ImgStyle = styled.div`
 `;
 
 const DetailStyle = styled.div`
-  ${tw`flex flex-auto justify-between mb-24 mx-24`};
-  font-family: Galano Grotesque;
-  .portfolio-name {
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 75px;
-    color: #2e444f;
-    margin-right: 50px;
-  }
-  p {
-    font-size: 22px;
-    width: 820px;
-    margin-top: 12px;
-    font-weight: 300;
-  }
+${tw`flex flex-auto justify-evenly my-24 mx-24`};
+.portfolio-name {
+  width: 310px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 113%;
+  color: #2e444f;
+  white-space: nowrap;
+  margin-right: 100px;
+}
+p {
+  font-size: 22px;
+  max-width: 820px;
+  font-weight: 300;
+}
 `;
 
 const GridStyle = styled.div`
