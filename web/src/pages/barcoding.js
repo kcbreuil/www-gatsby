@@ -17,6 +17,8 @@ import document from '../images/barcoding/B-document.png';
 import exploration from '../images/barcoding/B-Exploration.jpg';
 import tape from '../images/barcoding/tape-pattern.png';
 
+import Layout from '../components/Layout'
+
 const HeroStyle = styled.div`
   width: 100vw;
   ${tw`w-screen`};
@@ -55,6 +57,7 @@ ${tw`flex flex-auto justify-between mb-24 mx-24`};
     font-size: 50px;
     line-height: 75px;
     color: #2e444f;
+    margin-right: 50px;
   }
   p {
     font-size: 22px;
@@ -75,7 +78,7 @@ const BottomStyle = styled.div`
 
 export default function BarcodingPage() {
   return (
-    <>
+    <Layout>
       <HeroStyle>
         <img src={subway} alt="subway" />
       </HeroStyle>
@@ -114,6 +117,6 @@ export default function BarcodingPage() {
         <img className="mark" src={exploration} alt="mark" />
         <img className="document" src={document} alt="document" />
       </BottomStyle>
-    </>
+    </Layout>
   );
 }
