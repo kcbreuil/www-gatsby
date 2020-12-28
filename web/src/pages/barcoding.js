@@ -9,10 +9,28 @@ const HeroStyle = styled.div`
   ${tw`w-screen`};
   top: -160px;
   margin-bottom: 100px;
+
+  @media screen and (max-width: 480px) {
+   .gatsby-image-wrapper {
+     width: 100vw
+   }
+   margin-bottom: 50px;
+ }
+ @media screen and (max-width: 700px) and (min-width: 400px) {
+  .gatsby-image-wrapper {
+    width: 100vw
+  }
 `;
 
 const ImgFlex = styled.div`
   ${tw`grid grid-cols-2 gap-8 mx-24 mb-24`};
+
+  @media screen and (max-width: 420px) {
+   .mask, .welcome {
+     width: 165px;
+   }
+   ${tw`mx-6 mb-6`}
+ }
 `;
 
 const BarGrid = styled.div`
@@ -33,6 +51,9 @@ const BarGrid = styled.div`
     grid-column: 1 / 3;
     grid-row: 5 / span 2;
   }
+  @media screen and (max-width: 420px) {
+    ${tw`mx-6 mb-6`}
+  }
 `;
 
 const DetailStyle = styled.div`
@@ -49,6 +70,17 @@ const DetailStyle = styled.div`
     margin-top: 12px;
     font-weight: 300;
   }
+  @media screen and (max-width: 700px) {
+     display: flex;
+     flex-direction: column
+  }
+
+  @media screen and (max-width: 420px) {
+   .detail-info {
+     width: 300px;
+   }
+   ${tw`mx-6 mt-8 mb-8`}
+ }
 `;
 
 const BottomStyle = styled.div`
@@ -57,6 +89,14 @@ const BottomStyle = styled.div`
   .document,
   .mark {
     height: 350px !important;
+  }
+  @media screen and (max-width: 420px) {
+    ${tw`mx-6 mb-6`}
+    .tape,
+    .document,
+    .mark {
+      height: 100px !important;
+    }
   }
 `;
 
@@ -94,7 +134,7 @@ export default function BarcodingPage({ data }) {
       </ImgFlex>
       <DetailStyle>
         <span className="portfolio-name">Barcoding</span>
-        <p>
+        <p className="detail-info">
           As the technology behind supply chain changes, Barcoding wanted to
           keep focus on its namesake and founding technology. The brand had to
           sustain its equity while showing the world that it has not only grown
