@@ -4,22 +4,31 @@ import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
+import Layout from '../components/Layout'
+
 const HeroStyle = styled.div`
   width: 100vw;
   ${tw`w-screen`};
   top: -160px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 
+  .gatsby-image-wrapper {
+    top: 100px
+
+  }
   @media screen and (max-width: 480px) {
    .gatsby-image-wrapper {
-     width: 100vw
+     width: 100vw;
+     top: 150px
    }
-   margin-bottom: 50px;
+   margin-bottom: 200px;
  }
- @media screen and (max-width: 700px) and (min-width: 400px) {
-  .gatsby-image-wrapper {
-    width: 100vw
-  }
+//  @media screen and (max-width: 700px) and (min-width: 400px) {
+//   .gatsby-image-wrapper {
+//     width: 100vw;
+//   }
+//   ${tw`w-screen`};
+// }
 `;
 
 const ImgFlex = styled.div`
@@ -63,6 +72,7 @@ const DetailStyle = styled.div`
     font-size: 50px;
     line-height: 75px;
     color: #2e444f;
+    margin-right: 50px;
   }
   p {
     font-size: 22px;
@@ -76,6 +86,9 @@ const DetailStyle = styled.div`
   }
 
   @media screen and (max-width: 420px) {
+    .portfolio-name {
+      font-size: 42px
+    }
    .detail-info {
      width: 300px;
    }
@@ -120,7 +133,7 @@ export default function BarcodingPage({ data }) {
   } = data;
   console.log(subway);
   return (
-    <>
+    <Layout>
       <HeroStyle>
         <Img fluid={subway.childImageSharp.fluid} alt="subway" />
       </HeroStyle>
@@ -207,7 +220,7 @@ export default function BarcodingPage({ data }) {
           alt="document"
         />
       </BottomStyle>
-    </>
+    </Layout>
   );
 }
 
