@@ -1,9 +1,10 @@
 import React from 'react';
 import tw from 'twin.macro';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-
-import volo from '../images/volo/volobmore.png';
+// import volo from '../images/volo/volobmore.png';
 import adult from '../images/volo/adult.png';
 import kids from '../images/volo/kids.png';
 import color from '../images/volo/colorandtype.png';
@@ -15,7 +16,7 @@ import group from '../images/volo/group.png';
 import glasses from '../images/volo/glasses.png';
 import budlight from '../images/volo/budlightbowl.png';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 
 const HeroStyle = styled.div`
   width: 100vw;
@@ -48,20 +49,35 @@ const DetailStyle = styled.div`
 
 const GridStyle = styled.div`
   ${tw`grid grid-cols-2 justify-items-center gap-12 mx-24`};
-  .ombre, .moodboards {
-      grid-column: 1 / 3
+  .ombre,
+  .moodboards {
+    grid-column: 1 / 3;
   }
 `;
 
-export default function VoloPage() {
+export default function VoloPage({ data }) {
+  const {
+    volo,
+    adult,
+    kids,
+    color,
+    football,
+    foundation,
+    ombre,
+    moodboards,
+    group,
+    glasses,
+    budlight,
+  } = data;
+
   return (
     <Layout>
       <HeroStyle>
-        <img src={volo} alt="volo" />
+        <Img fluid={volo.childImageSharp.fluid} alt="volo" />
       </HeroStyle>
       <ImgStyle>
-        <img src={glasses} alt="glasses" />
-        <img src={budlight} alt="budlightbowl" />
+        <Img fluid={glasses.childImageSharp.fluid} alt="glasses" />
+        <Img fluid={budlight.childImageSharp.fluid} alt="budlightbowl" />
       </ImgStyle>
       <DetailStyle>
         <span className="portfolio-name">Volo City</span>
@@ -80,27 +96,97 @@ export default function VoloPage() {
         </p>
       </DetailStyle>
       <GridStyle>
-        <img className="ombre" src={ombre} alt="ombre-logo" />
-        <img className="color" src={color} alt="color" />
-        <img className="group" src={group} alt="group" />
-        <img className="moodboards" src={moodboards} alt="modboards" />
-        <img className="foundation" src={foundation} alt="foundation" />
-        <img className="football" src={football} alt="football" />
-        <img className="adult" src={adult} alt="adultflyer" />
-        <img className="kids" src={kids} alt="kidsflyer" />
+        <Img className="ombre" fluid={ombre.childImageSharp.fluid} alt="ombre-logo" />
+        <Img className="color" fluid={color.childImageSharp.fluid} alt="color" />
+        <Img className="group" fluid={group.childImageSharp.fluid} alt="group" />
+        <Img className="moodboards" fluid={moodboards.childImageSharp.fluid} alt="modboards" />
+        <Img className="foundation" fluid={foundation.childImageSharp.fluid} alt="foundation" />
+        <Img className="football" fluid={football.childImageSharp.fluid} alt="football" />
+        <Img className="adult" fluid={adult.childImageSharp.fluid} alt="adultflyer" />
+        <Img className="kids" fluid={kids.childImageSharp.fluid} alt="kidsflyer" />
       </GridStyle>
     </Layout>
   );
 }
 
 export const query = graphql`
-    query VoloQuery {
-        volo: file(relativePath: { regex: "/volo/volobmore.png" }) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid	
-                }
-            }
+  query VoloQuery {
+    volo: file(relativePath: { regex: "/volo/volobmore/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
-  
-`
+      }
+    }
+    adult: file(relativePath: { regex: "/volo/adult/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    kids: file(relativePath: { regex: "/volo/kids/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    color: file(relativePath: { regex: "/volo/colorandtype/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    football: file(relativePath: { regex: "/volo/football/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    foundation: file(relativePath: { regex: "/volo/foundation/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ombre: file(relativePath: { regex: "/volo/ombre/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    moodboards: file(relativePath: { regex: "/volo/moodboards/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    group: file(relativePath: { regex: "/volo/group/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    glasses: file(relativePath: { regex: "/volo/glasses/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    budlight: file(relativePath: { regex: "/volo/budlightbowl/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
