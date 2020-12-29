@@ -1,9 +1,11 @@
 import React from 'react';
 import tw from 'twin.macro';
+
+import styled from 'styled-components';
+
 import subway from '../images/barcoding/subway-takeover.png';
 import mask from '../images/barcoding/Mask-Group.png';
 import welcome from '../images/barcoding/Welcome-Box-2.png';
-import styled from 'styled-components';
 import billboard from '../images/barcoding/Billboard-mockup-1.png';
 import masktwo from '../images/barcoding/Mask-Group(1).png';
 import office from '../images/barcoding/Office.png';

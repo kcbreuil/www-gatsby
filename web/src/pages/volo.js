@@ -1,6 +1,8 @@
 import React from 'react';
 import tw from 'twin.macro';
 import styled from 'styled-components';
+
+
 import volo from '../images/volo/volobmore.png';
 import adult from '../images/volo/adult.png';
 import kids from '../images/volo/kids.png';
@@ -90,3 +92,15 @@ export default function VoloPage() {
     </Layout>
   );
 }
+
+export const query = graphql`
+    query VoloQuery {
+        volo: file(relativePath: { regex: "/volo/volobmore.png" }) {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid	
+                }
+            }
+        }
+  
+`
