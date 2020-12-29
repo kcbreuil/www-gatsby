@@ -1,9 +1,9 @@
 import React from 'react';
 import tw from 'twin.macro';
 import styled from 'styled-components';
-import bottom from '../images/dcunited/bottom.png';
-import dchero from '../images/dcunited/dchero.png';
-import middle from '../images/dcunited/middle.png';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+
 
 import Layout from '../components/Layout';
 
@@ -18,7 +18,7 @@ const DetailStyle = styled.div`
     color: #2e444f;
     white-space: nowrap;
     margin-right: 100px;
-}
+  }
   p {
     font-size: 22px;
     max-width: 820px;
@@ -30,10 +30,11 @@ const ImgFlex = styled.div`
   margin-left: 75px;
 `;
 
-export default function DcunitedPage() {
+export default function DcunitedPage({ data }) {
+  const { middle, dchero, bottom } = data;
   return (
     <Layout>
-      <img className="" src={dchero} alt="one" />
+      <Img fluid={dchero.childImageSharp.fluid} alt="one" />
       <DetailStyle>
         <span className="portfolio-name">DC United</span>
         <p>
@@ -51,9 +52,35 @@ export default function DcunitedPage() {
         </p>
       </DetailStyle>
       <ImgFlex>
-        <img className="" src={middle} alt="three" />
-        <img className="" src={bottom} alt="two" />
+        <Img fluid={middle.childImageSharp.fluid} alt="three" />
+        <Img fluid={bottom.childImageSharp.fluid} alt="two" />
       </ImgFlex>
     </Layout>
   );
 }
+
+export const query = graphql`
+  query DcUnitedQuery {
+    bottom: file(relativePath: { regex: "/dcunited/bottom/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    dchero: file(relativePath: { regex: "/dcunited/dchero/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    middle: file(relativePath: { regex: "/dcunited/middle/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
