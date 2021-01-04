@@ -4,46 +4,37 @@ import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 
 const HeroStyle = styled.div`
-  width: 100vw;
-  ${tw`w-screen`};
   top: -160px;
   margin-bottom: 200px;
 
   .gatsby-image-wrapper {
-    top: 100px
-
+    top: 100px;
   }
   @media screen and (max-width: 480px) {
-   .gatsby-image-wrapper {
-     width: 100vw;
-     top: 150px
-   }
-   margin-bottom: 200px;
- }
-//  @media screen and (max-width: 700px) and (min-width: 400px) {
-//   .gatsby-image-wrapper {
-//     width: 100vw;
-//   }
-//   ${tw`w-screen`};
-// }
+    .gatsby-image-wrapper {
+      width: 100vw;
+      top: 150px;
+    }
+    margin-bottom: 200px;
+  }
 `;
 
 const ImgFlex = styled.div`
-  ${tw`grid grid-cols-2 gap-8 mx-24 mb-24`};
+  ${tw`grid grid-cols-2 gap-8 mx-12 mb-24 sm:mx-6`};
 
   @media screen and (max-width: 420px) {
-   .mask, .welcome {
-     width: 165px;
-   }
-   ${tw`mx-6 mb-6`}
- }
+    .mask,
+    .welcome {
+      width: 165px;
+    }
+  }
 `;
 
 const BarGrid = styled.div`
-  ${tw`grid grid-cols-2 gap-8 mx-24 mb-24`}
+  ${tw`grid grid-cols-2 gap-8 mx-12 mb-24 sm:mx-6`}
   .item-b {
     grid-column: 2 / 3;
     grid-row: 1 / span 2;
@@ -60,13 +51,10 @@ const BarGrid = styled.div`
     grid-column: 1 / 3;
     grid-row: 5 / span 2;
   }
-  @media screen and (max-width: 420px) {
-    ${tw`mx-6 mb-6`}
-  }
 `;
 
 const DetailStyle = styled.div`
-  ${tw`flex flex-auto justify-between mb-24 mx-24`};
+  ${tw`flex flex-auto justify-between mb-24 mx-12 sm:mx-6`};
   .portfolio-name {
     font-weight: bold;
     font-size: 50px;
@@ -77,34 +65,33 @@ const DetailStyle = styled.div`
   p {
     font-size: 22px;
     width: 820px;
+    max-width: 100%;
     margin-top: 12px;
     font-weight: 300;
   }
-  @media screen and (max-width: 700px) {
-     display: flex;
-     flex-direction: column
+  @media screen and (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 500px) {
     .portfolio-name {
-      font-size: 42px
+      font-size: 42px;
     }
-   .detail-info {
-     width: 300px;
-   }
-   ${tw`mx-6 mt-8 mb-8`}
- }
+    .detail-info {
+      width: 300px;
+    }
+  }
 `;
 
 const BottomStyle = styled.div`
-  ${tw`flex flex-auto justify-between mx-24`};
+  ${tw`flex flex-auto justify-between mx-12 sm:mx-6`};
   .tape,
   .document,
   .mark {
-    height: 350px !important;
+    max-height: 350px !important;
   }
   @media screen and (max-width: 420px) {
-    ${tw`mx-6 mb-6`}
     .tape,
     .document,
     .mark {
@@ -131,7 +118,6 @@ export default function BarcodingPage({ data }) {
     exploration,
     tape,
   } = data;
-  console.log(subway);
   return (
     <Layout>
       <HeroStyle>
