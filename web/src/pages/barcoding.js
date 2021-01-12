@@ -15,7 +15,6 @@ const HeroStyle = styled.div`
   }
   @media screen and (max-width: 480px) {
     .gatsby-image-wrapper {
-      width: 100vw;
       top: 150px;
     }
     margin-bottom: 200px;
