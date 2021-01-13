@@ -53,7 +53,7 @@ const BarGrid = styled.div`
 `;
 
 const DetailStyle = styled.div`
-  ${tw`flex flex-auto justify-between mb-24 mx-12 sm:mx-6`};
+  ${tw`flex flex-col lg:flex-row flex-auto justify-between mb-24 mx-6 md:mx-12`};
   .portfolio-name {
     font-weight: bold;
     font-size: 50px;
@@ -68,10 +68,7 @@ const DetailStyle = styled.div`
     margin-top: 12px;
     font-weight: 300;
   }
-  @media screen and (max-width: 900px) {
-    display: flex;
-    flex-direction: column;
-  }
+
 
   @media screen and (max-width: 500px) {
     .portfolio-name {
