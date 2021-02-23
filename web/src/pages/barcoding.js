@@ -7,9 +7,7 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 
 const HeroStyle = styled.div`
-  top: -160px;
   margin-bottom: 200px;
-
   .gatsby-image-wrapper {
     top: 100px;
   }
@@ -68,7 +66,6 @@ const DetailStyle = styled.div`
     margin-top: 12px;
     font-weight: 300;
   }
-
 
   @media screen and (max-width: 500px) {
     .portfolio-name {
