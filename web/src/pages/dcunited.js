@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-
 import Layout from '../components/Layout';
 
 const DetailStyle = styled.div`
@@ -38,14 +37,14 @@ export default function DcunitedPage({ data }) {
       <DetailStyle>
         <span className="portfolio-name">DC United</span>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisi
-          nisi, mollis non dui id, venenatis laoreet erat. Phasellus pulvinar
-          mauris dui, sit amet bibendum velit tempor eu. Aenean dignissim arcu
-          dolor, et scelerisque purus fermentum in. Maecenas at augue at mauris
-          tristique convallis vitae in massa. In hac habitasse platea dictumst.
-          Aenean ullamcorper mauris euismod nulla rhoncus, ut ultrices ex
-          ullamcorper. Praesent diam metus, sodales at felis vel, rhoncus
-          laoreet lorem. Sed.
+          D.C. United was prepping to start the 2018 season in their new home at
+          Audi Field. Inspired by the excitement of the fans who were counting
+          down until the first kickoff, we built a digital experience that
+          brought the in-person experience to the web. Using the group energy of
+          game day as our muse, we incorporated on-page animations, countdown
+          timers, and fly-through videos to make the web experience feel alive.
+          The result is a captivating website that blends the brand identities
+          of Audi and D.C. United in a clean, minimalistic design.
           <br />
           <br />
           <i>Read more</i>
