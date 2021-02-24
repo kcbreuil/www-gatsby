@@ -55,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         color: ${props => props.darkTheme ? `var(--white)` : 'var(--brGreen)' };
         background-color: ${props => props.darkTheme ? `var(--brGreen)` : `var(--white)`};
-        font-family: 'Galano Grotesque';
+        font-family: 'ConnaryFagenBlack';
         font-feature-settings: "kern", "liga", "clig", "calt";
         font-kerning: normal;
         font-size: 1rem;

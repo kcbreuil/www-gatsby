@@ -78,6 +78,7 @@ export default function ContactPage(props) {
 }
 
 const StyledGrid = styled.div`
+  font-family: 'ConnaryFagenBlack';
   display: grid;
   grid-template-columns:
     [left] minmax(9%, 1fr) repeat(12, [col-start] minmax(0px, 70px) [col-end])
