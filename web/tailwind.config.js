@@ -5,9 +5,10 @@ module.exports = {
   },
     purge: [],
     theme: {
-        container: {
+        container: (theme) => ({
             center: true,
-        },
+            padding: theme('spacing.5'),
+        }),
         extend: {
             colors: {
                 bckrmGreen: '#2E444F',
