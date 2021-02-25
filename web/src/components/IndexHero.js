@@ -10,58 +10,24 @@ const StyledSection = styled.section`
 `
 
 const StyledGrid = styled.div`
-    ${tw`grid md:grid-cols-12 lg:auto-rows-min lg:gap-y-5 mx-4 lg:mx-auto lg:mt-24 md:gap-x-2`}
-
-    grid-template-rows: auto;
-
-    @media(min-width: 1024px) {
-        margin-top: 12rem;
-    }
+    ${tw`grid md:grid-cols-12 md:auto-rows-min md:gap-y-5 mx-4 md:mx-auto md:mt-24 md:gap-x-2`}
 `
 
 const Heading = styled.h1`
-    ${tw`text-4xl md:text-5xl mb-8 lg:col-start-7 lg:col-end-12 flex flex-col justify-center lg:flex-row`}
+    ${tw`text-4xl lg:text-5xl lg:leading-tight mb-8 md:col-start-7 md:col-end-12`}
 `;
 
 const ImageOne = styled(Link)`
-    ${tw`col-start-1 col-end-6 row-start-1`}
+    ${tw`col-start-1 md:col-end-6 md:row-start-1`}
 `;
 
 const ImageTwo = styled(Link)`
-    ${tw`col-start-2 row-start-2 row-end-3 -mt-40`}
+    ${tw`md:col-start-7 md:col-end-12 md:row-start-2 md:-mt-40`}
 `;
 
 const ImageThree = styled(Link)`
-    ${tw`row-end-6`}
+    ${tw`md:col-span-7 md:row-start-3`}
 `;
-
-const StyledImgWrapper = styled.div`
-
-
-    @media(min-width: 1024px) {
-        &:nth-of-type(1) {
-            grid-row-start: 1;
-
-            p {
-                width: 50%;
-            }
-        } 
-
-        &:nth-of-type(2) {
-            grid-column-start: 2;
-            grid-row-start: 4;
-        }
-
-        &:nth-of-type(3) {
-            grid-row-start: 9;
-            margin-left: 5rem;
-
-            p {
-                text-align: right;
-            }
-        }
-    }
-`
 
 const StyledP = styled.p`
     ${tw`text-2xl mt-5`}
