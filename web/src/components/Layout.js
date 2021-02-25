@@ -15,7 +15,7 @@ import * as fonts from '../fonts'
 
 // import NavModal from './NavModal'
 // import Header from './Header'
-import './layout.css'
+// import './layout.css'
 import NewNav from './NewNav'
 
 const GlobalStyle = createGlobalStyle`

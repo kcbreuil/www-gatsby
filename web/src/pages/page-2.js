@@ -1,72 +1,77 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 // import Img from 'gatsby-image'
 // import styled from 'styled-components';
 // import tw from 'twin.macro';
 
-import Layout from '../components/Layout'
-import SEO from '../components/seo'
+import Layout from '../components/Layout';
+import SEO from '../components/seo';
 
-import Contact from '../components/Contact'
-import IndexCTA from '../components/IndexCTA'
-import IndexHero from '../components/IndexHero'
-import IndexFeatureSection from '../components/IndexFeatureSection'
-import IndexPressSection from '../components/IndexPressSection'
+import Contact from '../components/Contact';
+import IndexCTA from '../components/IndexCTA';
+import IndexHero from '../components/IndexHero';
+import IndexFeatureSection from '../components/IndexFeatureSection';
+import IndexPressSection from '../components/IndexPressSection';
 
 export default function SecondPage ({ data }) {
     const {
         featureImage,
-        tempBarcoding,
-        tempByteLion,
+        // tempByteLion,
+        image3,
+        barcoding,
         tempRendia,
     } = data
 
-    const images = [tempByteLion, tempRendia, tempBarcoding]
+    const images = [barcoding, tempRendia, image3]
 
-    return (
-        <Layout darkTheme={true}>
-            <SEO title="Page two" />
-            <IndexHero images={images} /> 
-            <IndexCTA />
-            <IndexFeatureSection featureImage={featureImage} />
-            <IndexPressSection />
-            <Contact />
-        </Layout>
-    )
+  return (
+    <Layout darkTheme={true}>
+      <SEO title="Page two" />
+      <IndexHero images={images} />
+      <IndexCTA />
+      <IndexFeatureSection featureImage={featureImage} />
+      <IndexPressSection />
+      <Contact />
+    </Layout>
+  );
 }
 
 export const query = graphql`
-    query NewIndexQuery {
-        featureImage: file(relativePath: { regex: "/kara/" }) {
-            childImageSharp {
-                fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid	
-                }
+  query NewIndexQuery {
+    featureImage: file(relativePath: { regex: "/kara/" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+      id
+    }
+
+    barcoding: file(relativePath: {eq: "subway-takeover.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid	
             }
         }
-        tempByteLion: file(relativePath: { regex: "/dreamBigger/" }){
-            childImageSharp {	
-                fluid(maxWidth: 500) {	
-                    ...GatsbyImageSharpFluid
-                }	
-            } 
-            id
-        }
-        tempRendia: file(relativePath: { regex: "/rendia/" }){
-            childImageSharp {	
-                fluid(maxWidth: 400) {	
-                    ...GatsbyImageSharpFluid	
-                }	
-            } 
-            id
-        }
-        tempBarcoding: file(relativePath: { regex: "/barcoding/" }){
-            childImageSharp {	
-                fluid(maxWidth: 600) {	
-                    ...GatsbyImageSharpFluid	
-                }	
-            } 
-            id
-        }
+        id
+    } 
+
+    tempRendia: file(relativePath: { regex: "/rendia/" }){
+        childImageSharp {	
+            fluid(maxWidth: 400) {	
+                ...GatsbyImageSharpFluid	
+            }	
+        } 
+        id
     }
-`
+    image3: file(relativePath: { eq: "dcu-mobile-and-tiles.png" }){
+        childImageSharp {	
+            fluid(maxWidth: 600) {	
+                ...GatsbyImageSharpFluid	
+            }	
+        } 
+        id
+    }
+
+  }
+`;
