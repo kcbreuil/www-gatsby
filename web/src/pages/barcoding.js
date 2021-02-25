@@ -20,7 +20,7 @@ const HeroStyle = styled.div`
 `;
 
 const ImgFlex = styled.div`
-  ${tw`grid grid-cols-2 gap-8 mx-10 mb-24 sm:mx-6`};
+  ${tw`container grid grid-cols-2 gap-8 mb-24`};
 
   @media screen and (max-width: 420px) {
     .mask,
@@ -31,7 +31,7 @@ const ImgFlex = styled.div`
 `;
 
 const BarGrid = styled.div`
-  ${tw`grid grid-cols-2 gap-8 mx-10 mb-24 sm:mx-6`}
+  ${tw`container grid grid-cols-2 gap-8 mb-24`}
   .item-b {
     grid-column: 2 / 3;
     grid-row: 1 / span 2;
@@ -51,7 +51,7 @@ const BarGrid = styled.div`
 `;
 
 const DetailStyle = styled.div`
-  ${tw`flex flex-col lg:flex-row flex-auto justify-between mb-24 mx-10 md:mx-12`};
+  ${tw`container flex flex-col lg:flex-row flex-auto justify-between mb-24`};
   .portfolio-name {
     font-weight: bold;
     font-size: 50px;
@@ -78,7 +78,7 @@ const DetailStyle = styled.div`
 `;
 
 const BottomStyle = styled.div`
-  ${tw`flex flex-auto justify-between mx-10 sm:mx-6`};
+  ${tw`container flex flex-auto justify-between`};
   .tape,
   .document,
   .mark {
