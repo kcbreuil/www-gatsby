@@ -82,28 +82,60 @@ export default function VoloPage({ data }) {
       <DetailStyle>
         <span className="portfolio-name">Volo City</span>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisi
-          nisi, mollis non dui id, venenatis laoreet erat. Phasellus pulvinar
-          mauris dui, sit amet bibendum velit tempor eu. Aenean dignissim arcu
-          dolor, et scelerisque purus fermentum in. Maecenas at augue at mauris
-          tristique convallis vitae in massa. In hac habitasse platea dictumst.
-          Aenean ullamcorper mauris euismod nulla rhoncus, ut ultrices ex
-          ullamcorper. Praesent diam metus, sodales at felis vel, rhoncus
-          laoreet lorem. Sed. Read more
+          Volo City is a national sports league that had different brand names
+          for each city’s adult leagues, and a separate non profit kid’s
+          organization. We unified the cities and non profit under one cohesive
+          brand, whose namesake was inspired by the style of bocce that was
+          played in the first league. Volo means to fly in Italian, and together
+          with each city they create velocity. The name and visual identity
+          system represents Volo’s mission to uplift communities, build
+          relationships, and celebrate the culture of their cities.
           <br />
           <br />
           <i>Read more</i>
         </p>
       </DetailStyle>
       <GridStyle>
-        <Img className="ombre" fluid={ombre.childImageSharp.fluid} alt="ombre-logo" />
-        <Img className="color" fluid={color.childImageSharp.fluid} alt="color" />
-        <Img className="group" fluid={group.childImageSharp.fluid} alt="group" />
-        <Img className="moodboards" fluid={moodboards.childImageSharp.fluid} alt="modboards" />
-        <Img className="foundation" fluid={foundation.childImageSharp.fluid} alt="foundation" />
-        <Img className="football" fluid={football.childImageSharp.fluid} alt="football" />
-        <Img className="adult" fluid={adult.childImageSharp.fluid} alt="adultflyer" />
-        <Img className="kids" fluid={kids.childImageSharp.fluid} alt="kidsflyer" />
+        <Img
+          className="ombre"
+          fluid={ombre.childImageSharp.fluid}
+          alt="ombre-logo"
+        />
+        <Img
+          className="color"
+          fluid={color.childImageSharp.fluid}
+          alt="color"
+        />
+        <Img
+          className="group"
+          fluid={group.childImageSharp.fluid}
+          alt="group"
+        />
+        <Img
+          className="moodboards"
+          fluid={moodboards.childImageSharp.fluid}
+          alt="modboards"
+        />
+        <Img
+          className="foundation"
+          fluid={foundation.childImageSharp.fluid}
+          alt="foundation"
+        />
+        <Img
+          className="football"
+          fluid={football.childImageSharp.fluid}
+          alt="football"
+        />
+        <Img
+          className="adult"
+          fluid={adult.childImageSharp.fluid}
+          alt="adultflyer"
+        />
+        <Img
+          className="kids"
+          fluid={kids.childImageSharp.fluid}
+          alt="kidsflyer"
+        />
       </GridStyle>
     </Layout>
   );
