@@ -14,11 +14,11 @@ const HeroStyle = styled.div`
 `;
 
 const ImgStyle = styled.div`
-  ${tw`grid grid-cols-2 gap-8 mx-24 mb-24`};
+  ${tw`container grid grid-cols-2 gap-8 mb-24`};
 `;
 
 const DetailStyle = styled.div`
-  ${tw`flex flex-auto justify-between mb-24 mx-24`};
+  ${tw`container flex flex-auto mb-24`};
   font-family: Galano Grotesque;
   .portfolio-name {
     font-weight: bold;
