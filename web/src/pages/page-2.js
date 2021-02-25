@@ -13,10 +13,16 @@ import IndexHero from '../components/IndexHero';
 import IndexFeatureSection from '../components/IndexFeatureSection';
 import IndexPressSection from '../components/IndexPressSection';
 
-export default function SecondPage({ data }) {
-  const { featureImage, tempBarcoding, tempByteLion, tempRendia } = data;
+export default function SecondPage ({ data }) {
+    const {
+        featureImage,
+        // tempByteLion,
+        image3,
+        barcoding,
+        tempRendia,
+    } = data
 
-  const images = [tempByteLion, tempRendia, tempBarcoding];
+    const images = [barcoding, tempRendia, image3]
 
   return (
     <Layout darkTheme={true}>
@@ -38,30 +44,34 @@ export const query = graphql`
           ...GatsbyImageSharpFluid
         }
       }
-    }
-    tempByteLion: file(relativePath: { regex: "/dreamBigger/" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
-        }
-      }
       id
     }
-    tempRendia: file(relativePath: { regex: "/rendia/" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
+
+    barcoding: file(relativePath: {eq: "subway-takeover.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid	
+            }
         }
-      }
-      id
+        id
+    } 
+
+    tempRendia: file(relativePath: { regex: "/rendia/" }){
+        childImageSharp {	
+            fluid(maxWidth: 400) {	
+                ...GatsbyImageSharpFluid	
+            }	
+        } 
+        id
     }
-    tempBarcoding: file(relativePath: { regex: "/barcoding/" }) {
-      childImageSharp {
-        fluid(maxWidth: 600) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-      id
+    image3: file(relativePath: { eq: "dcu-mobile-and-tiles.png" }){
+        childImageSharp {	
+            fluid(maxWidth: 600) {	
+                ...GatsbyImageSharpFluid	
+            }	
+        } 
+        id
     }
+
   }
 `;
