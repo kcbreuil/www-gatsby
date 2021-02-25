@@ -7,10 +7,8 @@ import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 
 const HeroStyle = styled.div`
-  width: 100vw;
-  ${tw`w-screen`};
-  top: -160px;
   margin-bottom: 100px;
+  padding-top: 160px;
 `;
 
 const ImgStyle = styled.div`
@@ -18,21 +16,30 @@ const ImgStyle = styled.div`
 `;
 
 const DetailStyle = styled.div`
-  ${tw`container flex flex-auto mb-24`};
-  font-family: Galano Grotesque;
+${tw`container flex flex-col lg:flex-row flex-auto justify-between mb-24`};
+.portfolio-name {
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 75px;
+  color: #2e444f;
+  margin-right: 50px;
+}
+p {
+  font-size: 22px;
+  width: 820px;
+  max-width: 100%;
+  margin-top: 12px;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 500px) {
   .portfolio-name {
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 75px;
-    color: #2e444f;
-    margin-right: 50px;
+    font-size: 42px;
   }
-  p {
-    font-size: 22px;
-    width: 820px;
-    margin-top: 12px;
-    font-weight: 300;
+  .detail-info {
+    width: 300px;
   }
+}
 `;
 
 const GridStyle = styled.div`
@@ -68,7 +75,7 @@ export default function VoloPage({ data }) {
         <Img fluid={budlight.childImageSharp.fluid} alt="budlightbowl" />
       </ImgStyle>
       <DetailStyle>
-        <span className="portfolio-name">Volo City</span>
+        <h1 className="portfolio-name">Volo City</h1>
         <p>
           Volo City is a national sports league that had different brand names
           for each city’s adult leagues, and a separate non profit kid’s
