@@ -125,7 +125,7 @@ export default function BarcodingPage({ data }) {
         />
       </ImgFlex>
       <DetailStyle>
-        <span className="portfolio-name">Barcoding</span>
+        <h1 className="portfolio-name">Barcoding</h1>
         <p className="detail-info">
           As the technology behind supply chain changes, Barcoding wanted to
           keep focus on its namesake and founding technology. The brand had to
