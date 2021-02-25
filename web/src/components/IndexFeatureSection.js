@@ -6,11 +6,11 @@ import tw from 'twin.macro';
 import { CgArrowLongRight as Icon } from 'react-icons/cg'
 
 const StyledSection = styled.section`
-    ${tw`container flex flex-col justify-center content-center mb-10`}
+    ${tw`flex flex-col justify-center mb-10`}
 `
 
 const StyledGrid = styled.div`
-    ${tw`grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-16 min-h-screen mx-8 lg:mx-0`}
+    ${tw`grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-16 min-h-screen`}
 `
 
 const ImageContainer = styled.div`
@@ -42,7 +42,7 @@ export default function IndexFeatureSection ({ featureImage }) {
                     </StyledLink>
                 </StyledDiv>
                 <StyledDiv>
-                    <img src='https://via.placeholder.com/507x325' alt="placeholder"/>
+                    <img src='https://via.placeholder.com/325x325' alt="placeholder"/>
                 </StyledDiv>
                 <ImageContainer>
                     <Img fluid={featureImage.childImageSharp.fluid} style={{maxWidth: `100%`}} />
