@@ -36,7 +36,7 @@ const DetailStyle = styled.div`
 `;
 
 const GridStyle = styled.div`
-  ${tw`grid grid-cols-2 justify-items-center gap-12 mx-24`};
+  ${tw`container grid gap-12`};
   .ombre,
   .moodboards {
     grid-column: 1 / 3;
@@ -45,7 +45,7 @@ const GridStyle = styled.div`
 
 export default function VoloPage({ data }) {
   const {
-    volo,
+    volobmore,
     adult,
     kids,
     color,
@@ -61,7 +61,7 @@ export default function VoloPage({ data }) {
   return (
     <Layout>
       <HeroStyle>
-        <Img fluid={volo.childImageSharp.fluid} alt="volo" />
+        <Img fluid={volobmore.childImageSharp.fluid} alt="volo" />
       </HeroStyle>
       <ImgStyle>
         <Img fluid={glasses.childImageSharp.fluid} alt="glasses" />
@@ -131,7 +131,7 @@ export default function VoloPage({ data }) {
 
 export const query = graphql`
   query VoloQuery {
-    volo: file(relativePath: { regex: "/volo/volobmore/" }) {
+    volobmore: file(relativePath: { regex: "/volo/volobmore/" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
