@@ -21,7 +21,6 @@ const HeroStyle = styled.div`
 
 const ImgFlex = styled.div`
   ${tw`container grid grid-cols-2 gap-8 mb-24`};
-
   @media screen and (max-width: 420px) {
     .mask,
     .welcome {
