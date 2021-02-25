@@ -4,18 +4,6 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-// import volo from '../images/volo/volobmore.png';
-import adult from '../images/volo/adult.png';
-import kids from '../images/volo/kids.png';
-import color from '../images/volo/colorandtype.png';
-import football from '../images/volo/football.png';
-import foundation from '../images/volo/foundation.png';
-import ombre from '../images/volo/ombre.png';
-import moodboards from '../images/volo/moodboards.png';
-import group from '../images/volo/group.png';
-import glasses from '../images/volo/glasses.png';
-import budlight from '../images/volo/budlightbowl.png';
-
 import Layout from '../components/Layout';
 
 const HeroStyle = styled.div`
