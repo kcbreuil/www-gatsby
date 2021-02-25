@@ -5,20 +5,23 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { CgArrowLongRight as Icon } from 'react-icons/cg'
 
-const StyledSection = styled.section`
-    ${tw`flex flex-col justify-center mb-10`}
+import MarkAbbr from './svgs/mark-abbr';
+
+
+const Grid = styled.section`
+    ${tw`container grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-16 my-10 min-h-screen`}
 `
 
-const StyledGrid = styled.div`
-    ${tw`grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-16 min-h-screen`}
+const ImageOne = styled.div`
+    ${tw`md:col-start-7 md:col-end-12 md:row-start-2`}
 `
 
-const ImageContainer = styled.div`
-    ${tw`md:col-start-2 md:col-end-2 md:row-start-1 lg:row-end-1 md:flex md:flex-col md:justify-end`}
-`
+const ImageTwo = styled.div`
+    ${tw`md:col-span-6 md:flex md:flex-col md:justify-center row-start-3 md:row-start-2`}
+`;
 
-const StyledDiv = styled.div`
-    ${tw`mb-32`}
+const MarkWrapper = styled.div`
+    ${tw`col-span-6 flex justify-center`}
 `
 
 const StyledLink = styled(Link)`
@@ -29,34 +32,27 @@ const StyledQuote = styled.p`
     ${tw`text-3xl md:text-5xl mt-5 font-bold`}
 `
 
-export default function IndexFeatureSection ({ featureImage }) {
-    console.log(featureImage)
+export default function IndexFeatureSection ({ images }) {
+    const [designTeam, featureImage] = images
+
     return (
-        <StyledSection>
-            <StyledGrid>
-                <StyledDiv>
-                    <img src='https://via.placeholder.com/275' class='mx-auto' alt="placeholder"/>
-                    <StyledLink to='/'>
-                        Work with us
-                        <Icon className={`ml-5`} />
-                    </StyledLink>
-                </StyledDiv>
-                <StyledDiv>
-                    <img src='https://via.placeholder.com/325x325' alt="placeholder"/>
-                </StyledDiv>
-                <ImageContainer>
-                    <Img fluid={featureImage.childImageSharp.fluid} style={{maxWidth: `100%`}} />
-                </ImageContainer>
-                <StyledDiv>
-                    <StyledQuote>
-                        “An agency with a steadfast commitment to protecting its people and its culture.”
-                    </StyledQuote>
-                    <StyledLink to='/'>
-                        5 questions with Technical.ly
-                        <Icon className={`ml-5`}/>
-                    </StyledLink>
-                </StyledDiv>
-            </StyledGrid>
-        </StyledSection>
+        <Grid>
+            <MarkWrapper>
+                <MarkAbbr />
+            </MarkWrapper>
+            <ImageOne>
+                <Img fluid={featureImage.childImageSharp.fluid} style={{maxWidth: `100%`}} />
+                <StyledQuote>
+                    “An agency with a steadfast commitment to protecting its people and its culture.”
+                </StyledQuote>
+                <StyledLink to='/'>
+                    5 questions with Technical.ly
+                    <Icon className={`ml-5`}/>
+                </StyledLink>
+            </ImageOne>
+            <ImageTwo>
+                <Img fluid={designTeam.childImageSharp.fluid} style={{maxWidth: `100%`}} />
+            </ImageTwo>
+        </Grid>
     )
 }
