@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 
 import IndexPressItem from '../components/IndexPressItem'
 
-const Grid = styled.div`
+const Grid = styled.section`
     ${tw`container grid md:grid-cols-3 gap-y-10 md:gap-8 my-32`}
 `
 
