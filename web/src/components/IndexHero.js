@@ -6,11 +6,11 @@ import tw from 'twin.macro';
 import { Link } from 'gatsby';
 
 const StyledSection = styled.section`
-    ${tw`container min-h-screen mb-10 mt-40`}
+    ${tw`bg-brand-2 min-h-screen pb-10 mt-40`}
 `
 
 const StyledGrid = styled.div`
-    ${tw`grid md:grid-cols-12 md:auto-rows-min md:gap-y-5 mx-4 md:mx-auto md:mt-24 md:gap-x-2`}
+    ${tw`container grid md:grid-cols-12 md:auto-rows-min md:gap-y-5 mx-4 md:mx-auto md:mt-20 md:gap-x-2 text-brand-9`}
 `
 
 const Heading = styled.h1`

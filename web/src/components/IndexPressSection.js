@@ -4,15 +4,21 @@ import tw from 'twin.macro';
 
 import IndexPressItem from '../components/IndexPressItem'
 
-const Grid = styled.section`
-    ${tw`container grid md:grid-cols-3 gap-y-10 md:gap-8 my-32`}
+const Section = styled.section`
+    ${tw`bg-brand-1`}
+`;
+
+const Grid = styled.div`
+    ${tw`container grid md:grid-cols-3 gap-y-10 md:gap-8 py-32`}
 `
 
 export default function IndexPressSection () {
     return (
-        <Grid>
-            {data.map(item => <IndexPressItem data={item} /> )}
-        </Grid>
+        <Section>
+            <Grid>
+                {data.map(item => <IndexPressItem data={item} /> )}
+            </Grid>
+        </Section>
     )
 }
 

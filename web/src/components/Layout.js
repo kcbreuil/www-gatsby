@@ -115,7 +115,7 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export default function Layout ({ children, darkTheme, hasFooter }) {
+export default function Layout ({ children, darkTheme, hasFooter, newBrand }) {
     return (
         <StaticQuery
             query={graphql`
@@ -130,7 +130,7 @@ export default function Layout ({ children, darkTheme, hasFooter }) {
             render={data => (
                 <>
                     <GlobalStyle darkTheme={darkTheme} />
-                    <NewNav darkTheme={darkTheme} />
+                    <NewNav darkTheme={darkTheme} newBrand={newBrand}/>
                     <main>{children}</main>
                     {hasFooter &&
                         <Footer />

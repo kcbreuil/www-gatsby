@@ -7,9 +7,12 @@ import { CgArrowLongRight as Icon } from 'react-icons/cg'
 
 import MarkAbbrWithAccent from './svgs/mark-abbr-with-accent';
 
+const Section = styled.section`
+    ${tw`bg-brand-2`}
+`;
 
-const Grid = styled.section`
-    ${tw`container grid grid-cols-1 md:grid-cols-12 auto-rows-auto gap-y-8 lg:gap-x-16 lg:gap-y-0 my-20 xl:mb-40`}
+const Grid = styled.div`
+    ${tw`container grid grid-cols-1 md:grid-cols-12 auto-rows-auto gap-y-8 lg:gap-x-16 lg:gap-y-0 py-20 xl:pb-40`}
 `
 
 const MarkWrapper = styled.div`
@@ -40,25 +43,27 @@ export default function IndexFeatureSection ({ images }) {
     const [designTeam, featureImage] = images
 
     return (
-        <Grid>
-            <MarkWrapper>
-                <MarkAbbrWithAccent />
-            </MarkWrapper>
-            <ImageOne>
-                <Img fluid={featureImage.childImageSharp.fluid} style={{maxWidth: `100%`}} />
-            </ImageOne>
-            <QuoteWrapper>
-                <Quote>
-                    “An agency with a steadfast commitment to protecting its people and its culture.”
-                </Quote>
-                <StyledLink to='/'>
-                    5 questions with Technical.ly
-                    <Icon className={`ml-5`}/>
-                </StyledLink>
-            </QuoteWrapper>
-            <ImageTwo>
-                <Img fluid={designTeam.childImageSharp.fluid} style={{maxWidth: `100%`}} />
-            </ImageTwo>
-        </Grid>
+        <Section>
+            <Grid>
+                <MarkWrapper>
+                    <MarkAbbrWithAccent />
+                </MarkWrapper>
+                <ImageOne>
+                    <Img fluid={featureImage.childImageSharp.fluid} style={{maxWidth: `100%`}} />
+                </ImageOne>
+                <QuoteWrapper>
+                    <Quote>
+                        “An agency with a steadfast commitment to protecting its people and its culture.”
+                    </Quote>
+                    <StyledLink to='/'>
+                        5 questions with Technical.ly
+                        <Icon className={`ml-5`}/>
+                    </StyledLink>
+                </QuoteWrapper>
+                <ImageTwo>
+                    <Img fluid={designTeam.childImageSharp.fluid} style={{maxWidth: `100%`}} />
+                </ImageTwo>
+            </Grid>
+        </Section>
     )
 }
