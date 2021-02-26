@@ -42,7 +42,6 @@ export default function IndexHero ({ images }) {
                 <ImageOne to="#">
                     <Img
                         fluid={images[0].childImageSharp.fluid}
-                        style={{maxWidth: `100%`}}
                     />
                     <StyledP>Statement about this project</StyledP>
                 </ImageOne>
@@ -50,7 +49,6 @@ export default function IndexHero ({ images }) {
                 <ImageTwo to="#">
                     <Img
                         fluid={images[1].childImageSharp.fluid}
-                        style={{maxWidth: `100%`}}
                     />
                     <StyledP>Statement about this project</StyledP>
                 </ImageTwo>
@@ -58,23 +56,9 @@ export default function IndexHero ({ images }) {
                 <ImageThree to="#">
                     <Img
                         fluid={images[2].childImageSharp.fluid}
-                        style={{maxWidth: `100%`}}
                     />
                     <StyledP>Statement about this project</StyledP>
                 </ImageThree>
-                {/* {images.map(image => {
-                    return (
-                        <StyledImgWrapper
-                            key={image.id}
-                        >
-                            <Img
-                                fluid={image.childImageSharp.fluid}
-                                style={{maxWidth: `100%`}}
-                            />
-                            <StyledP>Statement about this project</StyledP>
-                        </StyledImgWrapper>
-                    )
-                })} */}
             </StyledGrid>
         </StyledSection>
     )

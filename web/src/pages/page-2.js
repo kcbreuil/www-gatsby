@@ -15,10 +15,10 @@ import IndexPressSection from '../components/IndexPressSection';
 
 export default function SecondPage ({ data }) {
     const {
-        featureImage,
-        // tempByteLion,
-        image3,
         barcoding,
+        designTeam,
+        featureImage,
+        image3,
         tempRendia,
     } = data
 
@@ -29,7 +29,7 @@ export default function SecondPage ({ data }) {
       <SEO title="Page two" />
       <IndexHero images={images} />
       <IndexCTA />
-      <IndexFeatureSection featureImage={featureImage} />
+      <IndexFeatureSection images={[designTeam, featureImage]} />
       <IndexPressSection />
       <Contact />
     </Layout>
@@ -37,41 +37,50 @@ export default function SecondPage ({ data }) {
 }
 
 export const query = graphql`
-  query NewIndexQuery {
-    featureImage: file(relativePath: { regex: "/kara/" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
+    query NewIndexQuery {
+        featureImage: file(relativePath: { regex: "/kara/" }) {
+            childImageSharp {
+                fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid
+                }
+            }
+            id
         }
-      }
-      id
-    }
 
-    barcoding: file(relativePath: {eq: "subway-takeover.jpg"}) {
-        childImageSharp {
-            fluid(maxWidth: 600) {
-                ...GatsbyImageSharpFluid	
+        barcoding: file(relativePath: {eq: "subway-takeover.jpg"}) {
+            childImageSharp {
+                fluid(maxWidth: 600) {
+                    ...GatsbyImageSharpFluid	
+                }
+            }
+            id
+        } 
+
+        tempRendia: file(relativePath: { regex: "/rendia/" }){
+            childImageSharp {	
+                fluid(maxWidth: 400) {	
+                    ...GatsbyImageSharpFluid	
+                }	
+            } 
+            id
+        }
+
+        image3: file(relativePath: { eq: "dcu-mobile-and-tiles.png" }){
+            childImageSharp {	
+                fluid(maxWidth: 600) {	
+                    ...GatsbyImageSharpFluid	
+                }	
+            } 
+            id
+        }
+
+        designTeam:   file(relativePath: {eq: "design-team.jpg"}) {
+            id
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid	
+                }
             }
         }
-        id
-    } 
-
-    tempRendia: file(relativePath: { regex: "/rendia/" }){
-        childImageSharp {	
-            fluid(maxWidth: 400) {	
-                ...GatsbyImageSharpFluid	
-            }	
-        } 
-        id
     }
-    image3: file(relativePath: { eq: "dcu-mobile-and-tiles.png" }){
-        childImageSharp {	
-            fluid(maxWidth: 600) {	
-                ...GatsbyImageSharpFluid	
-            }	
-        } 
-        id
-    }
-
-  }
 `;
