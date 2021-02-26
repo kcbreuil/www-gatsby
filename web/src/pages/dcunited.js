@@ -43,7 +43,7 @@ export default function DcunitedPage({ data }) {
     <Layout>
       <Img fluid={dchero.childImageSharp.fluid} alt="one" />
       <DetailStyle>
-        <span className="portfolio-name">DC United</span>
+        <h1 className="portfolio-name">DC United</h1>
         <p>
           D.C. United was prepping to start the 2018 season in their new home at
           Audi Field. Inspired by the excitement of the fans who were counting
