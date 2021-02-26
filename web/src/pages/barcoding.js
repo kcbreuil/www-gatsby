@@ -111,7 +111,7 @@ export default function BarcodingPage({ data }) {
     tape,
   } = data;
   return (
-    <Layout>
+    <Layout hasFooter>
       <HeroStyle>
         <Img fluid={subway.childImageSharp.fluid} alt="subway" />
       </HeroStyle>

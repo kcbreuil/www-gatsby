@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { CgArrowLongRight as Icon } from 'react-icons/cg'
 
-import MarkAbbr from './svgs/mark-abbr';
+import MarkAbbrWithAccent from './svgs/mark-abbr-with-accent';
 
 
 const Grid = styled.section`
@@ -42,7 +42,7 @@ export default function IndexFeatureSection ({ images }) {
     return (
         <Grid>
             <MarkWrapper>
-                <MarkAbbr />
+                <MarkAbbrWithAccent />
             </MarkWrapper>
             <ImageOne>
                 <Img fluid={featureImage.childImageSharp.fluid} style={{maxWidth: `100%`}} />
