@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 import Logo from '../components/Logo';
+// import Mark from './svgs/mark';
 // import NewHamburger from '../components/NewHamburger';
 
 const StyledNav = styled.nav`
