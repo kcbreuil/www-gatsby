@@ -7,21 +7,29 @@ import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 
 const DetailStyle = styled.div`
-  ${tw`flex flex-auto justify-evenly my-24 mx-24`};
+  ${tw`container flex flex-col lg:flex-row flex-auto justify-between mb-24`};
   .portfolio-name {
-    width: 310px;
-    font-style: normal;
     font-weight: bold;
     font-size: 50px;
-    line-height: 113%;
+    line-height: 75px;
     color: #2e444f;
-    white-space: nowrap;
-    margin-right: 100px;
+    margin-right: 50px;
   }
   p {
     font-size: 22px;
-    max-width: 820px;
+    width: 820px;
+    max-width: 100%;
+    margin-top: 12px;
     font-weight: 300;
+  }
+
+  @media screen and (max-width: 500px) {
+    .portfolio-name {
+      font-size: 42px;
+    }
+    .detail-info {
+      width: 300px;
+    }
   }
 `;
 
