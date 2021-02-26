@@ -1,0 +1,94 @@
+@font-face {
+    font-family: "ConnaryFagenBlack";
+    src: url("./Connary-Fagen-Quincy-CF-Black.otf");
+  }
+
+  @font-face {
+    font-family: "ConaryFagenBlackItalic";
+    src: url("./Connary-Fagen-Quincy-CF-Black\ Italic.otf");
+  }
+
+  @font-face {
+    font-family: "ConnaryFagenBoldItalic";
+    src: url("./Connary-Fagen-Quincy-CF-Bold-Italic.otf");
+  }
+
+  @font-face {
+    font-family: "ConnaryFagenBold";
+    src: url("./Connary-Fagen-Quincy-CF-Bold.otf");
+  }
+
+  @font-face {
+    font-family: "ConnaryFagenExtraBoldItalic";
+    src: url("Connary-Fagen-Quincy-CF-Extra-Bold-Italic.otf");
+  }
+
+  @font-face {
+    font-family: "ConnaryFagenBlackExtraBold";
+    src: url("./Connary-Fagen-Quincy-CF-Extra-Bold.otf");
+  } 
+
+
+  @font-face {
+    font-family: "ConnaryFagenLightItalic";
+    src: url("Connary-Fagen-Quincy-CF-Light-Italic.otf");
+  }
+
+  @font-face {
+    font-family: "ConnaryFagenLight";
+    src: url("./Connary-Fagen-Quincy-CF-Light.otf");
+  } 
+
+
+  @font-face {
+    font-family: "ConnaryFagenMediumItalic";
+    src: url("Connary-Fagen-Quincy-CF-Medium-Italic.otf");
+  }
+
+  @font-face {
+    font-family: "ConnaryFagenMedium";
+    src: url("./Connary-Fagen-Quincy-CF-Medium.otf");
+  } 
+
+  @font-face {
+    font-family: "ConnaryFagenMediumItalic";
+    src: url("Connary-Fagen-Quincy-CF-Medium-Italic.otf");
+  }
+
+  @font-face {
+    font-family: "ConnaryFagenMedium";
+    src: url("./Connary-Fagen-Quincy-CF-Medium.otf");
+  } 
+
+
+  @font-face {
+    font-family: "ConnaryFagenRegularItalic";
+    src: url("Connary-Fagen-Quincy-CF-Regular-Italic.otf");
+  }
+
+  @font-face {
+    font-family: "ConnaryFagenRegular";
+    src: url("./Connary-Fagen-Quincy-CF-Regular.otf");
+  } 
+
+  @font-face {
+    font-family: "ConnaryFagenTextItalic";
+    src: url("Connary-Fagen-Quincy-CF-Text-Italic.otf");
+  }
+
+  @font-face {
+    font-family: "ConnaryFagenText";
+    src: url("./Connary-Fagen-Quincy-CF-Text.otf");
+  } 
+
+
+  @font-face {
+    font-family: "ConnaryFagenThinItalic";
+    src: url("Connary-Fagen-Quincy-CF-Thin-Italic.otf");
+  }
+
+  @font-face {
+    font-family: "ConnaryFagenThin";
+    src: url("./Connary-Fagen-Quincy-CF-Thin.otf");
+  } 
+
