@@ -15,14 +15,25 @@ import * as fonts from '../fonts'
 
 // import NavModal from './NavModal'
 // import Header from './Header'
-import './layout.css'
+// import './layout.css'
 import NewNav from './NewNav'
+import Footer from './footer';
 
 const GlobalStyle = createGlobalStyle`
     html {
         --brGreen: #2E444F;
         --brGrey: #4E5859;
         --white: #ffffff;
+        --black: #000000;
+        --brand-1: #FBF7E9;
+        --brand-2: #E9DDC9;
+        --brand-3: #E2B394;
+        --brand-4: #B5734D;
+        --brand-5: #7C4121;
+        --brand-6: #F7A037;
+        --brand-7: #EA4E25;
+        --brand-8: #FFD4CB;
+        --brand-9: #1F2A48;
     }
 
     @font-face {
@@ -55,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         color: ${props => props.darkTheme ? `var(--white)` : 'var(--brGreen)' };
         background-color: ${props => props.darkTheme ? `var(--brGreen)` : `var(--white)`};
-        font-family: 'Galano Grotesque';
+        font-family: 'ConnaryFagenBlack';
         font-feature-settings: "kern", "liga", "clig", "calt";
         font-kerning: normal;
         font-size: 1rem;
@@ -93,7 +104,7 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export default function Layout ({ children, darkTheme }) {
+export default function Layout ({ children, darkTheme, hasFooter }) {
     return (
         <StaticQuery
             query={graphql`
@@ -110,6 +121,9 @@ export default function Layout ({ children, darkTheme }) {
                     <GlobalStyle darkTheme={darkTheme} />
                     <NewNav darkTheme={darkTheme} />
                     <main>{children}</main>
+                    {hasFooter &&
+                        <Footer />
+                    }
                 </>
             )}
         />

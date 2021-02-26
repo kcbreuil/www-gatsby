@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
+    "autoprefixer": "^10.2.4",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
     "framer-motion": "^2.7.7",
@@ -14,23 +15,25 @@
     "gatsby-image": "^2.3.2",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^2.2.10",
-    "gatsby-plugin-postcss": "^2.3.12",
+    "gatsby-plugin-postcss": "^3.7.0",
     "gatsby-plugin-purgecss": "^5.0.0",
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-sharp": "^2.5.4",
     "gatsby-plugin-styled-components": "^3.2.1",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-datocms": "^2.1.29",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-source-sanity": "^5.0.6",
     "gatsby-transformer-sharp": "^2.4.4",
     "lodash": "^4.17.15",
+    "postcss": "^8.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.11.0",
     "styled-components": "^4.4.1",
-    "tailwindcss": "^1.8.10"
+    "tailwindcss": "^2.0.3"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -41,7 +44,11 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "prettier": "1.19.1",
+<<<<<<< HEAD
     "twin.macro": "^1.10.0"
+=======
+    "twin.macro": "^2.2.3"
+>>>>>>> 400637c2f3649c418e29f8b3094ecb7a51aaeef9
   },
   "keywords": [
     "gatsby"

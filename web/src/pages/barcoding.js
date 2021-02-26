@@ -1,37 +1,36 @@
 import React from 'react';
 import tw from 'twin.macro';
-import subway from '../images/barcoding/subway-takeover.png';
-import mask from '../images/barcoding/Mask-Group.png';
-import welcome from '../images/barcoding/Welcome-Box-2.png';
+import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import billboard from '../images/barcoding/Billboard-mockup-1.png';
-import masktwo from '../images/barcoding/Mask-Group(1).png';
-import office from '../images/barcoding/Office.png';
-import signage from '../images/barcoding/Signage.png';
-import pattern from '../images/barcoding/Pattern.png';
-import lockup from '../images/barcoding/Barcoding-LockUp.png';
-import video from '../images/barcoding/Video-pic.png';
-import postcard1 from '../images/barcoding/Postcard-BG1.png';
-import postcard2 from '../images/barcoding/Postcard-BG2.png';
-import document from '../images/barcoding/B-document.png';
-import exploration from '../images/barcoding/B-Exploration.jpg';
-import tape from '../images/barcoding/tape-pattern.png';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 
 const HeroStyle = styled.div`
-  width: 100vw;
-  ${tw`w-screen`};
-  top: -160px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
+  .gatsby-image-wrapper {
+    top: 100px;
+  }
+  @media screen and (max-width: 480px) {
+    .gatsby-image-wrapper {
+      top: 150px;
+    }
+    margin-bottom: 200px;
+  }
 `;
 
 const ImgFlex = styled.div`
-  ${tw`grid grid-cols-2 gap-8 mx-24 mb-24`};
+  ${tw`container grid grid-cols-2 gap-8 mb-24`};
+  @media screen and (max-width: 420px) {
+    .mask,
+    .welcome {
+      width: 165px;
+    }
+  }
 `;
 
 const BarGrid = styled.div`
-  ${tw`grid grid-cols-2 gap-8 mx-24 mb-24`}
+  ${tw`container grid grid-cols-2 gap-8 mb-24`}
   .item-b {
     grid-column: 2 / 3;
     grid-row: 1 / span 2;
@@ -51,46 +50,82 @@ const BarGrid = styled.div`
 `;
 
 const DetailStyle = styled.div`
-${tw`flex flex-auto justify-evenly my-24 mx-24`};
-.portfolio-name {
-  width: 310px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 50px;
-  line-height: 113%;
-  color: #2e444f;
-  white-space: nowrap;
-  margin-right: 100px;
-}
-p {
-  font-size: 22px;
-  max-width: 820px;
-  font-weight: 300;
-}
-`;
+  ${tw`container flex flex-col lg:flex-row flex-auto justify-between mb-24`};
+  .portfolio-name {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 75px;
+    color: #2e444f;
+    margin-right: 50px;
+  }
+  p {
+    font-size: 22px;
+    width: 820px;
+    max-width: 100%;
+    margin-top: 12px;
+    font-weight: 300;
+  }
 
-const BottomStyle = styled.div`
-  ${tw`flex flex-auto justify-between mx-24`};
-  .tape,
-  .document,
-  .mark {
-    height: 350px;
+  @media screen and (max-width: 500px) {
+    .portfolio-name {
+      font-size: 42px;
+    }
+    .detail-info {
+      width: 300px;
+    }
   }
 `;
 
-export default function BarcodingPage() {
+const BottomStyle = styled.div`
+  ${tw`container flex flex-auto justify-between`};
+  .tape,
+  .document,
+  .mark {
+    max-height: 350px !important;
+  }
+  @media screen and (max-width: 420px) {
+    .tape,
+    .document,
+    .mark {
+      height: 100px !important;
+    }
+  }
+`;
+
+export default function BarcodingPage({ data }) {
+  const {
+    subway,
+    mask,
+    welcome,
+    billboard,
+    masktwo,
+    office,
+    signage,
+    pattern,
+    lockup,
+    video,
+    postcard1,
+    postcard2,
+    document,
+    exploration,
+    tape,
+  } = data;
   return (
-    <Layout>
+    <Layout hasFooter>
       <HeroStyle>
-        <img src={subway} alt="subway" />
+        <Img fluid={subway.childImageSharp.fluid} alt="subway" />
       </HeroStyle>
       <ImgFlex>
-        <img src={mask} alt="logo" className="mask" />
-        <img src={welcome} alt="welcome" className="welcome" />
+        <Img fluid={mask.childImageSharp.fluid} alt="logo" className="mask" />
+        <Img
+          fluid={welcome.childImageSharp.fluid}
+          alt="welcome"
+          className="welcome"
+        />
       </ImgFlex>
       <DetailStyle>
-        <span className="portfolio-name">Barcoding</span>
-        <p>
+        <h1 className="portfolio-name">Barcoding</h1>
+        <p className="detail-info">
           As the technology behind supply chain changes, Barcoding wanted to
           keep focus on its namesake and founding technology. The brand had to
           sustain its equity while showing the world that it has not only grown
@@ -104,21 +139,175 @@ export default function BarcodingPage() {
         </p>
       </DetailStyle>
       <BarGrid>
-        <img className="item-a" src={billboard} alt="one" />
-        <img className="item-c" src={office} alt="three" />
-        <img className="item-b" src={masktwo} alt="two" />
-        <img className="signage" src={signage} alt="signage" />
-        <img className="pattern" src={pattern} alt="pattern" />
-        <img className="video" src={video} alt="video" />
-        <img className="lockup" src={lockup} alt="lockup" />
-        <img className="postcard1" src={postcard1} alt="postcard1" />
-        <img className="postcard2" src={postcard2} alt="postcard2" />
+        <Img
+          className="item-a"
+          fluid={billboard.childImageSharp.fluid}
+          alt="one"
+        />
+        <Img
+          className="item-c"
+          fluid={office.childImageSharp.fluid}
+          alt="three"
+        />
+        <Img
+          className="item-b"
+          fluid={masktwo.childImageSharp.fluid}
+          alt="two"
+        />
+        <Img
+          className="signage"
+          fluid={signage.childImageSharp.fluid}
+          alt="signage"
+        />
+        <Img
+          className="pattern"
+          fluid={pattern.childImageSharp.fluid}
+          alt="pattern"
+        />
+        <Img
+          className="video"
+          fluid={video.childImageSharp.fluid}
+          alt="video"
+        />
+        <Img
+          className="lockup"
+          fluid={lockup.childImageSharp.fluid}
+          alt="lockup"
+        />
+        <Img
+          className="postcard1"
+          fluid={postcard1.childImageSharp.fluid}
+          alt="postcard1"
+        />
+        <Img
+          className="postcard2"
+          fluid={postcard2.childImageSharp.fluid}
+          alt="postcard2"
+        />
       </BarGrid>
       <BottomStyle>
-        <img className="tape" src={tape} alt="tape" />
-        <img className="mark" src={exploration} alt="mark" />
-        <img className="document" src={document} alt="document" />
+        <Img className="tape" fixed={tape.childImageSharp.fixed} alt="tape" />
+        <Img
+          className="mark"
+          fixed={exploration.childImageSharp.fixed}
+          alt="mark"
+        />
+        <Img
+          className="document"
+          fixed={document.childImageSharp.fixed}
+          alt="document"
+        />
       </BottomStyle>
     </Layout>
   );
 }
+
+export const query = graphql`
+  query BarcodingQuery {
+    subway: file(relativePath: { regex: "/barcoding/subway-takeover/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mask: file(relativePath: { regex: "/barcoding/Mask-Group/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    billboard: file(relativePath: { regex: "/barcoding/Billboard-mockup-1/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    welcome: file(relativePath: { regex: "/barcoding/Welcome-Box-2/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    masktwo: file(relativePath: { regex: "/barcoding/lobby/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    office: file(relativePath: { regex: "/barcoding/Office/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    signage: file(relativePath: { regex: "/barcoding/Signage/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    pattern: file(relativePath: { regex: "/barcoding/Pattern/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    lockup: file(relativePath: { regex: "/barcoding/Barcoding-LockUp/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    video: file(relativePath: { regex: "/barcoding/Video-pic/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    postcard1: file(relativePath: { regex: "/barcoding/Postcard-BG1/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    postcard2: file(relativePath: { regex: "/barcoding/Postcard-BG2/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    document: file(relativePath: { regex: "/barcoding/B-document/" }) {
+      childImageSharp {
+        fixed {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    exploration: file(relativePath: { regex: "/barcoding/B-Exploration/" }) {
+      childImageSharp {
+        fixed(width: 350) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    tape: file(relativePath: { regex: "/barcoding/tape-pattern/" }) {
+      childImageSharp {
+        fixed(width: 350) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
