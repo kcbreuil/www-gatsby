@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         color: ${props => props.darkTheme ? `var(--white)` : 'var(--brGreen)' };
         background-color: ${props => props.darkTheme ? `var(--brGreen)` : `var(--white)`};
-        font-family: 'ConnaryFagenBlack';
+        font-family: 'ConnaryFagenRegular';
         font-feature-settings: "kern", "liga", "clig", "calt";
         font-kerning: normal;
         font-size: 1rem;
@@ -75,32 +75,43 @@ const GlobalStyle = createGlobalStyle`
         word-wrap: break-word;
     }
 
-    h1,
+    h1 {
+        font-family: ConnaryFagenExtraBold;
+        font-size: 3.052rem;
+        line-height: 1.25;
+    }
+
     h2,
     h3,
     h4 {
         font-weight: bold;
-        line-height: 1;
+        line-height: 1.25;
+        font-family: ConnaryFagenBold;
     }
 
 
     h2,
     .h2 {
-        font-size: 2.369rem;
+        font-size: 2.441rem;
     }
 
     h3,
     .h3 {
-        font-size: 1.777rem;
+        font-size: 1.953rem;
     }
 
     h4,
     .h4 {
-        font-size: 1.333rem;
+        font-size: 1.563rem;
     }
 
     a {
         text-decoration: none;
+    }
+    caption, .caption {
+        line-height: 1.5;
+        font-family: ConnaryFagenItalic;
+
     }
 `
 
