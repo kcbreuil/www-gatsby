@@ -66,7 +66,7 @@ export default function VoloPage({ data }) {
   } = data;
 
   return (
-    <Layout>
+    <Layout hasFooter>
       <HeroStyle>
         <Img fluid={volobmore.childImageSharp.fluid} alt="volo" />
       </HeroStyle>

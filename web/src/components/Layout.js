@@ -17,6 +17,7 @@ import * as fonts from '../fonts'
 // import Header from './Header'
 // import './layout.css'
 import NewNav from './NewNav'
+import Footer from './footer';
 
 const GlobalStyle = createGlobalStyle`
     html {
@@ -103,7 +104,7 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export default function Layout ({ children, darkTheme }) {
+export default function Layout ({ children, darkTheme, hasFooter }) {
     return (
         <StaticQuery
             query={graphql`
@@ -120,6 +121,9 @@ export default function Layout ({ children, darkTheme }) {
                     <GlobalStyle darkTheme={darkTheme} />
                     <NewNav darkTheme={darkTheme} />
                     <main>{children}</main>
+                    {hasFooter &&
+                        <Footer />
+                    }
                 </>
             )}
         />
