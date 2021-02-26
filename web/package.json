@@ -44,11 +44,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "prettier": "1.19.1",
-<<<<<<< HEAD
-    "twin.macro": "^1.10.0"
-=======
     "twin.macro": "^2.2.3"
->>>>>>> 400637c2f3649c418e29f8b3094ecb7a51aaeef9
   },
   "keywords": [
     "gatsby"
