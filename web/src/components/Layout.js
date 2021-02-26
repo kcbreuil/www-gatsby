@@ -23,6 +23,16 @@ const GlobalStyle = createGlobalStyle`
         --brGreen: #2E444F;
         --brGrey: #4E5859;
         --white: #ffffff;
+        --black: #000000;
+        --brand-1: #FBF7E9;
+        --brand-2: #E9DDC9;
+        --brand-3: #E2B394;
+        --brand-4: #B5734D;
+        --brand-5: #7C4121;
+        --brand-6: #F7A037;
+        --brand-7: #EA4E25;
+        --brand-8: #FFD4CB;
+        --brand-9: #1F2A48;
     }
 
     @font-face {
