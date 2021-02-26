@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function MarkAbbr () {
+export default function MarkAbbrWithAccent () {
     return (
         <svg width="403" height="374" viewBox="0 0 403 374" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M162.855 0C50.2367 0 0 71.0928 0 152.106C0 239.732 58.5175 346.095 319.638 373.099C388.645 379.162 402.998 354.362 402.998 306.416V238.078C403.55 100.301 298.66 0 162.855 0Z" fill="#FAF6E8"/>
