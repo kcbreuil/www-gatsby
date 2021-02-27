@@ -6,11 +6,11 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 import Logo from '../components/Logo';
-// import Mark from './svgs/mark';
+import Mark from './svgs/mark';
 // import NewHamburger from '../components/NewHamburger';
 
 const StyledNav = styled.nav`
-    ${tw`bg-white fixed top-0 w-full z-10`}
+    ${tw`bg-white fixed py-8 top-0 w-full z-10`}
 
     background-color: ${props => props.darkTheme ? 'var(--brGreen)' : 'var(--white)' };
 `
@@ -26,7 +26,7 @@ const StyledLink = styled(Link)`
 
 `
 
-export default function NewNav ({ darkTheme }) {
+export default function NewNav ({ darkTheme, newBrand }) {
     // const [navOpen, setNavOpen] = useState(false)
 
     const menu = [
@@ -64,7 +64,8 @@ export default function NewNav ({ darkTheme }) {
         <StyledNav darkTheme={darkTheme} >
             <NavInner>
                 <Link to='/'>
-                    <Logo darkTheme={darkTheme} />
+                    {newBrand && <Mark />}
+                    {!newBrand && <Logo darkTheme={darkTheme} />}
                 </Link>
                 <div class="justify-end md:flex md:items-center md:w-auto">
                     {menu.map((item, index) => {
