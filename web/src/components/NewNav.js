@@ -5,7 +5,6 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import Logo from '../components/Logo';
 import Mark from './svgs/mark';
 // import NewHamburger from '../components/NewHamburger';
 
@@ -26,7 +25,7 @@ const StyledLink = styled(Link)`
 
 `
 
-export default function NewNav ({ darkTheme, newBrand }) {
+export default function NewNav ({ darkTheme }) {
     // const [navOpen, setNavOpen] = useState(false)
 
     const menu = [
@@ -64,8 +63,7 @@ export default function NewNav ({ darkTheme, newBrand }) {
         <StyledNav darkTheme={darkTheme} >
             <NavInner>
                 <Link to='/'>
-                    {newBrand && <Mark />}
-                    {!newBrand && <Logo darkTheme={darkTheme} />}
+                    <Mark />
                 </Link>
                 <div class="justify-end md:flex md:items-center md:w-auto">
                     {menu.map((item, index) => {
