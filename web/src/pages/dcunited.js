@@ -40,7 +40,7 @@ const ImgFlex = styled.div`
 export default function DcunitedPage({ data }) {
   const { middle, dchero, bottom } = data;
   return (
-    <Layout>
+    <Layout isCaseStudy>
       <Img fluid={dchero.childImageSharp.fluid} alt="one" />
       <DetailStyle>
         <h1 className="portfolio-name">DC United</h1>
