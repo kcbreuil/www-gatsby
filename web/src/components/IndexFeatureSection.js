@@ -8,7 +8,7 @@ import { CgArrowLongRight as Icon } from 'react-icons/cg'
 import MarkAbbrWithAccent from './svgs/mark-abbr-with-accent';
 
 const Section = styled.section`
-    ${tw`bg-brand-2`}
+    ${tw``}
 `;
 
 const Grid = styled.div`

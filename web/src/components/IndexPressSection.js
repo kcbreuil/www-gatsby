@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 import IndexPressItem from '../components/IndexPressItem'
 
 const Section = styled.section`
-    ${tw`bg-brand-1`}
+    ${tw``}
 `;
 
 const Grid = styled.div`

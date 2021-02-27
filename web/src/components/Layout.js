@@ -5,12 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 // import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components';
+import tw from 'twin.macro';
 import * as fonts from '../fonts'
 
 // import NavModal from './NavModal'
@@ -64,9 +66,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        color: ${props => props.darkTheme ? `var(--white)` : 'var(--brGreen)' };
-        background-color: ${props => props.darkTheme ? `var(--brGreen)` : `var(--white)`};
-        font-family: 'ConnaryFagenRegular';
+        color: var(--brand-9);
+        font-family: 'ConnaryFagenBlack';
         font-feature-settings: "kern", "liga", "clig", "calt";
         font-kerning: normal;
         font-size: 1rem;
@@ -115,7 +116,38 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export default function Layout ({ children, darkTheme, hasFooter, newBrand }) {
+const Main = styled.main`
+    ${tw`transition duration-1000`}
+    background-color: ${({ hasBgColorTransition, isBgTransitioned }) => (
+        !hasBgColorTransition
+            ? 'transparent'
+            : isBgTransitioned
+            ? 'var(--brand-1)'
+            : 'var(--brand-2)'
+    )}
+`;
+export default function Layout ({ hasBgColorTransition, children, darkTheme, hasFooter, newBrand }) {
+    const main = useRef();
+    const [isBgTransitioned, setisBgTransitioned] = useState(false)
+
+    const handleScroll = () => {
+        const elHeight = main.current.clientHeight;
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > elHeight * .45) {
+            setisBgTransitioned(true);
+        } else {
+            setisBgTransitioned(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    })
     return (
         <StaticQuery
             query={graphql`
@@ -130,8 +162,14 @@ export default function Layout ({ children, darkTheme, hasFooter, newBrand }) {
             render={data => (
                 <>
                     <GlobalStyle darkTheme={darkTheme} />
-                    <NewNav darkTheme={darkTheme} newBrand={newBrand}/>
-                    <main>{children}</main>
+                    <NewNav darkTheme={darkTheme} newBrand={newBrand} />
+                    <Main
+                        hasBgColorTransition={hasBgColorTransition}
+                        isBgTransitioned={isBgTransitioned}
+                        ref={main}
+                    >
+                        {children}
+                    </Main>
                     {hasFooter &&
                         <Footer />
                     }

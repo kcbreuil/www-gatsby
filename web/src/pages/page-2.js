@@ -25,7 +25,7 @@ export default function SecondPage ({ data }) {
     const images = [barcoding, tempRendia, image3]
 
   return (
-    <Layout hasFooter newBrand>
+    <Layout hasFooter newBrand hasBgColorTransition>
       <SEO title="Page two" />
       <IndexHero images={images} />
       <IndexCTA />

@@ -6,11 +6,11 @@ import tw from 'twin.macro';
 import { CgArrowLongRight as Icon } from 'react-icons/cg'
 
 const StyledSection = styled.section`
-    ${tw`bg-brand-2 h-3/4`}
+    ${tw`h-3/4`}
 `
 
 const Container = styled.div`
-    ${tw`container flex flex-col justify-center pb-5`}
+    ${tw`container flex flex-col justify-center py-40`}
 `;
 
 const StyledHeading = styled.h2`
