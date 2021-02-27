@@ -126,7 +126,7 @@ const Main = styled.main`
             : 'var(--brand-2)'
     )}
 `;
-export default function Layout ({ hasBgColorTransition, children, darkTheme, hasFooter }) {
+export default function Layout ({ hasBgColorTransition, children, darkTheme, hasFooter, isCaseStudy }) {
     const main = useRef();
     const [isBgTransitioned, setisBgTransitioned] = useState(false)
 
@@ -162,7 +162,7 @@ export default function Layout ({ hasBgColorTransition, children, darkTheme, has
             render={data => (
                 <>
                     <GlobalStyle darkTheme={darkTheme} />
-                    <NewNav darkTheme={darkTheme} />
+                    <NewNav darkTheme={darkTheme} isCaseStudy={isCaseStudy} />
                     <Main
                         hasBgColorTransition={hasBgColorTransition}
                         isBgTransitioned={isBgTransitioned}
