@@ -21,7 +21,7 @@ const NavInner = styled.div`
 const StyledLink = styled(Link)`
     ${tw`block mt-4 ml-8 text-right md:inline-block md:mt-0 text-3xl leading-10`}
 
-    color: ${props => props.darkTheme ? '#fff' : '#2E444F' }
+    color: ${props => props.darkTheme ? 'var(--brand-9)' : '#2E444F' }
 
 `
 
