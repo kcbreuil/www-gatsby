@@ -23,7 +23,7 @@ export default function Index ({ data }) {
 
   return (
     <Layout hasFooter hasBgColorTransition>
-      <SEO title="Page two" />
+      <SEO title="Home" />
       <IndexHero images={images} />
       <IndexCTA />
       <IndexFeatureSection images={[designTeam, featureImage]} />
