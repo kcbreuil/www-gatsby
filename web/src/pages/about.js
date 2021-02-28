@@ -55,7 +55,7 @@ export default function AboutPage(props) {
 
     return (
         <>
-            <Layout darkTheme={false}>
+            <Layout hasFooter hasBgColorTransition>
                 <SEO title="About" />
                 <Hero heading={content.heroSection.heading} image={heroImage}/>
                 <ServiceSection
