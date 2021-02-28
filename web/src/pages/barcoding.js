@@ -111,7 +111,6 @@ export default function BarcodingPage({ data }) {
     signage,
     pattern,
     lockup,
-    video,
     ethic,
     fulfilled,
     postcard1,
