@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
+import ProjectInfo from '../components/ProjectInfo';
 
 const HeroStyle = styled.div`
   margin-bottom: 200px;
@@ -92,7 +93,14 @@ const BottomStyle = styled.div`
   }
 `;
 
-export default function BarcodingPage({ data }) {
+const content = {
+  detail: {
+    name: 'wee woo',
+    info: 'brahm likes to read',
+  },
+};
+
+export default function BarcodingPage({ data, name, info }) {
   const {
     subway,
     mask,
@@ -138,6 +146,7 @@ export default function BarcodingPage({ data }) {
           <i>Read more</i>
         </p>
       </DetailStyle>
+      <ProjectInfo name={content.detail.name} info={content.detail.info} />
       <BarGrid>
         <Img
           className="item-a"
