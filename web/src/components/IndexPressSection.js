@@ -9,7 +9,7 @@ const Section = styled.section`
 `;
 
 const Grid = styled.div`
-    ${tw`container grid md:grid-cols-3 gap-y-10 md:gap-8 py-32`}
+    ${tw`container grid md:grid-cols-3 py-32`}
 `
 
 export default function IndexPressSection () {

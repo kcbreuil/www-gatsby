@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 
 
 const Link = styled.a`
-    ${tw`cursor-pointer justify-between hover:bg-brand-2 p-12 transition-colors text-2xl`}
+    ${tw`cursor-pointer justify-between hover:bg-brand-2 py-6 lg:px-6  transition-colors text-2xl`}
 `
 
 const Heading = styled.h2`
