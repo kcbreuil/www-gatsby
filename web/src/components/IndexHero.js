@@ -39,25 +39,25 @@ export default function IndexHero ({ images }) {
         <StyledSection>
             <StyledGrid>
                 <Heading>Backroom is an independent, full service brand strategy & activation agency.</Heading>
-                <ImageOne to="#">
+                <ImageOne to="/barcoding">
                     <Img
                         fluid={images[0].childImageSharp.fluid}
                     />
-                    <StyledP>Statement about this project</StyledP>
+                    <StyledP>We collaborated with the Barcoding team to define a brand architecture and positioning that moved them beyond vertical lines and into the lynchpin of supply chain in an ever-changing technological world. An evolution of their existing logo showed a progression away from the barcode, while giving a nod to their original namesake with an elevated wordmark.</StyledP>
                 </ImageOne>
 
-                <ImageTwo to="#">
+                <ImageTwo to="/volo">
                     <Img
                         fluid={images[1].childImageSharp.fluid}
                     />
-                    <StyledP>Statement about this project</StyledP>
+                    <StyledP>We partnered with Volo City, a national brand that strengthens communities and impacts economic health through sports leagues. We unified each of their cities and the youth non-profit under a name that was inspired by the style of bocce that was played in their very first league.</StyledP>
                 </ImageTwo>
 
-                <ImageThree to="#">
+                <ImageThree to="/dcunited">
                     <Img
                         fluid={images[2].childImageSharp.fluid}
                     />
-                    <StyledP>Statement about this project</StyledP>
+                    <StyledP>With a month before go-time, our team designed and launched a co-branded website to support the launch of D.C. United’s new stadium, Audi Field. The site was designed to capture the group energy anticipation of a game day in a digital space, with fly-through videos and a countdown timer to keep fans charged up.</StyledP>
                 </ImageThree>
             </StyledGrid>
         </StyledSection>

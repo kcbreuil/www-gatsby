@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
+import Video from '../components/Video'
 
 const HeroStyle = styled.div`
   margin-bottom: 200px;
@@ -173,11 +174,7 @@ export default function BarcodingPage({ data }) {
           fluid={pattern.childImageSharp.fluid}
           alt="pattern"
         />
-        <Img
-          className="video"
-          fluid={video.childImageSharp.fluid}
-          alt="video"
-        />
+        <Video videoSrcURL="https://www.youtube.com/embed/QL9rpBGp_IM" videoTitle="Barcoding's Approach: People, Process, Technology" />
         <Img
           className="lockup"
           fluid={lockup.childImageSharp.fluid}
@@ -282,13 +279,6 @@ export const query = graphql`
       }
     }
     lockup: file(relativePath: { regex: "/barcoding/Barcoding-LockUp/" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    video: file(relativePath: { regex: "/barcoding/Video-pic/" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

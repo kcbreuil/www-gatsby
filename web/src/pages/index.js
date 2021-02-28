@@ -23,7 +23,7 @@ export default function Index ({ data }) {
 
   return (
     <Layout hasFooter hasBgColorTransition>
-      <SEO title="Page two" />
+      <SEO title="Home" />
       <IndexHero images={images} />
       <IndexCTA />
       <IndexFeatureSection images={[designTeam, featureImage]} />
@@ -37,7 +37,7 @@ export const query = graphql`
     query IndexQuery {
         featureImage: file(relativePath: { regex: "/kara/" }) {
             childImageSharp {
-                fluid(maxWidth: 500) {
+                fluid(maxWidth: 450) {
                 ...GatsbyImageSharpFluid
                 }
             }
@@ -53,7 +53,7 @@ export const query = graphql`
             id
         } 
 
-        tempRendia: file(relativePath: { regex: "/rendia/" }){
+        tempRendia: file(relativePath: { regex: "/glasses/" }){
             childImageSharp {	
                 fluid(maxWidth: 400) {	
                     ...GatsbyImageSharpFluid	
