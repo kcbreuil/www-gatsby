@@ -36,7 +36,7 @@ const MarkLink = styled(Link)`
 const nav = [
     {
         text: 'info',
-        link: '/info',
+        link: '/about',
     },
     {
         text: 'contact',
@@ -47,19 +47,19 @@ const nav = [
 const social = [
     {
         text: 'linkedin',
-        link: '#',
+        link: 'https://www.linkedin.com/company/backroom-io',
     },
     {
         text: 'instagram',
-        link: '#',
+        link: 'https://www.instagram.com/backroom.io/',
     },
     {
         text: 'twitter',
-        link: '#',
+        link: 'https://twitter.com/backroom',
     },
     {
         text: 'github',
-        link: '#',
+        link: 'https://github.com/bckrm',
     },
 ] 
 

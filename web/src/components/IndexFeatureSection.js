@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Img from 'gatsby-image'
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -31,7 +30,7 @@ const QuoteWrapper = styled.div`
     ${tw`md:col-span-10 md:col-start-2 lg:col-start-7 lg:col-end-13 lg:px-10 row-start-3 md:row-start-2 lg:row-start-3`}
 `;
 
-const StyledLink = styled(Link)`
+const Link = styled.a`
     ${tw`flex mt-4 md:mt-12 mr-auto text-xl md:text-2xl leading-10 items-center justify-start`}
 `
 
@@ -55,10 +54,10 @@ export default function IndexFeatureSection ({ images }) {
                     <Quote>
                         “An agency with a steadfast commitment to protecting its people and its culture.”
                     </Quote>
-                    <StyledLink to='/'>
+                    <Link href='https://technical.ly/baltimore/2019/08/15/5-questions-with-kara-redman-how-a-creative-agency-thrives-on-its-own-terms/' target="_blank" rel="noopener noreferrer">
                         5 questions with Technical.ly
                         <Icon className={`ml-5`}/>
-                    </StyledLink>
+                    </Link>
                 </QuoteWrapper>
                 <ImageTwo>
                     <Img fluid={designTeam.childImageSharp.fluid} style={{maxWidth: `100%`}} />
