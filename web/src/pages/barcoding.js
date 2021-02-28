@@ -104,7 +104,6 @@ export default function BarcodingPage({ data }) {
     signage,
     pattern,
     lockup,
-    // video,
     postcard1,
     postcard2,
     document,
@@ -258,13 +257,6 @@ export const query = graphql`
       }
     }
     lockup: file(relativePath: { regex: "/barcoding/Barcoding-LockUp/" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    video: file(relativePath: { regex: "/barcoding/Video-pic/" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
