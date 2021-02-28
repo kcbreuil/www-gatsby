@@ -77,7 +77,7 @@ const DetailStyle = styled.div`
 `;
 
 const BottomStyle = styled.div`
-  ${tw`container flex flex-auto justify-between`};
+  ${tw`container flex flex-auto	justify-between`};
   .tape,
   .document,
   .mark {
@@ -89,6 +89,13 @@ const BottomStyle = styled.div`
     .mark {
       height: 100px !important;
     }
+  }
+`;
+
+const ShirtStyle = styled.div`
+  ${tw`container flex`}
+  .ethic, .fulfilled {
+    width: 50%;
   }
 `;
 
@@ -104,6 +111,8 @@ export default function BarcodingPage({ data }) {
     pattern,
     lockup,
     video,
+    ethic,
+    fulfilled,
     postcard1,
     postcard2,
     document,
@@ -198,6 +207,18 @@ export default function BarcodingPage({ data }) {
           alt="document"
         />
       </BottomStyle>
+      <ShirtStyle>
+        <Img
+          className="ethic"
+          fluid={ethic.childImageSharp.fluid}
+          alt="ethic"
+        />
+        <Img
+          className="fulfilled"
+          fluid={fulfilled.childImageSharp.fluid}
+          alt="fulfilled"
+        />
+      </ShirtStyle>
     </Layout>
   );
 }
@@ -306,6 +327,20 @@ export const query = graphql`
       childImageSharp {
         fixed(width: 350) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    ethic: file(relativePath: { regex: "/barcoding/Work-Ethic/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    fulfilled: file(relativePath: { regex: "/barcoding/Fullfilled-AF/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
