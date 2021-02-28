@@ -12,7 +12,7 @@ const Section = styled.section`
 `;
 
 const Grid = styled.div`
-    ${tw`container grid grid-cols-1 md:grid-cols-12 auto-rows-auto gap-y-8 lg:gap-x-16 lg:gap-y-0 py-20 xl:pb-40`}
+    ${tw`container grid grid-cols-1 md:grid-cols-12 gap-y-20 lg:gap-x-16 lg:gap-y-0 py-20 xl:pb-40`}
 `
 
 const MarkWrapper = styled.div`
@@ -20,7 +20,7 @@ const MarkWrapper = styled.div`
 `
 
 const ImageOne = styled.div`
-    ${tw`md:col-start-8 md:col-end-13 lg:col-start-7 row-start-2 md:row-start-1 lg:row-start-2`}
+    ${tw`md:col-start-8 md:col-end-13 lg:col-start-7 lg:px-10 row-start-2 md:row-start-1 lg:row-start-2`}
 `
 
 const ImageTwo = styled.div`
@@ -28,11 +28,11 @@ const ImageTwo = styled.div`
 `;
 
 const QuoteWrapper = styled.div`
-    ${tw`md:col-span-10 md:col-start-2 lg:col-start-7 lg:col-end-13 row-start-3 md:row-start-2 lg:row-start-3`}
+    ${tw`md:col-span-10 md:col-start-2 lg:col-start-7 lg:col-end-13 lg:px-10 row-start-3 md:row-start-2 lg:row-start-3`}
 `;
 
 const StyledLink = styled(Link)`
-    ${tw`flex mt-4 md:mt-12 mr-auto text-xl md:text-2xl leading-10 items-center justify-center`}
+    ${tw`flex mt-4 md:mt-12 mr-auto text-xl md:text-2xl leading-10 items-center justify-start`}
 `
 
 const Quote = styled.p`
