@@ -1,26 +1,29 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-const StyledHeading = styled.h2`
-    ${tw`text-5xl`}
+
+const Link = styled.a`
+    ${tw`cursor-pointer justify-between hover:bg-brand-2 p-12 transition-colors text-2xl`}
 `
 
-const StyledP = styled.p`
-    ${tw`text-2xl`}
+const Heading = styled.h2`
+    ${tw`mb-8 text-4xl`}
 `
 
-const StyledLink = styled(Link)`
-    ${tw`text-2xl`}
+const P = styled.p`
+    ${tw`mb-4 text-2xl`}
 `
+
 
 export default function IndexPresItem ({ data }) {
+    const { body, link: { href, text }, title } = data;
+
     return (
-        <div>
-            <StyledHeading>{data.title}</StyledHeading>
-            <StyledP>{data.body}</StyledP>
-            <StyledLink to='/'>{data.linkText}</StyledLink>
-        </div>
+        <Link href={`/${href}`}>
+            <Heading>{title}</Heading>
+            <P>{body}</P>
+            <P>{text}</P>
+        </Link>
     )
 }
