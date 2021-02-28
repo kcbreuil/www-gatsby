@@ -39,21 +39,21 @@ export default function IndexHero ({ images }) {
         <StyledSection>
             <StyledGrid>
                 <Heading>Backroom is an independent, full service brand strategy & activation agency.</Heading>
-                <ImageOne to="#">
+                <ImageOne to="/barcoding">
                     <Img
                         fluid={images[0].childImageSharp.fluid}
                     />
                     <StyledP>Statement about this project</StyledP>
                 </ImageOne>
 
-                <ImageTwo to="#">
+                <ImageTwo to="/volo">
                     <Img
                         fluid={images[1].childImageSharp.fluid}
                     />
                     <StyledP>Statement about this project</StyledP>
                 </ImageTwo>
 
-                <ImageThree to="#">
+                <ImageThree to="/dcunited">
                     <Img
                         fluid={images[2].childImageSharp.fluid}
                     />
