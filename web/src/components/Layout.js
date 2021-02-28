@@ -21,9 +21,11 @@ import Footer from './footer';
 
 const Main = styled.main`
     ${tw`transition duration-1000`}
-    background-color: ${({ hasBgColorTransition, isBgTransitioned }) => (
-        !hasBgColorTransition
-            ? 'transparent'
+    background-color: ${({ hasBgColorTransition, isBgTransitioned, isCaseStudy }) => (
+        isCaseStudy
+            ? 'var(--white)'
+            : !hasBgColorTransition
+            ? 'var(--brand-2)'
             : isBgTransitioned
             ? 'var(--brand-1)'
             : 'var(--brand-2)'
@@ -68,6 +70,7 @@ export default function Layout ({ hasBgColorTransition, children, darkTheme, has
                     <Main
                         hasBgColorTransition={hasBgColorTransition}
                         isBgTransitioned={isBgTransitioned}
+                        isCaseStudy={isCaseStudy}
                         ref={main}
                     >
                         {children}
