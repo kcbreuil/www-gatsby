@@ -20,7 +20,7 @@ export default function IndexPresItem ({ data }) {
     const { body, link: { href, text }, title } = data;
 
     return (
-        <Link href={`/${href}`}>
+        <Link href={`/${href}`} target="_blank" rel="noreferrer">
             <Heading>{title}</Heading>
             <P>{body}</P>
             <P>{text}</P>
