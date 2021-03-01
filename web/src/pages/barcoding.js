@@ -111,7 +111,8 @@ export default function BarcodingPage({ data, name, info }) {
     signage,
     pattern,
     lockup,
-    video,
+    ethic,
+    fulfilled,
     postcard1,
     postcard2,
     document,
@@ -173,11 +174,7 @@ export default function BarcodingPage({ data, name, info }) {
           fluid={pattern.childImageSharp.fluid}
           alt="pattern"
         />
-        <Img
-          className="video"
-          fluid={video.childImageSharp.fluid}
-          alt="video"
-        />
+        <Video videoSrcURL="https://www.youtube.com/embed/QL9rpBGp_IM" videoTitle="Barcoding's Approach: People, Process, Technology" />
         <Img
           className="lockup"
           fluid={lockup.childImageSharp.fluid}
@@ -207,6 +204,18 @@ export default function BarcodingPage({ data, name, info }) {
           alt="document"
         />
       </BottomStyle>
+      <ShirtStyle>
+        <Img
+          className="ethic"
+          fluid={ethic.childImageSharp.fluid}
+          alt="ethic"
+        />
+        <Img
+          className="fulfilled"
+          fluid={fulfilled.childImageSharp.fluid}
+          alt="fulfilled"
+        />
+      </ShirtStyle>
     </Layout>
   );
 }
@@ -276,13 +285,6 @@ export const query = graphql`
         }
       }
     }
-    video: file(relativePath: { regex: "/barcoding/Video-pic/" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     postcard1: file(relativePath: { regex: "/barcoding/Postcard-BG1/" }) {
       childImageSharp {
         fluid {
@@ -315,6 +317,20 @@ export const query = graphql`
       childImageSharp {
         fixed(width: 350) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    ethic: file(relativePath: { regex: "/barcoding/Work-Ethic/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    fulfilled: file(relativePath: { regex: "/barcoding/Fullfilled-AF/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
