@@ -9,7 +9,7 @@ import Mark from './svgs/mark';
 // import NewHamburger from '../components/NewHamburger';
 
 const StyledNav = styled.nav`
-    ${tw`fixed py-8 top-0 w-full z-10`}
+    ${tw`fixed text-brand-9 py-8 top-0 w-full z-10`}
 
     background-color: ${({ isCaseStudy }) => isCaseStudy ? 'var(--white)' : 'var(--brand-2)'}
 `
@@ -19,13 +19,11 @@ const NavInner = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-    ${tw`block mt-4 ml-8 text-right md:inline-block md:mt-0 text-3xl leading-10`}
-
-    color: ${props => props.darkTheme ? 'var(--brand-9)' : '#2E444F' }
+    ${tw`block text-brand-9 mt-4 ml-8 text-right md:inline-block md:mt-0 text-3xl leading-10`}
 
 `
 
-export default function NewNav ({ darkTheme, isCaseStudy }) {
+export default function NewNav ({ isCaseStudy }) {
     // const [navOpen, setNavOpen] = useState(false)
 
     const menu = [
@@ -60,7 +58,7 @@ export default function NewNav ({ darkTheme, isCaseStudy }) {
     // const handleClick = () => setNavOpen(!navOpen)
 
     return (
-        <StyledNav darkTheme={darkTheme} isCaseStudy={isCaseStudy}>
+        <StyledNav isCaseStudy={isCaseStudy}>
             <NavInner>
                 <Link to='/'>
                     <Mark />
@@ -70,7 +68,6 @@ export default function NewNav ({ darkTheme, isCaseStudy }) {
                         return (
                             <StyledLink
                                 activeClassName='font-bold pointer-events-none'
-                                darkTheme={darkTheme}
                                 to={item.link}
                                 key={item.name}
                             >
