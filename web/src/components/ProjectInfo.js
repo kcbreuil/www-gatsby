@@ -8,11 +8,11 @@ const ProjectWrapper = styled.div`
 `;
 
 const StyledHeading = styled.div`
-  ${tw`font-bold text-4xl lg:text-5xl`}
+  ${tw`font-bold text-5xl lg:text-5xl`}
 `;
 
 const StyledBody = styled.div`
-  ${tw`w-72`}
+  ${tw`w-7/12	text-2xl`}
 `;
 
 export default function ProjectInfo({ name, info }) {
