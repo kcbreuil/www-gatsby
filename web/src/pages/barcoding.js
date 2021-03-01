@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import ProjectInfo from '../components/ProjectInfo';
+import Video from '../components/Video'
 
 const HeroStyle = styled.div`
   margin-bottom: 200px;
@@ -95,8 +96,8 @@ const BottomStyle = styled.div`
 
 const content = {
   detail: {
-    name: 'wee woo',
-    info: 'brahm likes to read',
+    name: 'Barcoding',
+    info: 'As the technology behind supply chain changes, Barcoding wanted to keep focus on its namesake and founding technology. The brand had tosustain its equity while showing the world that it has not only grown up, but that it drives innovation in the industry. We helped Barcoding evolve in the face of a major technological shift and gave them an identity system with a foundation built to withstand and thrive in changing times.'
   },
 };
 
