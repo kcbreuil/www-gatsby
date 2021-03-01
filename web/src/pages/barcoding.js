@@ -82,7 +82,7 @@ const content = {
   },
 };
 
-export default function BarcodingPage({ data, name, info }) {
+export default function BarcodingPage({ data }) {
   const {
     subway,
     mask,
