@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const ProjectWrapper = styled.div`
-  ${tw`container flex flex-col lg:flex-row mb-24`}
+  ${tw`container flex flex-col text-brand-9 lg:flex-row mb-24`}
 `;
 
 const StyledHeading = styled.div`
