@@ -28,13 +28,11 @@ const NavInner = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-    ${tw`block md:mt-4 ml-8 text-right md:inline-block md:mt-0 text-3xl leading-10`}
-
-    color: ${props => props.darkTheme ? '#fff' : '#2E444F' }
+    ${tw`block mt-4 ml-8 text-right md:inline-block md:mt-0 text-3xl leading-10`}
 
 `
 
-export default function NewNav ({ darkTheme, isCaseStudy }) {
+export default function NewNav ({ isCaseStudy }) {
     // const [navOpen, setNavOpen] = useState(false)
 
     const menu = [
@@ -69,7 +67,7 @@ export default function NewNav ({ darkTheme, isCaseStudy }) {
     // const handleClick = () => setNavOpen(!navOpen)
 
     return (
-        <StyledNav darkTheme={darkTheme} isCaseStudy={isCaseStudy}>
+        <StyledNav isCaseStudy={isCaseStudy}>
             <NavInner>
                 <Link to='/'>
                     <DesktopMarkWrapper>
@@ -84,7 +82,6 @@ export default function NewNav ({ darkTheme, isCaseStudy }) {
                         return (
                             <StyledLink
                                 activeClassName='font-bold pointer-events-none'
-                                darkTheme={darkTheme}
                                 to={item.link}
                                 key={item.name}
                             >
