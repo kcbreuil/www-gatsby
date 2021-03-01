@@ -4,15 +4,15 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const ProjectWrapper = styled.div`
-  ${tw`container flex flex-col text-brand-9 lg:flex-row mb-24`}
+  ${tw`container flex flex-col text-brand-9 lg:flex-row lg:justify-between mb-24`}
 `;
 
-const StyledHeading = styled.div`
-  ${tw`font-bold mr-16 mb-4 text-5xl lg:text-6xl`}
+const StyledHeading = styled.h1`
+  ${tw`font-bold mb-4 text-5xl lg:text-6xl`}
 `;
 
-const StyledBody = styled.div`
-  ${tw`w-auto	text-2xl`}
+const StyledBody = styled.p`
+  ${tw`lg:w-2/3 text-2xl`}
 `;
 
 export default function ProjectInfo({ name, info }) {
