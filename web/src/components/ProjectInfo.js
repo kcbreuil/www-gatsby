@@ -8,7 +8,7 @@ const ProjectWrapper = styled.div`
 `;
 
 const StyledHeading = styled.div`
-  ${tw`font-bold mr-4 mb-4 text-5xl lg:text-6xl`}
+  ${tw`font-bold mr-16 mb-4 text-5xl lg:text-6xl`}
 `;
 
 const StyledBody = styled.div`
