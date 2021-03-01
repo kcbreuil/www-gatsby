@@ -78,7 +78,7 @@ const DetailStyle = styled.div`
 `;
 
 const BottomStyle = styled.div`
-  ${tw`container flex flex-auto	justify-between`};
+  ${tw`container flex flex-auto justify-between`};
   .tape,
   .document,
   .mark {
