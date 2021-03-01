@@ -10,7 +10,7 @@ import MarkAbbr from './svgs/mark-abbr'
 // import NewHamburger from '../components/NewHamburger';
 
 const StyledNav = styled.nav`
-    ${tw`fixed py-8 top-0 w-full z-10`}
+    ${tw`fixed py-4 md:py-8 top-0 w-full z-10`}
 
     background-color: ${({ isCaseStudy }) => isCaseStudy ? 'var(--white)' : 'var(--brand-2)'}
 `
